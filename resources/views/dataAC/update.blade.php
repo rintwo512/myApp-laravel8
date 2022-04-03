@@ -1,0 +1,201 @@
+@extends('layouts.main')
+
+
+@section('content')              
+        
+<div class="row">
+<div class="col-xl-9 mx-auto">
+  <a href="/ac" class="btn btn-success btn-sm mb-3"><i class="bi bi-arrow-left"></i> Back</a>
+  <h6 class="mb-0 text-uppercase">Update Data AC</h6>
+  <hr/>
+  <div class="card">
+    <div class="card-body">
+      <div class="p-4 border rounded">
+        <form action="/ac/update/{{ $ac->id }}" method="post" class="row g-3 needs-validation">           
+            @csrf
+          <div class="col-md-4">
+            <label for="tgl_pemasangan" class="form-label">Tanggal Pemasangan</label>
+            <input type="text" class="form-control datepicker" name="tgl_pemasangan" id="tgl_pemasangan" value="{{ old('tgl_pemasangan', $ac->tgl_pemasangan) }}">
+          </div>
+          <div class="col-md-4">
+            <label for="petugas_pemasangan" class="form-label">Petugas Pemasangan</label>
+            <input type="text" class="form-control" id="petugas_pemasangan" name="petugas_pemasangan" value="{{ old('petugas_pemasangan', $ac->petugas_pemasangan) }}">
+          </div>
+          <div class="col-md-4">
+            <label for="tgl_maintenance" class="form-label">Tanggal Maintenance</label>
+            <input class="result form-control" type="text" name="tgl_maintenance" id="date-time" value="{{ old('tgl_maintenance', $ac->tgl_maintenance) }}">
+          </div>
+          <div class="col-md-4">
+            <label for="label" class="form-label">Label</label>
+            <input type="text" class="form-control @error('label')
+            is-invalid @enderror" id="label" name="label" value="{{ old('label', $ac->label) }}">
+            @error('label')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+            @enderror
+          </div>
+          <div class="col-md-4">
+            <label for="assets" class="form-label">Assets</label>
+            <input type="text" class="form-control" name="assets" id="assets" value="{{ old('assets', $ac->assets) }}">            
+          </div>
+          <div class="col-md-4">
+            <label for="merk" class="form-label">Merk <span class="text-danger">*</span></label>
+            <select class="form-select" id="merk" required name="merk">
+                <option value="{{ $ac->merk }}" selected>{{ $ac->merk }}</option>
+                <option disabled value="">--Select--</option>
+                <option value="Daikin">Daikin</option>
+                <option value="Panasonic">Panasonic</option>
+                <option value="LG">LG</option>
+                <option value="Sharp">Sharp</option>
+                <option value="Mitshubisi">Mitshubisi</option>
+                <option value="Midea">Midea</option>
+                <option value="Polytron">Polytron</option>
+            </select>            
+          </div>
+          <div class="col-md-4">
+            <label for="wing" class="form-label">Wing <span class="text-danger">*</span></label>
+            <select class="form-select" id="wing" required name="wing" value="{{ $ac->wing }}">
+                <option value="{{ $ac->wing }}" selected>{{ $ac->wing }}</option>
+                <option disabled value="">--Select--</option>
+                <option value="Wing A">Wing A</option>
+                <option value="Wing B">Wing B</option>
+                <option value="Wing C">Wing C</option>
+                <option value="Wing D">Wing D</option>
+                <option value="Lainnya">Lainnya</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="lantai" class="form-label">Lantai <span class="text-danger">*</span></label>
+            <select class="form-select" id="lantai" required name="lantai">
+                <option value="{{ $ac->lantai }}" selected>{{ $ac->lantai }}</option>
+                <option disabled value="">--Select--</option>
+                <option value="Lantai 1">Lantai 1</option>
+                <option value="Lantai 2">Lantai 2</option>
+                <option value="Lantai 3">Lantai 3</option>
+            </select>            
+          </div>
+          <div class="col-md-4">
+            <label for="ruangan" class="form-label">Ruangan <span class="text-danger">*</span></label>
+            <input type="text" class="form-control @error('ruangan') is-invalid @enderror" name="ruangan" id="ruangan" value="{{ old('ruangan', $ac->ruangan) }}" required>            
+          </div>
+          <div class="col-md-4">
+            <label for="type" class="form-label">Type <span class="text-danger">*</span></label>
+            <select class="form-select" id="type" required name="type">
+                <option value="{{ $ac->type }}" selected>{{ $ac->type }}</option>
+                <option disabled value="">--Select--</option>
+                <option value="Cassete">Cassete</option>
+                <option value="Splite">Splite</option>
+                <option value="Standing floor">Standing Floor</option>
+                <option value="Central">Central</option>                
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="kapasitas" class="form-label">Kapasitas <span class="text-danger">*</span></label>
+            <select class="form-select" id="kapasitas" required name="kapasitas">
+                <option value="{{ $ac->kapasitas }}" selected>{{ $ac->kapasitas }}</option>
+                <option disabled value="">--Select--</option>
+                <option value="3/4pk">3/4pk</option>
+                <option value="1pk">1pk</option>
+                <option value="1,5pk">1,5pk</option>
+                <option value="2pk">2pk</option>                
+                <option value="2,5pk">2,5pk</option>                
+                <option value="3pk">3pk</option>                
+                <option value="5pk">5pk</option>                
+                <option value="8pk">8pk</option>                
+                <option value="10pk">10pk</option>                
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="jenis" class="form-label">Jenis <span class="text-danger">*</span></label>
+            <select class="form-select" id="jenis" required name="jenis">
+                <option value="{{ $ac->jenis }}" selected>{{ $ac->jenis }}</option>
+                <option disabled value="">--Select--</option>
+                <option value="Inverter">Inverter</option>
+                <option value="Non-inverter">Non-Inverter</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="refrigerant" class="form-label">Refrigerant <span class="text-danger">*</span></label>
+            <select class="form-select" id="refrigerant" required name="refrigerant">
+                <option value="{{ $ac->refrigerant }}" selected>R22</option>
+                <option disabled value="">--Select--</option>
+                <option value="R22">R22</option>
+                <option value="R32">R32</option>
+                <option value="R410">R410</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="product" class="form-label">Product</label>
+            <input type="text" class="form-control" name="product" id="product" value="{{ old('product', $ac->product) }}">            
+          </div>
+          <div class="col-md-4">
+            <label for="current" class="form-label">Amper</label>
+            <input type="text" class="form-control" name="current" id="current" value="{{ old('current', $ac->current) }}">            
+          </div>
+          <div class="col-md-4">
+            <label for="voltage" class="form-label">Voltage <span class="text-danger">*</span></label>
+            <select class="form-select" id="voltage" required name="voltage">
+                <option value="{{ $ac->voltage }}" selected>{{ $ac->voltage }}</option>
+                <option disabled value="">--Select--</option>
+                <option value="220Volt">220Volt</option>
+                <option value="380Volt">380Volt</option>                
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="btu" class="form-label">Btu</label>
+            <input type="text" class="form-control" name="btu" id="btu" value="{{ old('btu', $ac->btu) }}">
+          </div>
+          <div class="col-md-4">
+            <label for="status" class="form-label">Status <span class="text-danger">*</span></label>
+            <select class="form-select" id="status" required name="status">
+                <option value="{{ $ac->status }}" selected>{{ $ac->status }}</option>
+                <option disabled value="">--Select--</option>
+                <option value="Normal">Normal</option>
+                <option value="Rusak">Rusak</option>                
+            </select>
+          </div> 
+          <div class="col-12">
+            <label class="form-label">Catatan</label>
+            <textarea class="form-control" name="catatan" id="catatan" rows="4" cols="4" value="" placeholder="Masukan catatan jika ada!">{{ old('catatan', $ac->catatan) }}</textarea>
+          </div>        
+          <div class="col-12">
+              <div class="d-grid">
+              <button class="btn btn-purple" type="submit">Submit form</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</div>
+<!--end row-->
+<script>
+    
+
+    addEventListener('click', function(){
+        const stValue = document.querySelector('#status').value;
+        const ctt = document.querySelector('#catatan');
+    
+        if(stValue == 'Rusak'){
+            document.querySelector('#catatan').required = true;
+            ctt.classList.add('is-invalid');
+          }else{
+            document.querySelector('#catatan').required = false;
+            document.querySelector('#catatan').innerHTML = '';
+            ctt.classList.remove('is-invalid');
+
+        }
+    });
+
+
+    const label = document.querySelector('#label');
+    setTimeout(() => {
+      label.classList.remove('is-invalid');
+    }, 10000);
+
+   
+</script>
+@endsection
