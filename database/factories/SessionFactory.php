@@ -14,7 +14,7 @@ class SessionFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => mt_rand(1, 2),
+            'user_id' => 1,
             'lat' => $this->faker->latitude($min = -90, $max = 90),
             'long' => $this->faker->longitude($min = -180, $max = 180),
             'user_agent' => $this->faker->chrome()

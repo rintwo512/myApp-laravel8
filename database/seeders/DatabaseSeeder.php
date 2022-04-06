@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Ac;
+use App\Models\CctvMonitor1;
 use App\Models\User;
 use App\Models\Chart;
 use App\Models\Session;
@@ -20,7 +21,7 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(1)->create();
         // Ac::factory(20)->create();
-        Session::factory(2)->create();
+        Session::factory(1)->create();
 
         User::create([
             'name' => 'Meong',
@@ -32,14 +33,19 @@ class DatabaseSeeder extends Seeder
             'is_active' => 1
         ]);
 
-        User::create([
-            'name' => 'Black',
-            'nik' => "15920001",
-            'image' => 'default.png',
-            'password' => bcrypt('user'),
-            'status_login' => 'offline',
-            'role' => 0,
-            'is_active' => 1
+        CctvMonitor1::create([
+            'lantai' => 'Lantai 1',
+            'wing' => 'Wing A',
+            'lokasi' => 'Lobby',
+            'merk' => 'Hikvision',
+            'type' => 'Analog',
+            'status' => 'Rusak',
+            'kerusakan' => 'Kamera rusak',
+            'resolusi' => '2MP',
+            'tgl_pemasangan' => '1 April, 2015',
+            'petugas_pemasangan' => 'Vendor',
+            'sandi_dvr' => 'telkom/pola Z',
+            'user_id' => 1
         ]);
 
         Chart::create([

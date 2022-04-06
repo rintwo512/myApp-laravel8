@@ -11,7 +11,7 @@
                   <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-table" style="color:#7b378e"></i></a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Data AC yang di tambahkan oleh : <strong>{{ $user->name }}</strong></li>
+                    <li class="breadcrumb-item active" aria-current="page">Data yang di update oleh : <strong>{{ $user->name }}</strong></li>
                   </ol>
                 </nav>
               </div>              
@@ -22,12 +22,14 @@
           <div class="card-body">
             <div class="table-responsive"> 
               <table id="example" class="table table-striped table-bordered" style="width:100%">
+                @if (auth()->user()->role == 3)                  
                 <a href="javascript:;" class="btn btn-danger btn-sm mb-3" id="selectDeleteCreateUser">Delete All</a>
+                @endif
                 <thead>
                   <tr>
-                    <th><input type="checkbox" class="form-check-input" id="checkAllCreateUser" /></th>
+                    {{-- <th><input type="checkbox" class="form-check-input" id="checkAllCreateUser" /></th> --}}
                     <th>No.</th>
-                    <th>Ditambahkan</th>
+                    <th>Di Update</th>
                     <th>Wing</th>
                     <th>Lantai</th>
                     <th>Ruangan</th>
@@ -41,7 +43,7 @@
                     <tr id="sid{{ $data->id }}">
                         <td><input class="form-check-input checkBoxClassCreateUser" type="checkbox" name="ids" value="{{ $data->id }}" /></td>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $data->created_at->diffForHumans() }}</td>
+                        <td>{{ Carbon::parse($data->user_updated_time)->diffForHumans() }}</td>
                         <td>{{ $data->wing }}</td>
                         <td>{{ $data->lantai }}</td>
                         <td>{{ $data->ruangan }}</td>
@@ -59,9 +61,9 @@
                 </tbody>
                 <tfoot>
                   <tr>
-                    <th></th>
+                    {{-- <th></th> --}}
                     <th>No.</th>
-                    <th>Ditambahkan</th>
+                    <th>Di Update</th>
                     <th>Wing</th>
                     <th>Lantai</th>
                     <th>Ruangan</th>
@@ -73,7 +75,59 @@
               </table>
             </div>
           </div>
-        </div>        
+        </div>
+
+
+        <div class="card">
+          <div class="card-body">
+            <div class="table-responsive"> 
+              <table id="exampleUserUpdate" class="table table-striped table-bordered" style="width:100%">                
+                <thead>
+                  <tr>                   
+                    <th>No.</th>
+                    <th>Di Update</th>
+                    <th>Lantai</th>
+                    <th>Wing</th>
+                    <th>Lokasi</th>
+                    <th>Merk</th>                    
+                    <th>Type</th>
+                    <th>Status</th>                    
+                  </tr>
+                </thead>
+                <tbody>
+                    @foreach ($dataCctv1 as $cctv1)
+                    <tr>                        
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ Carbon::parse($cctv1->updated_time)->diffForHumans() }}</td>
+                        <td>{{ $cctv1->lantai }}</td>
+                        <td>{{ $cctv1->wing }}</td>
+                        <td>{{ $cctv1->lokasi }}</td>
+                        <td>{{ $cctv1->merk }}</td>
+                        <td>{{ $cctv1->type }}</td>
+                        @if ($cctv1->status == "Rusak")
+                        <td class="bg-danger">{{ $cctv1->status }}</td>
+                        @else
+                        <td class="bg-info">{{ $cctv1->status }}</td>
+                        @endif
+                    </tr> 
+                    @endforeach                                   
+                </tbody>
+                <tfoot>
+                  <tr>                    
+                    <th>No.</th>
+                    <th>Di Update</th>
+                    <th>Lantai</th>
+                    <th>Wing</th>
+                    <th>Lokasi</th>
+                    <th>Merk</th>                    
+                    <th>Type</th>
+                    <th>Status</th>                    
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
 
         <div class="card">
           <div class="card-body">
@@ -230,4 +284,4 @@ function initMap(lat, long) {
 // style map
           </script>
       
-@endsection       
+@endsection

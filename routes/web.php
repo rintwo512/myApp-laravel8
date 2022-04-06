@@ -5,6 +5,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AcController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CctvMonitor1Controller;
 use App\Http\Controllers\ChartAcController;
 use App\Http\Controllers\LoginController;
 
@@ -62,3 +63,15 @@ Route::resource('/dashboard/users', AdminController::class)->middleware('admin')
 Route::delete('dashboard/users/delete/{id}', [AdminController::class, 'destroy'])->middleware('auth');
 
 Route::get('/error', [AdminController::class, 'errorPage']);
+
+
+// CCTV Monitor 1
+Route::resource('/dashboard/cctv', CctvMonitor1Controller::class);
+
+Route::get('/dashboard/trashed/cctv', [CctvMonitor1Controller::class, 'trash']);
+
+Route::delete('/dashboard/cctv/trash/{id}', [CctvMonitor1Controller::class, 'restoreDataCctv1'])->middleware('auth');
+
+Route::get('/dashboard/cctv/trash/deleteAll', [CctvMonitor1Controller::class, 'deleteAll'])->middleware('auth');
+
+Route::get('/dashboard/export/cctv', [CctvMonitor1Controller::class, 'exportDataCctv1'])->middleware('auth');

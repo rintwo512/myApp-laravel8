@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ac;
+use App\Models\CctvMonitor1;
 use App\Models\User;
 use App\Models\Session;
 use Illuminate\Http\Request;
@@ -78,12 +80,16 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        $dataCreates = User::find($id)->userData;
+
+
         $user = User::find($id);
+        $getDataUpate = Ac::where('user_updated', $user->name)->get();
+        $getDataUpdateCctv1 = CctvMonitor1::where('user_updated', $user->name)->get();
 
         return view('dataUsers.dataUserCreate', [
-            'title' => 'Data User Create',
-            'dataCreates' => $dataCreates,
+            'title' => 'User Activity',
+            'dataCreates' => $getDataUpate,
+            'dataCctv1' => $getDataUpdateCctv1,
             'user' => $user
         ]);
     }

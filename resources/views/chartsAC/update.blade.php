@@ -128,7 +128,9 @@ $nowMonth = Carbon::now()->month - 1;
                     <select class="form-select" id="monthChart" name="monthChart" required>
                         <option value="">--Select--</option>
                         @foreach (array_slice($month, $nowMonth) as $mon )
+                        @if ($iniBulan == $mon)
                         <option value="{{ $mon }}">{{ $mon }}</option>
+                        @endif
                         @endforeach
                     </select>
                   </div>

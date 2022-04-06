@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ac;
+use App\Models\CctvMonitor1;
 use App\Models\User;
 use App\Models\Chart;
 use Illuminate\Http\Request;
@@ -14,27 +15,13 @@ class ChartAcController extends Controller
     public function index(Request $request)
     {
 
-        // $lat = -5.147665;
-        // $lon = 119.432732;
-
-        // $data = DB::table("users")
-        //     ->select(
-        //         "users.id",
-        //         DB::raw("6371 * acos(cos(radians(" . $lat . ")) 
-        //         * cos(radians(users.lat)) 
-        //         * cos(radians(users.lon) - radians(" . $lon . ")) 
-        //         + sin(radians(" . $lat . ")) 
-        //         * sin(radians(users.lat))) AS distance")
-        //     )
-        //     ->groupBy("users.id")
-        //     ->get();
-
-        // dd($data);
-
-
-
         $kalTahun = DB::table('chartac')->select('tahun')->groupBy('tahun')->orderBy('tahun', 'DESC')->get()->count();
         $kal = intval(Chart::sum('total'));
+
+        $countAcRusak = Ac::where('status', 'Rusak')->count();
+        $countCctv1 = CctvMonitor1::all()->count();
+        $countCctv1Rusak = CctvMonitor1::where('status', 'Rusak')->count();
+
 
         $list_tahun = DB::table('chartac')
             ->select('tahun')
@@ -50,7 +37,11 @@ class ChartAcController extends Controller
             'countUsers' => User::count(),
             'list_tahun' => $list_tahun,
             'kal' => $kal,
-            'kalTahun' => $kalTahun
+            'kalTahun' => $kalTahun,
+            'countAcRusak' => $countAcRusak,
+            'countCctv1' => $countCctv1,
+            'countTrashCctv1' => CctvMonitor1::onlyTrashed()->count(),
+            'countCctv1Rusak' => $countCctv1Rusak
         ]);
     }
 

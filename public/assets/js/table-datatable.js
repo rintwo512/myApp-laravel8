@@ -4,6 +4,10 @@ $(function() {
     $(document).ready(function() {
         $('#example').DataTable();
       } );
+    
+    $(document).ready(function() {
+        $('#exampleUserUpdate').DataTable();
+    } );
 
 
       $(document).ready(function() {

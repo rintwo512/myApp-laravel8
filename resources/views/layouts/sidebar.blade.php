@@ -43,7 +43,7 @@
                 </div>                    
               </div>
               <a href="/ac" class="list-group-item {{ Request::is('ac*') ? 'active' : '' }}"><i class="bi bi-house-door"></i> Data AC</a>
-              <a href="#" class="list-group-item"><i class="bi bi-house"></i> Data CCTV</a>
+              <a href="/dashboard/cctv" class="list-group-item list-group-item {{ Request::is('dashboard/cctv*') ? 'active' : '' }}"><i class="bi bi-house"></i> Data CCTV</a>
             </div>
         </div>
         <div class="tab-pane fade" id="pills-adminMenu">

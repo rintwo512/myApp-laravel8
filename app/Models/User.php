@@ -53,4 +53,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Session::class);
     }
+
+    public function userDataCctv()
+    {
+        return $this->hasMany(CctvMonitor1::class);
+    }
 }

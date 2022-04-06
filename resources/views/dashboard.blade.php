@@ -29,7 +29,7 @@
         <div class="d-flex align-items-center">
           <div class="">
             <p class="mb-1">Data AC</p>
-            <h4 class="mb-0">{{ $countData }}</h4>
+            <h4 class="mb-0">Total : {{ $countData }} unit AC</h4>
           </div>
           <div class="ms-auto fs-2 text-primary">
             <i class="bi bi-table"></i>
@@ -46,7 +46,7 @@
         <div class="d-flex align-items-center">
           <div class="">
             <p class="mb-1">Data Trash AC</p>
-            <h4 class="mb-0">{{ $countTrash }}</h4>
+            <h4 class="mb-0">{{ $countTrash }} unit</h4>
           </div>
           <div class="ms-auto fs-2 text-danger">
             <i class="bi bi-trash"></i>
@@ -57,6 +57,94 @@
       </div>
     </div>
    </div>
+   <div class="col">
+    <div class="card radius-10">
+      <div class="card-body">
+        <div class="d-flex align-items-center">
+          <div class="">
+            <p class="mb-1">Total Maintenance</p>
+            <h6 class="mb-0">{{ $kal }} unit total AC yang di maintenance dalam {{ $kalTahun }} tahun.</h6>
+          </div>
+          <div class="ms-auto fs-2 text-primary">
+            <i class="bi bi-hammer"></i>
+          </div>
+        </div>
+        <div class="border-top my-2"></div>
+        <small class="mb-0 text-primary"><span class="text-primary"><i class="bi bi-gear"></i></span> Data Maint AC</small>
+      </div>
+    </div>
+   </div>
+   <div class="col">
+    <div class="card radius-10">
+      <div class="card-body">
+        <div class="d-flex align-items-center">
+          <div class="">
+            <p class="mb-1">Perlu diperhatikan</p>
+            <h6 class="mb-0">{{ $countAcRusak }} Unit AC yang masih tidak normal.</h6>
+          </div>
+          <div class="ms-auto fs-2 text-danger">
+            <i class="bi bi-gear"></i>
+          </div>
+        </div>
+        <div class="border-top my-2"></div>
+        <small class="mb-0 text-danger"><span class="text-danger"><i class="bi bi-gear"></i></span> Data AC tidak aktif</small>
+      </div>
+    </div>
+   </div>
+
+   {{-- CCTV --}}
+   <div class="col-md-4">
+    <div class="card radius-10">
+      <div class="card-body">
+        <div class="d-flex align-items-center">
+          <div class="">
+            <p class="mb-1">Data CCTV</p>
+            <h6 class="mb-0">Total CCTV : {{ $countCctv1 }} Unit</h6>
+          </div>
+          <div class="ms-auto fs-2 text-info">
+            <i class="bi bi-camera-video"></i>
+          </div>
+        </div>
+        <div class="border-top my-2"></div>
+        <a href="/dashboard/cctv"><small class="mb-0 text-info"><span class="text-info"><i class="bi bi-camera-video"></i></span> View Data</small></a>
+      </div>
+    </div>
+   </div>
+   <div class="col-md-4">
+    <div class="card radius-10">
+      <div class="card-body">
+        <div class="d-flex align-items-center">
+          <div class="">
+            <p class="mb-1">Data Trash CCTV</p>
+            <h6 class="mb-0">{{ $countTrashCctv1 }} Unit</h6>
+          </div>
+          <div class="ms-auto fs-2 text-info">
+            <i class="bi bi-trash"></i>
+          </div>
+        </div>
+        <div class="border-top my-2"></div>
+        <small class="mb-0 text-info"><span class="text-info"><i class="bi bi-trash"></i></span> Delete Trash</small>
+      </div>
+    </div>
+   </div>
+   <div class="col-md-4">
+    <div class="card radius-10">
+      <div class="card-body">
+        <div class="d-flex align-items-center">
+          <div class="">
+            <p class="mb-1">Perlu diperhatikan</p>
+            <h6 class="mb-0">{{ $countCctv1Rusak }} Unit CCTV yang masih tidak normal.</h6>
+          </div>
+          <div class="ms-auto fs-2 text-info">
+            <i class="bi bi-gear"></i>
+          </div>
+        </div>
+        <div class="border-top my-2"></div>
+        <small class="mb-0 text-info"><span class="text-info"><i class="bi bi-gear"></i></span> Data CCTV tidak aktif</small>
+      </div>
+    </div>
+   </div>
+   {{-- END CCTV --}}
    <div class="col-12">
     <div class="card radius-10">
       <div class="card-body">
@@ -73,24 +161,7 @@
         <small class="mb-0 text-success"><span class="text-success"> <i class="bi bi-eye"></i></span> List Users Registration</small>
       </div>
     </div>
-   </div>
-   <div class="col">
-    <div class="card radius-10">
-      <div class="card-body">
-        <div class="d-flex align-items-center">
-          <div class="">
-            <p class="mb-1">Total Maintenance</p>
-            <h4 class="mb-0">{{ $kal }} unit total AC yang di maintenance dalam {{ $kalTahun }} tahun.</h4>
-          </div>
-          <div class="ms-auto fs-2 text-orange">
-            <i class="bi bi-hammer"></i>
-          </div>
-        </div>
-        <div class="border-top my-2"></div>
-        <small class="mb-0"><span class="text-info"><i class="bi bi-gear"></i></span> Data Maint AC</small>
-      </div>
-    </div>
-   </div>
+   </div>   
 </div>
 
 <script src="/assets/js/jquery.min.js"></script>

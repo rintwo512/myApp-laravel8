@@ -82,8 +82,11 @@
               <div class="p-2 border-bottom m-2">
                   <h5 class="h5 mb-0">Notification</h5>
               </div>
-             <div class="header-message-list p-2">                   
-              <a class="dropdown-item" href="#">
+             <div class="header-message-list p-2">
+               @if (auth()->user()->role === 1)
+                 
+               <a class="dropdown-item" href="/dashboard/users">
+               @endif
                  @foreach ($users as $user )
                  <div class="d-flex align-items-center">
 
