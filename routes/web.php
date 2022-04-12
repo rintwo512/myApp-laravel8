@@ -57,12 +57,20 @@ Route::get('/ac/trash/deleteAll', [AcController::class, 'deleteAll'])->middlewar
 Route::get('/ac/export', [AcController::class, 'exportDataAc'])->middleware('auth');
 Route::delete('/selectedac', [AcController::class, 'deleteCheckedAc'])->name('ac.deleteSelected')->middleware('auth');
 Route::delete('ac/trash/{id}', [AcController::class, 'restore'])->middleware('auth');
+Route::get('/dashboard/range/ac/{nilai}', [AcController::class, 'queryRangeAc'])->middleware('auth');
+
+
 
 
 Route::resource('/dashboard/users', AdminController::class)->middleware('admin');
 Route::delete('dashboard/users/delete/{id}', [AdminController::class, 'destroy'])->middleware('auth');
 
+
+
+
 Route::get('/error', [AdminController::class, 'errorPage']);
+
+
 
 
 // CCTV Monitor 1
@@ -75,3 +83,5 @@ Route::delete('/dashboard/cctv/trash/{id}', [CctvMonitor1Controller::class, 'res
 Route::get('/dashboard/cctv/trash/deleteAll', [CctvMonitor1Controller::class, 'deleteAll'])->middleware('auth');
 
 Route::get('/dashboard/export/cctv', [CctvMonitor1Controller::class, 'exportDataCctv1'])->middleware('auth');
+
+Route::get('/dashboard/range/cctv/{nilai}', [CctvMonitor1Controller::class, 'queryRange'])->middleware('auth');

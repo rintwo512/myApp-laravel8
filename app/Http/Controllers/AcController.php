@@ -83,6 +83,7 @@ class AcController extends Controller
                 'btu' => $request->btu,
                 'status' => $request->status,
                 'catatan' => $request->catatan,
+                'kerusakan' => $request->kerusakan,
                 'tgl_pemasangan' => $request->tgl_pemasangan,
                 'petugas_pemasangan' => $request->petugas_pemasangan,
                 'tgl_maintenance' => $request->tgl_maintenance,
@@ -170,6 +171,7 @@ class AcController extends Controller
                 'btu' => $request->btu,
                 'status' => $request->status,
                 'catatan' => $request->catatan,
+                'kerusakan' => $request->kerusakan,
                 'tgl_pemasangan' => $request->tgl_pemasangan,
                 'petugas_pemasangan' => $request->petugas_pemasangan,
                 'tgl_maintenance' => $request->tgl_maintenance,
@@ -232,5 +234,14 @@ class AcController extends Controller
         }
 
         return response()->json(['success' => 'Data kembali']);
+    }
+
+    public function queryRangeAc($nilai)
+    {
+        $start = substr($nilai, 0, 10);
+        $end = substr($nilai, 13, 24);
+
+        $range = Ac::whereBetween('user_updated_time', [$start, $end])->get();
+        return response()->json($range);
     }
 }

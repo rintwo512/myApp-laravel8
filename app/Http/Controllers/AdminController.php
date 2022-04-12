@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ac;
-use App\Models\CctvMonitor1;
 use App\Models\User;
 use App\Models\Session;
+use App\Models\CctvMonitor1;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class AdminController extends Controller
 {
@@ -17,9 +18,6 @@ class AdminController extends Controller
      */
     public function index()
     {
-
-        // $dd = auth()->user()->userAgent->long;
-        // ddd(request()->userAgent());
 
         return view('dataUsers.index', [
             'title' => 'Data Users',

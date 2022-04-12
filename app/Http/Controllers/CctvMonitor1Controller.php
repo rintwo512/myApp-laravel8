@@ -21,9 +21,7 @@ class CctvMonitor1Controller extends Controller
 
         // dd(User::find(1)->userDataCctv);
 
-        // CctvMonitor1::onlyTrashed()->restore();
-
-
+        // CctvMonitor1::onlyTrashed()->restore();       
 
         return view('cctv.monitor1.index', [
             'title' => 'Data CCTV',
@@ -168,5 +166,16 @@ class CctvMonitor1Controller extends Controller
     public function exportDataCctv1()
     {
         return Excel::download(new Cctv1Export, 'data-cctv-monitor1.xlsx');
+    }
+
+    public function queryRange(Request $request, $nilai)
+    {
+
+        $start = substr($nilai, 0, 10);
+        $end = substr($nilai, 13, 24);
+
+        $range = CctvMonitor1::whereBetween('updated_time', [$start, $end])->get();
+        return response()->json($range);
+        // echo json_encode($range);
     }
 }

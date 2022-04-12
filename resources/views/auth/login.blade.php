@@ -33,19 +33,20 @@
                       <div class="col-12">
                         <input type="hidden" name="lat" id="lat">
                         <input type="hidden" name="long" id="long">
-                        <label for="nik" class="form-label">NIK</label>
                         <div class="ms-auto position-relative">
-                          <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-123"></i></div>
+                          <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-person"></i></div>
                           <input type="text" class="form-control radius-30 ps-5 @error('nik') is-invalid @enderror" id="nik" placeholder="NIK" name="nik" onkeypress='return event.charCode >= 48 && event.charCode <= 57' value="{{ old('nik') }}">                          
                         </div>                        
                       </div>
-                      <div class="col-12">
-                        <label for="password" class="form-label">Enter Password</label>                        
+                      <div class="col-12">              
                         <div class="ms-auto position-relative">
                           <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-eye-slash" id="togglePassword"></i></div>
                           <input type="password" class="form-control radius-30 ps-5 @error('password') is-invalid @enderror" id="password" placeholder="Enter Password" name="password">                          
                         </div>
                       </div>
+                      <small id="message1" class="text-danger">
+                        
+                    </small>
                       <div class="col-12">
                         <div class="d-grid">
                           <button type="submit" class="btn btn-primary radius-30" id="btnSub">Sign In</button>
@@ -66,29 +67,7 @@
    <script src="/assets/js/jquery.min.js"></script>
    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
        
-   {{-- <script>
-     var options = {
-  enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0
-};
-
-function success(pos) {
-  var crd = pos.coords;
-
-  document.querySelector('#lat').value = crd.latitude;
-  document.querySelector('#long').value = crd.longitude
-  console.log(`Latitude : ${crd.latitude}`);
-  console.log(`Longitude: ${crd.longitude}`);
-  console.log(`More or less ${crd.accuracy} meters.`);
-}
-
-function error(err) {
-  console.warn(`ERROR(${err.code}): ${err.message}`);
-}
-
-navigator.geolocation.getCurrentPosition(success, error, options);
-   </script> --}}
+  
 
 
    <script>
@@ -143,7 +122,44 @@ navigator.geolocation.getCurrentPosition(success, error, options);
             
             // toggle the icon
             this.classList.toggle("bi-eye");
-        });
+        });        
 
    </script>
+
+<script>
+
+  const password1 = document.querySelector('#password');
+  const message1 = document.querySelector('#message1');
+
+password1.addEventListener('keyup', function (e) {
+  if (e.getModifierState('CapsLock')) {
+      message1.textContent = 'Caps lock is on';      
+  } else {
+      message1.textContent = '';      
+  }
+});
+</script>
+
+<script>
+
+  $('#nik').on('keypress', function() {
+    
+    var checknumber = $('#nik').val();    
+    if(jQuery.isNumeric(checknumber) == true){
+      $('#nik').removeClass('is-invalid');
+    }else{
+      $('#nik').addClass('is-valid');
+
+    }
+			
+    
+  });
+  $('#password').on('keyup', function() {
+    $('#password').removeClass('is-invalid');
+    $('#password').addClass('is-valid');
+  });
+
+</script>
+
+   
 @endsection   

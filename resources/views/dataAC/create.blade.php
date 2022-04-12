@@ -48,6 +48,7 @@
             <select class="form-select" id="merk" required name="merk">
                 <option selected disabled value="">--Select--</option>
                 <option value="Daikin">Daikin</option>
+                <option value="General">General</option>
                 <option value="Panasonic">Panasonic</option>
                 <option value="LG">LG</option>
                 <option value="Sharp">Sharp</option>
@@ -60,10 +61,10 @@
             <label for="wing" class="form-label">Wing <span class="text-danger">*</span></label>
             <select class="form-select" id="wing" required name="wing">
                 <option selected disabled value="">--Select--</option>
-                <option value="Wing A">Wing A</option>
-                <option value="Wing B">Wing B</option>
-                <option value="Wing C">Wing C</option>
-                <option value="Wing D">Wing D</option>
+                <option value="WA">WA</option>
+                <option value="WB">WB</option>
+                <option value="WC">WC</option>
+                <option value="WD">WD</option>
                 <option value="Lainnya">Lainnya</option>
             </select>
           </div>
@@ -138,10 +139,14 @@
                 <option value="Rusak">Rusak</option>                
             </select>
           </div> 
-          <div class="col-12">
+          <div class="col-6">
+            <label class="form-label">Kerusakan</label>
+            <textarea class="form-control" name="kerusakan" id="kerusakan" rows="4" cols="4" value="{{ old('kerusakan') }}" placeholder="Masukan kerusakan jika ada!"></textarea>
+          </div>
+          <div class="col-6">
             <label class="form-label">Catatan</label>
             <textarea class="form-control" name="catatan" id="catatan" rows="4" cols="4" value="{{ old('catatan') }}" placeholder="Masukan catatan jika ada!"></textarea>
-          </div>        
+          </div>
           <div class="col-12">
               <div class="d-grid">
               <button class="btn btn-purple" type="submit">Submit form</button>

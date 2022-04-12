@@ -29,7 +29,7 @@
         <div class="d-flex align-items-center">
           <div class="">
             <p class="mb-1">Data AC</p>
-            <h4 class="mb-0">Total : {{ $countData }} unit AC</h4>
+            <h6 class="mb-0">Total <i class="bi bi-arrow-right"></i> {{ $countData }} Unit</h6>
           </div>
           <div class="ms-auto fs-2 text-primary">
             <i class="bi bi-table"></i>
@@ -46,7 +46,7 @@
         <div class="d-flex align-items-center">
           <div class="">
             <p class="mb-1">Data Trash AC</p>
-            <h4 class="mb-0">{{ $countTrash }} unit</h4>
+            <h6 class="mb-0">{{ $countTrash }} unit</h6>
           </div>
           <div class="ms-auto fs-2 text-danger">
             <i class="bi bi-trash"></i>
@@ -99,7 +99,7 @@
         <div class="d-flex align-items-center">
           <div class="">
             <p class="mb-1">Data CCTV</p>
-            <h6 class="mb-0">Total CCTV : {{ $countCctv1 }} Unit</h6>
+            <h6 class="mb-0">Total CCTV <i class="bi bi-arrow-right"></i> {{ $countCctv1 }} Unit</h6>
           </div>
           <div class="ms-auto fs-2 text-info">
             <i class="bi bi-camera-video"></i>
@@ -163,6 +163,7 @@
     </div>
    </div>   
 </div>
+
 
 <script src="/assets/js/jquery.min.js"></script>
 <script src="/assets/plugins/chartjs/js/Chart.min.js"></script>
@@ -238,10 +239,11 @@ new Chart(document.getElementById("chart7"), {
     });
     
     const d = new Date();
-    let tahun = d.getFullYear() -1;    
+    let tahun = d.getFullYear();    
     chartAc(tahun, `Statistic Bulanan Maintenance AC : ${tahun}`);
   });
 </script>
+
 
 
 @endsection

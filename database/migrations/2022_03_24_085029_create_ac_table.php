@@ -32,6 +32,7 @@ class CreateAcTable extends Migration
             $table->string('btu')->nullable();
             $table->string('status');
             $table->text('catatan')->nullable();
+            $table->text('kerusakan')->nullable();
             $table->string('tgl_pemasangan')->nullable();
             $table->string('petugas_pemasangan')->nullable();
             $table->string('tgl_maintenance')->nullable();

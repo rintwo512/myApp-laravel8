@@ -97,7 +97,7 @@
                 <textarea class="form-control" rows="4" cols="4" id="kerusakan" name="kerusakan" placeholder="Kerusakan pada camera!">{{ $dataCctv1->kerusakan }}</textarea>
              </div>
              <div class="col-6">
-              <label class="form-label">Catatan</label>
+              <label class="form-label">Catatan <small>(Optional)</small></label>
               <textarea class="form-control" rows="4" cols="4" id="catatan" name="catatan">{{ $dataCctv1->catatan }}</textarea>
            </div>
           <div class="col-12">
@@ -113,4 +113,23 @@
 </div>
 </div>
 <!--end row-->
+
+<script src="/assets/js/jquery.min.js"></script> 
+  <script>
+          $(document).on('change', function() {
+            const status = $("#status").val();
+            if(status == "Rusak"){
+              $("#kerusakan").attr('required', true);
+              $("#kerusakan").addClass('is-invalid');
+              $("#kerusakan").prop('disabled', false);
+              
+            }else{
+              $("#kerusakan").removeAttr('required', false);
+              $("#kerusakan").removeClass('is-invalid');
+              $("#kerusakan").prop('disabled', true);
+              $("#kerusakan").val('');
+            }
+          });
+        </script>
+
 @endsection

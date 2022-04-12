@@ -2,8 +2,11 @@
 
 
 @section('content')
-<?php use Illuminate\Support\Carbon; ?>
 
+@php use Illuminate\Support\Carbon; @endphp
+
+
+            <meta name="csrf-token" content="{{ csrf_token() }}">
             <div class="flash-success" data-success="{{ session('success') }}"></div>
             <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">              
               <div class="ps-3">
@@ -23,6 +26,14 @@
             @endcan
 
             <a href="/dashboard/trashed/cctv" class="btn btn-secondary btn-sm"><i class="bi bi-trash"></i></a>
+
+          <div class="col-md-4 mt-3">            
+              <div class="input-group mb-3">
+                  <button class="btn btn-info text-white" type="button" id="btnRange">Search</button>
+                  <input type="text" class="form-control input-range" name="rangeQuery">
+              </div>            
+          </div>
+
         <hr/>
         <h6 class="mb-2 text-uppercase">Monitor 1</h6>
         <div class="card">
@@ -108,8 +119,6 @@
           </div>
         </div>
 
-
-        
             <!-- Modal add data cctv -->
             <div class="modal fade" id="modalAddDataCctvMonitor1" tabindex="-1" aria-hidden="true">
               <div class="modal-dialog modal-lg">
@@ -214,33 +223,33 @@
                   <div class="modal-body" id="modalDetailCctv1">
                     <div class="card">                      
                         <ul class="list-group">                        
-                          <li class="list-group-item d-flex justify-content-between align-items-center">Di ubah <span>:</span> <span id="detailUpdatedCCTV1"></span>
-                          <li class="list-group-item d-flex justify-content-between align-items-center">Tanggal Pemasangan <span>:</span> <span id="detailTanggalPemasanganCCTV1"></span>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">Di ubah <i class="bi bi-arrow-right"></i> <span id="detailUpdatedCCTV1"></span>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">Tanggal Pemasangan <i class="bi bi-arrow-right"></i> <span id="detailTanggalPemasanganCCTV1"></span>
                           </li>
-                          <li class="list-group-item d-flex justify-content-between align-items-center">Petugas Pemasangan <span>:</span> <span id="detailPetugasPemasanganCCTV1"></span>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">Petugas Pemasangan <i class="bi bi-arrow-right"></i> <span id="detailPetugasPemasanganCCTV1"></span>
                           </li>
-                          <li class="list-group-item d-flex justify-content-between align-items-center">Tanggal Perbaikan <span>:</span> <span id="detailTglPerbaikanCCTV1"></span>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">Tanggal Perbaikan <i class="bi bi-arrow-right"></i> <span id="detailTglPerbaikanCCTV1"></span>
                           </li>
-                          <li class="list-group-item d-flex justify-content-between align-items-center">Petugas Perbaikan <span>:</span> <span id="detailPetugasPerbaikanCCTV1"></span>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">Petugas Perbaikan <i class="bi bi-arrow-right"></i> <span id="detailPetugasPerbaikanCCTV1"></span>
                           </li>
-                          <li class="list-group-item d-flex justify-content-between align-items-center">Lantai <span>:</span> <span id="detailLantaiCCTV1"></span>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">Lantai <i class="bi bi-arrow-right"></i> <span id="detailLantaiCCTV1"></span>
                           </li>
-                          <li class="list-group-item d-flex justify-content-between align-items-center">Wing <span>:</span> <span id="detailWingCCTV1"></span>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">Wing <i class="bi bi-arrow-right"></i> <span id="detailWingCCTV1"></span>
                           </li>                        
-                          <li class="list-group-item d-flex justify-content-between align-items-center">Lokasi <span>:</span> <span id="detailLokasiCCTV1"></span>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">Lokasi <i class="bi bi-arrow-right"></i> <span id="detailLokasiCCTV1"></span>
                           </li>
-                          <li class="list-group-item d-flex justify-content-between align-items-center">Merk <span>:</span> <span id="detailMerkCCTV1"></span>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">Merk <i class="bi bi-arrow-right"></i> <span id="detailMerkCCTV1"></span>
                           </li>
-                          <li class="list-group-item d-flex justify-content-between align-items-center">Type <span>:</span> <span id="detailTypeCCTV1"></span>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">Type <i class="bi bi-arrow-right"></i> <span id="detailTypeCCTV1"></span>
                           </li>
-                          <li class="list-group-item d-flex justify-content-between align-items-center">Resolusi <span>:</span> <span id="detailResolusiCCTV1"></span>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">Resolusi <i class="bi bi-arrow-right"></i> <span id="detailResolusiCCTV1"></span>
                           </li>
-                          <li class="list-group-item d-flex justify-content-between align-items-center">Status <span>:</span> <span id="detailStatusCCTV1"></span>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">Status <i class="bi bi-arrow-right"></i> <span id="detailStatusCCTV1"></span>
                           </li>
-                          <li class="list-group-item d-flex justify-content-between align-items-center">Kata Sandi DVR <span>:</span> <span id="detailSandiDvrCCTV1"></span>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">Kata Sandi DVR <i class="bi bi-arrow-right"></i> <span id="detailSandiDvrCCTV1"></span>
                           </li>
                           
-                          <div class="accordion-item">
+                          <div class="accordion-item detailKerusakanCCTV1">
                             <h2 class="accordion-header" id="headingTwo">
                               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                 Kerusakan
@@ -252,7 +261,7 @@
                             </div>
                           </div>
 
-                          <div class="accordion-item">
+                          <div class="accordion-item detailCatatanCCTV1">
                             <h2 class="accordion-header" id="headingThree">
                               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                 Catatan
@@ -273,16 +282,53 @@
                   </div>
                 </div>
               </div>
-            </div>
-          
-  
+            </div>        
           {{-- end modal detail --}}
+
+          {{-- modal range data --}}
+          <div class="modal fade" id="modalRangeData" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="rangeTitle">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="card-body">
+                    <table class="table table-bordered mb-0">
+                      <thead>
+                        <tr>                  
+                          <th scope="col">Lantai</th>
+                          <th scope="col">Wing</th>                  
+                          <th scope="col">Lokasi</th>
+                          <th scope="col">Merk</th>
+                          <th scope="col">Type</th>
+                          <th scope="col">Status</th>
+                          <th scope="col">Diperbarui pada</th>
+                          <th scope="col">By</th>
+                        </tr>
+                      </thead>
+                      <tbody id="rangeData">
+                                        
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          {{-- end modal range data --}}
+
 
         
 
         <script src="/assets/js/jquery.min.js"></script>  
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+        
         <script>
 
           const flashSuccess = document.querySelector('.flash-success');
@@ -348,6 +394,14 @@
                   $("#detailUpdatedCCTV1").html(userupdatedetcctv1);
                 }
 
+                if(statusdetcctv1 == "Normal"){
+                    $('.detailKerusakanCCTV1').hide();
+                }
+                if(catatandetcctv1 == ''){
+                  $('.detailCatatanCCTV1').hide();
+                }else{
+                  $('.detailCatatanCCTV1').show();
+                }
 
                 $("#modalDetailCctv1 #detailTanggalPemasanganCCTV1").text(tglpemasangandetcctv1);
                 $("#modalDetailCctv1 #detailPetugasPemasanganCCTV1").text(petpemasangandetcctv1);
@@ -367,5 +421,87 @@
             });
 
         </script>
+
+        <script>
+          $(document).on('change', function() {
+            const status = $("#status").val();
+            if(status == "Rusak"){
+              $("#kerusakan").attr('required', true);
+              $("#kerusakan").addClass('is-invalid');
+              $("#kerusakan").prop('disabled', false);
+              
+            }else{
+              $("#kerusakan").removeAttr('required', false);
+              $("#kerusakan").removeClass('is-invalid');
+              $("#kerusakan").prop('disabled', true);
+              $("#kerusakan").val('');
+            }
+          });
+        </script>
+
+        
+        <script type="text/javascript">
+          $(function() {
+          
+            $('input[name="rangeQuery"]').daterangepicker({
+                autoUpdateInput: false,
+                locale: {
+                    cancelLabel: 'Clear'
+                }
+            });
+          
+            $('input[name="rangeQuery"]').on('apply.daterangepicker', function(ev, picker) {
+                $(this).val(picker.startDate.format('YYYY-MM-DD') + ' - ' + picker.endDate.format('YYYY-MM-DD'));
+            });
+          
+            $('input[name="rangeQuery"]').on('cancel.daterangepicker', function(ev, picker) {
+                $(this).val('');
+            });
+          
+          });
+          </script>
+
+          <script>
+            $(document).on('click', '#btnRange', function() {
+              const nilai = $('.input-range').val();              
+              const start = nilai.slice(0,11).split('-').join('/');
+              const end = nilai.slice(13,23).split('-').join('/');
+              
+              $.ajax({
+                url: "/dashboard/range/cctv/" + nilai,
+                type: "GET",               
+                success : result => {
+                  let card = '';
+                  result.forEach(e => {
+                    $('#modalRangeData').modal('show');
+                    $("#rangeTitle").text(`Data : ${start} sampai ${end}`);
+                    card += updateCard(e);
+                  });
+                  $("#rangeData").html(card);
+                }
+              });
+            });
+
+
+            function updateCard(e){
+              
+              let date = Date.parse(e.updated_at);
+              // let newD = date.setFullYear(e.created_at);
+              let newD = new Date(date);
+              let year = newD.getFullYear();
+              let month = newD.getMonth() + 1;
+              let day = newD.getUTCDate();
+              return `<tr>                  
+                      <td>${e.lantai}</td>
+                      <td>${e.wing}</td>
+                      <td>${e.lokasi}</td>
+                      <td>${e.merk}</td>
+                      <td>${e.type}</td>
+                      <td>${e.status}</td>
+                      <td>${year}-${month}-${day}</td>
+                      <td>${e.user_updated}</td>
+                      </tr>`;
+            }
+          </script>
 
 @endsection       

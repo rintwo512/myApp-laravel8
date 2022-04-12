@@ -45,6 +45,7 @@
                 <option value="{{ $ac->merk }}" selected>{{ $ac->merk }}</option>
                 <option disabled value="">--Select--</option>
                 <option value="Daikin">Daikin</option>
+                <option value="General">General</option>
                 <option value="Panasonic">Panasonic</option>
                 <option value="LG">LG</option>
                 <option value="Sharp">Sharp</option>
@@ -58,10 +59,10 @@
             <select class="form-select" id="wing" required name="wing" value="{{ $ac->wing }}">
                 <option value="{{ $ac->wing }}" selected>{{ $ac->wing }}</option>
                 <option disabled value="">--Select--</option>
-                <option value="Wing A">Wing A</option>
-                <option value="Wing B">Wing B</option>
-                <option value="Wing C">Wing C</option>
-                <option value="Wing D">Wing D</option>
+                <option value="WA">WA</option>
+                <option value="WB">WB</option>
+                <option value="WC">WC</option>
+                <option value="WD">WD</option>
                 <option value="Lainnya">Lainnya</option>
             </select>
           </div>
@@ -70,9 +71,9 @@
             <select class="form-select" id="lantai" required name="lantai">
                 <option value="{{ $ac->lantai }}" selected>{{ $ac->lantai }}</option>
                 <option disabled value="">--Select--</option>
-                <option value="Lantai 1">Lantai 1</option>
-                <option value="Lantai 2">Lantai 2</option>
-                <option value="Lantai 3">Lantai 3</option>
+                <option value="Lt1">Lt1</option>
+                <option value="Lt2">Lt2</option>
+                <option value="Lt3">Lt3</option>
             </select>            
           </div>
           <div class="col-md-4">
@@ -154,11 +155,15 @@
                 <option value="Normal">Normal</option>
                 <option value="Rusak">Rusak</option>                
             </select>
-          </div> 
-          <div class="col-12">
+          </div>
+          <div class="col-6">
+            <label class="form-label">Kerusakan</label>
+            <textarea class="form-control" name="kerusakan" id="kerusakan" rows="4" cols="4" placeholder="Masukan kerusakan jika ada!">{{ old('kerusakan', $ac->kerusakan) }}</textarea>
+          </div>
+          <div class="col-6">
             <label class="form-label">Catatan</label>
             <textarea class="form-control" name="catatan" id="catatan" rows="4" cols="4" value="" placeholder="Masukan catatan jika ada!">{{ old('catatan', $ac->catatan) }}</textarea>
-          </div>        
+          </div>          
           <div class="col-12">
               <div class="d-grid">
               <button class="btn btn-purple" type="submit">Submit form</button>
@@ -177,14 +182,14 @@
 
     addEventListener('click', function(){
         const stValue = document.querySelector('#status').value;
-        const ctt = document.querySelector('#catatan');
+        const ctt = document.querySelector('#kerusakan');
     
         if(stValue == 'Rusak'){
-            document.querySelector('#catatan').required = true;
+            document.querySelector('#kerusakan').required = true;
             ctt.classList.add('is-invalid');
           }else{
-            document.querySelector('#catatan').required = false;
-            document.querySelector('#catatan').innerHTML = '';
+            document.querySelector('#kerusakan').required = false;
+            document.querySelector('#kerusakan').innerHTML = '';
             ctt.classList.remove('is-invalid');
 
         }

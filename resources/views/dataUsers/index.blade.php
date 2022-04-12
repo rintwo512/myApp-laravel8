@@ -62,7 +62,7 @@
                             data-activeuser="{{ $user->is_active }}"
                             data-roleuser="{{ $user->role }}"
                             data-nameuser="{{ $user->name }}"
-                           ><i class="bi bi-pencil-fill"></i></a>
+                           ><i class="bi bi-gear"></i></a>
 
                            <a href="javascript:void(0)" onclick="delUser({{ $user->id }})" class="text-danger"><i class="bi bi-x-circle-fill"></i></a>                           
 
@@ -104,16 +104,12 @@
                   @csrf
                   <div class="col-md-6">
                     <label for="isActiveCheck" class="form-label">Status </label>
-                    <select class="form-select" id="isActiveCheck" name="isActive">
-                        <option value="1">Active</option>
-                        <option value="0">Inactive</option>
+                    <select class="form-select" id="isActiveCheck" name="isActive">                        
                     </select>
                   </div>
                   <div class="col-md-6">
-                    <label for="isActiveCheck" class="form-label">Role </label>
-                    <select class="form-select" id="role" name="role">
-                        <option value="1">Admin</option>
-                        <option value="0">Member</option>
+                    <label for="role" class="form-label">Role </label>
+                    <select class="form-select" id="role" name="role">                        
                     </select>
                   </div>                               
                 </div>
@@ -135,7 +131,28 @@
             $(document).on("click", "#btnEditUser", function(){
                 const id = $(this).data('iduser');
                 const active = $(this).data('activeuser');
+                let cardAct = '';
+                if(active == 1){
+                  cardAct += `<option value="1">Active</option><option value="0">Inactive</option>`;
+                  $('#isActiveCheck').html(cardAct);
+                }else{
+                  cardAct += `<option value="0">Inactive</option><option value="1">Active</option>`;
+                  $('#isActiveCheck').html(cardAct);
+                }
+
+
                 const role = $(this).data('roleuser');
+                let cardRole = '';
+                if(role == 1){
+                  cardRole += `<option value="1">Admin</option>
+                        <option value="0">Member</option>`;
+                  $('#role').html(cardRole);
+                }else{
+                  cardRole += `<option value="0">Member</option><option value="1">Admin</option>`;
+                  $('#role').html(cardRole);
+                }
+
+
                 const name = $(this).data('nameuser');
                 $('#formEdit').attr('action', `users/${id}`);
                 $('#userTitle').html(`Update Data ${name}`);

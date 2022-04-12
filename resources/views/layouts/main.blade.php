@@ -14,6 +14,7 @@
   <link href="/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
   <link href="/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
   <link href="/assets/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />  
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
   <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
   <link href="/assets/css/bootstrap-extended.css" rel="stylesheet" />
   <link href="/assets/css/style.css" rel="stylesheet" />
@@ -43,10 +44,11 @@
        <!--start sidebar -->
 
        <!--start content-->
-          <main class="page-content">
+          <main class="page-content" id="site-landing">
            
             
             @yield('content')
+            
             <!--end row-->                           
             
           </main>
@@ -86,10 +88,14 @@
   <script src="/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.min.js"></script>
   <script src="/assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
 	<script src="/assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>  
+  
   <script src="/assets/js/table-datatable.js"></script>
   <script src="/assets/js/form-date-time-pickes.js"></script>
   <script src="/assets/js/app.js"></script>
   <script src="/assets/js/index.js"></script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  
 
 
   <script>
@@ -127,6 +133,7 @@
 
   </script>
   
+
 
 </body>
 

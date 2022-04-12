@@ -2,9 +2,9 @@ addEventListener('click', function(){
     const st = document.querySelector('#status').value;
 
     if(st == 'Rusak'){
-        document.querySelector('#catatan').required = true;
+        document.querySelector('#kerusakan').required = true;
     }else{
-        document.querySelector('#catatan').required = false;
+        document.querySelector('#kerusakan').required = false;
     }
 });
 
@@ -12,10 +12,10 @@ addEventListener('click', function(){
 $('#wing').on('click', function() {
     const wing = $(this).val();
     let cardLantai = '';
-    if(wing == 'Wing A' || wing == 'Wing B'){
+    if(wing == 'WA' || wing == 'WB'){
         cardLantai += wingAB();
         $('.optLantai').html(cardLantai);
-    }else if(wing == 'Wing C' || wing == 'Wing D'){
+    }else if(wing == 'WC' || wing == 'WD'){
         cardLantai += wingCD();
         $('.optLantai').html(cardLantai);
     }else{
@@ -27,22 +27,22 @@ $('#wing').on('click', function() {
 function wingAB() {
   return `<label for="lantai" class="form-label">Lantai <span               class="text-danger">*</span></label>
         <select class="form-select" id="lantai" required name="lantai">
-            <option value="Lantai 1">Lantai 1</option>
-            <option value="Lantai 2">Lantai 2</option>
-            <option value="Lantai 3">Lantai 3</option>                
+            <option value="Lt1">Lt1</option>
+            <option value="Lt2">Lt2</option>
+            <option value="Lt3">Lt3</option>                
         </select>`;
 }
 function wingCD() {
     return `<label for="lantai" class="form-label">Lantai <span               class="text-danger">*</span></label>
           <select class="form-select" id="lantai" required name="lantai">
-              <option value="Lantai 1">Lantai 1</option>
-              <option value="Lantai 2">Lantai 2</option>                              
+              <option value="Lt1">Lt1</option>
+              <option value="Lt2">Lt2</option>                              
           </select>`;
 }
 function wingLainnya() {
     return `<label for="lantai" class="form-label">Lantai <span               class="text-danger">*</span></label>
           <select class="form-select" id="lantai" required name="lantai">
-              <option value="Lantai 1">Lantai 1</option>                                          
+              <option value="Lt1">Lt1</option>                                          
           </select>`;
 }
 

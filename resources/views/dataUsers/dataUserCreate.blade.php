@@ -11,7 +11,7 @@
                   <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-table" style="color:#7b378e"></i></a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Data yang di update oleh : <strong>{{ $user->name }}</strong></li>
+                    <li class="breadcrumb-item active" aria-current="page">Data perangkat yang di update oleh : <strong>{{ $user->name }}</strong></li>
                   </ol>
                 </nav>
               </div>              
@@ -41,7 +41,7 @@
                 <tbody>
                     @foreach ($dataCreates as $data)
                     <tr id="sid{{ $data->id }}">
-                        <td><input class="form-check-input checkBoxClassCreateUser" type="checkbox" name="ids" value="{{ $data->id }}" /></td>
+                        {{-- <td><input class="form-check-input checkBoxClassCreateUser" type="checkbox" name="ids" value="{{ $data->id }}" /></td> --}}
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ Carbon::parse($data->user_updated_time)->diffForHumans() }}</td>
                         <td>{{ $data->wing }}</td>
@@ -146,7 +146,7 @@
                    <th>Lat</th>
                    <th>Long</th>
                    <th>Device</th>
-                   <th>Status</th>                   
+                   {{-- <th>Status</th>                    --}}
                   </tr>
                 </thead>
                 <tbody>
@@ -159,10 +159,11 @@
                     <td>{{ $user->userAgent->lat }}</td>
                     <td>{{ $user->userAgent->long }}</td>
                     <td>{{ $user->userAgent->user_agent }}</td>
-                    @if ($user->is_login != NULL)
-                      
+                    {{-- @if ($user->is_login == NULL)
+                    
                     <td>{{ Carbon::parse($user->is_login)->diffForHumans() }}</td>                    
-                    @endif
+                    
+                    @endif --}}
                   </tr>                  
                 </tbody>
               </table>

@@ -1,3 +1,5 @@
+
+
 <table>
     <thead>
     <tr>
@@ -8,8 +10,9 @@
         <th>Ruangan</th>
         <th>Merk</th>
         <th>Type</th>                    
-        <th>PK</th>
+        <th>Paard Kracht(PK)</th>
         <th>Status</th>
+        <th>Kerusakan</th>
         <th>TGL Pemasangan</th>
         <th>Keterangan</th>
     </tr>
@@ -30,6 +33,7 @@
             @else                
             <td style="background: green">{{ $data->status }}</td>
             @endif
+            <td>{{ $data->kerusakan }}</td>
             <td>{{ $data->tgl_pemasangan }}</td>
             <td>{{ $data->catatan }}</td>
         </tr>
