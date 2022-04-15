@@ -28,7 +28,7 @@
       <div class="card-body">
         <div class="d-flex align-items-center">
           <div class="">
-            <p class="mb-1">Data AC</p>
+            <p class="mb-1">Data AC Tireg 7</p>
             <h6 class="mb-0">Total <i class="bi bi-arrow-right"></i> {{ $countData }} Unit</h6>
           </div>
           <div class="ms-auto fs-2 text-primary">
@@ -63,7 +63,11 @@
         <div class="d-flex align-items-center">
           <div class="">
             <p class="mb-1">Total Maintenance</p>
+            @if ($kalTahun === 1)
+            <h6 class="mb-0">{{ $kal }} unit total AC yang di maintenance tahun ini.</h6>
+            @else
             <h6 class="mb-0">{{ $kal }} unit total AC yang di maintenance dalam {{ $kalTahun }} tahun.</h6>
+            @endif
           </div>
           <div class="ms-auto fs-2 text-primary">
             <i class="bi bi-hammer"></i>
@@ -98,8 +102,8 @@
       <div class="card-body">
         <div class="d-flex align-items-center">
           <div class="">
-            <p class="mb-1">Data CCTV</p>
-            <h6 class="mb-0">Total CCTV <i class="bi bi-arrow-right"></i> {{ $countCctv1 }} Unit</h6>
+            <p class="mb-1">Data CCTV Tireg 7</p>
+            <h6 class="mb-0">Total CCTV <i class="bi bi-arrow-right"></i> {{ $countAll }} Unit</h6>
           </div>
           <div class="ms-auto fs-2 text-info">
             <i class="bi bi-camera-video"></i>
@@ -116,7 +120,7 @@
         <div class="d-flex align-items-center">
           <div class="">
             <p class="mb-1">Data Trash CCTV</p>
-            <h6 class="mb-0">{{ $countTrashCctv1 }} Unit</h6>
+            <h6 class="mb-0">{{ $countTrashCctvAll }} Unit</h6>
           </div>
           <div class="ms-auto fs-2 text-info">
             <i class="bi bi-trash"></i>
@@ -133,7 +137,7 @@
         <div class="d-flex align-items-center">
           <div class="">
             <p class="mb-1">Perlu diperhatikan</p>
-            <h6 class="mb-0">{{ $countCctv1Rusak }} Unit CCTV yang masih tidak normal.</h6>
+            <h6 class="mb-0">{{ $countCctvAllRusak }} Unit CCTV yang masih tidak normal.</h6>
           </div>
           <div class="ms-auto fs-2 text-info">
             <i class="bi bi-gear"></i>

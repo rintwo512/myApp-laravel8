@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ac;
-use App\Models\CctvMonitor1;
 use App\Models\User;
 use App\Models\Chart;
+use App\Models\CctvMonitor1;
+use App\Models\CctvMonitor2;
+use App\Models\CctvMonitor3;
+use App\Models\CctvMonitor4;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -18,9 +21,25 @@ class ChartAcController extends Controller
         $kalTahun = DB::table('chartac')->select('tahun')->groupBy('tahun')->orderBy('tahun', 'DESC')->get()->count();
         $kal = intval(Chart::sum('total'));
 
-        $countAcRusak = Ac::where('status', 'Rusak')->count();
         $countCctv1 = CctvMonitor1::all()->count();
+        $countCctv2 = CctvMonitor2::all()->count();
+        $countCctv3 = CctvMonitor3::all()->count();
+        $countCctv4 = CctvMonitor4::all()->count();
+        $countAll = $countCctv1 + $countCctv2 + $countCctv3 + $countCctv4;
+
         $countCctv1Rusak = CctvMonitor1::where('status', 'Rusak')->count();
+        $countCctv2Rusak = CctvMonitor2::where('status', 'Rusak')->count();
+        $countCctv3Rusak = CctvMonitor3::where('status', 'Rusak')->count();
+        $countCctv4Rusak = CctvMonitor4::where('status', 'Rusak')->count();
+        $countCctvAllRusak = $countCctv1Rusak + $countCctv2Rusak + $countCctv3Rusak + $countCctv4Rusak;
+
+        $countTrashCctv1 = CctvMonitor1::onlyTrashed()->count();
+        $countTrashCctv2 = CctvMonitor2::onlyTrashed()->count();
+        $countTrashCctv3 = CctvMonitor3::onlyTrashed()->count();
+        $countTrashCctv4 = CctvMonitor3::onlyTrashed()->count();
+        $countTrashCctvAll = $countTrashCctv1 + $countTrashCctv2 + $countTrashCctv3 + $countTrashCctv4;
+
+        $countAcRusak = Ac::where('status', 'Rusak')->count();
 
 
         $list_tahun = DB::table('chartac')
@@ -39,9 +58,9 @@ class ChartAcController extends Controller
             'kal' => $kal,
             'kalTahun' => $kalTahun,
             'countAcRusak' => $countAcRusak,
-            'countCctv1' => $countCctv1,
-            'countTrashCctv1' => CctvMonitor1::onlyTrashed()->count(),
-            'countCctv1Rusak' => $countCctv1Rusak
+            'countAll' => $countAll,
+            'countTrashCctvAll' => $countTrashCctvAll,
+            'countCctvAllRusak' => $countCctvAllRusak
         ]);
     }
 

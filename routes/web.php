@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AcController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CctvMonitor1Controller;
+use App\Http\Controllers\CctvMonitor2Controller;
+use App\Http\Controllers\CctvMonitor3Controller;
+use App\Http\Controllers\CctvMonitor4Controller;
 use App\Http\Controllers\ChartAcController;
 use App\Http\Controllers\LoginController;
 
@@ -63,7 +66,7 @@ Route::get('/dashboard/range/ac/{nilai}', [AcController::class, 'queryRangeAc'])
 
 
 Route::resource('/dashboard/users', AdminController::class)->middleware('admin');
-Route::delete('dashboard/users/delete/{id}', [AdminController::class, 'destroy'])->middleware('auth');
+Route::delete('dashboard/users/delete/{id}', [AdminController::class, 'destroy'])->middleware('admin');
 
 
 
@@ -74,14 +77,57 @@ Route::get('/error', [AdminController::class, 'errorPage']);
 
 
 // CCTV Monitor 1
-Route::resource('/dashboard/cctv', CctvMonitor1Controller::class);
+Route::resource('/dashboard/cctv', CctvMonitor1Controller::class)->middleware('admin');
 
-Route::get('/dashboard/trashed/cctv', [CctvMonitor1Controller::class, 'trash']);
+Route::get('/dashboard/trashed/cctv', [CctvMonitor1Controller::class, 'trash'])->middleware('admin');
 
-Route::delete('/dashboard/cctv/trash/{id}', [CctvMonitor1Controller::class, 'restoreDataCctv1'])->middleware('auth');
+Route::delete('/dashboard/cctv/trash/{id}', [CctvMonitor1Controller::class, 'restoreDataCctv1'])->middleware('admin');
 
-Route::get('/dashboard/cctv/trash/deleteAll', [CctvMonitor1Controller::class, 'deleteAll'])->middleware('auth');
+Route::get('/dashboard/cctv/trash/deleteAll', [CctvMonitor1Controller::class, 'deleteAll'])->middleware('admin');
 
-Route::get('/dashboard/export/cctv', [CctvMonitor1Controller::class, 'exportDataCctv1'])->middleware('auth');
+Route::get('/dashboard/export/cctv', [CctvMonitor1Controller::class, 'exportDataCctv1'])->middleware('admin');
 
-Route::get('/dashboard/range/cctv/{nilai}', [CctvMonitor1Controller::class, 'queryRange'])->middleware('auth');
+Route::get('/dashboard/range/cctv/{nilai}', [CctvMonitor1Controller::class, 'queryRange'])->middleware('admin');
+
+
+// CCTV Monitor 2
+Route::resource('/dashboard/cctv2', CctvMonitor2Controller::class)->middleware('admin');
+
+Route::get('/dashboard/trashed/cctv2', [CctvMonitor2Controller::class, 'trash'])->middleware('admin');
+
+Route::delete('/dashboard/cctv2/trash/{id}', [CctvMonitor2Controller::class, 'restoreDataCctv2'])->middleware('admin');
+
+Route::get('/dashboard/cctv2/trash/deleteAll', [CctvMonitor2Controller::class, 'deleteAllCctv2'])->middleware('admin');
+
+Route::get('/dashboard/export/cctv2', [CctvMonitor2Controller::class, 'exportDataCctv2'])->middleware('admin');
+
+Route::get('/dashboard/range/cctv2/{nilai}', [CctvMonitor2Controller::class, 'queryRangeCctv2'])->middleware('admin');
+
+
+
+
+// CCTV Monitor 3
+Route::resource('/dashboard/cctv3', CctvMonitor3Controller::class)->middleware('admin');
+
+Route::get('/dashboard/trashed/cctv3', [CctvMonitor3Controller::class, 'trash'])->middleware('admin');
+
+Route::delete('/dashboard/cctv3/trash/{id}', [CctvMonitor3Controller::class, 'restoreDataCctv3'])->middleware('admin');
+
+Route::get('/dashboard/cctv3/trash/deleteAll', [CctvMonitor3Controller::class, 'deleteAll'])->middleware('admin');
+
+Route::get('/dashboard/range/cctv3/{nilai}', [CctvMonitor3Controller::class, 'queryRangeCctv3'])->middleware('admin');
+
+Route::get('/dashboard/export/cctv3', [CctvMonitor3Controller::class, 'exportDataCctv3'])->middleware('admin');
+
+
+
+// CCTV Monitor 4
+Route::resource('/dashboard/cctv4', CctvMonitor4Controller::class)->middleware('admin');
+
+Route::get('/dashboard/trashed/cctv4', [CctvMonitor4Controller::class, 'trash'])->middleware('admin');
+
+Route::delete('/dashboard/cctv4/trash/{id}', [CctvMonitor4Controller::class, 'restoreDataCctv4'])->middleware('admin');
+
+Route::get('/dashboard/export/cctv4', [CctvMonitor4Controller::class, 'exportDataCctv4'])->middleware('admin');
+
+Route::get('/dashboard/range/cctv4/{nilai}', [CctvMonitor4Controller::class, 'queryRangeCctv4'])->middleware('admin');

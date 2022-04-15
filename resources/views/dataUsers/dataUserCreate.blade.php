@@ -18,6 +18,7 @@
             </div>                        
         <hr/>
         <a href="/dashboard/users" class="btn btn-info mb-3 text-white"><i class="bi bi-arrow-left"></i> Back</a>             
+        <h6 class="mb-2 text-uppercase">Data AC</h6>
         <div class="card">
           <div class="card-body">
             <div class="table-responsive"> 
@@ -77,7 +78,7 @@
           </div>
         </div>
 
-
+        <h6 class="mb-2 text-uppercase">Data CCTV Monitor 1</h6>
         <div class="card">
           <div class="card-body">
             <div class="table-responsive"> 
@@ -129,6 +130,153 @@
           </div>
         </div>
 
+        <h6 class="mb-2 text-uppercase">Data CCTV Monitor 2</h6>
+        <div class="card">
+          <div class="card-body">
+            <div class="table-responsive"> 
+              <table id="exampleUserUpdateCctvMonitor2" class="table table-striped table-bordered" style="width:100%">                
+                <thead>
+                  <tr>                   
+                    <th>No.</th>
+                    <th>Di Update</th>                   
+                    <th>Lokasi</th>
+                    <th>Merk</th>                    
+                    <th>Type</th>
+                    <th>Status</th>                    
+                  </tr>
+                </thead>
+                <tbody>
+                    @foreach ($dataCctv2 as $cctv2)
+                    <tr>                        
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ Carbon::parse($cctv2->updated_time)->diffForHumans() }}</td>
+                        <td>{{ $cctv2->lokasi }}</td>
+                        <td>{{ $cctv2->merk }}</td>
+                        <td>{{ $cctv2->type }}</td>
+                        @if ($cctv2->status == "Rusak")
+                        <td class="bg-danger">{{ $cctv2->status }}</td>
+                        @else
+                        <td class="bg-info">{{ $cctv2->status }}</td>
+                        @endif
+                    </tr> 
+                    @endforeach                                   
+                </tbody>
+                <tfoot>
+                  <tr>                    
+                    <th>No.</th>
+                    <th>Di Update</th>                   
+                    <th>Lokasi</th>
+                    <th>Merk</th>                    
+                    <th>Type</th>
+                    <th>Status</th>                   
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+
+
+        <h6 class="mb-2 text-uppercase">Data CCTV Monitor 3</h6>
+        <div class="card">
+          <div class="card-body">
+            <div class="table-responsive"> 
+              <table id="exampleUserUpdateCctvMonitor3" class="table table-striped table-bordered" style="width:100%">                
+                <thead>
+                  <tr>                   
+                    <th>No.</th>
+                    <th>Di Update</th>
+                    <th>Lantai</th>
+                    <th>Wing</th>
+                    <th>Lokasi</th>
+                    <th>Merk</th>                    
+                    <th>Type</th>
+                    <th>Status</th>                    
+                  </tr>
+                </thead>
+                <tbody>
+                    @foreach ($dataCctv3 as $cctv3)
+                    <tr>                        
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ Carbon::parse($cctv3->updated_time)->diffForHumans() }}</td>
+                        <td>{{ $cctv3->lantai }}</td>
+                        <td>{{ $cctv3->wing }}</td>
+                        <td>{{ $cctv3->lokasi }}</td>
+                        <td>{{ $cctv3->merk }}</td>
+                        <td>{{ $cctv3->type }}</td>
+                        @if ($cctv3->status == "Rusak")
+                        <td class="bg-danger">{{ $cctv3->status }}</td>
+                        @else
+                        <td class="bg-info">{{ $cctv3->status }}</td>
+                        @endif
+                    </tr> 
+                    @endforeach                                   
+                </tbody>
+                <tfoot>
+                  <tr>                    
+                    <th>No.</th>
+                    <th>Di Update</th>
+                    <th>Lantai</th>
+                    <th>Wing</th>
+                    <th>Lokasi</th>
+                    <th>Merk</th>                    
+                    <th>Type</th>
+                    <th>Status</th>                    
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+
+
+        <h6 class="mb-2 text-uppercase">Data CCTV Monitor 4</h6>
+        <div class="card">
+          <div class="card-body">
+            <div class="table-responsive"> 
+              <table id="exampleUserUpdateCctvMonitor4" class="table table-striped table-bordered" style="width:100%">                
+                <thead>
+                  <tr>                   
+                    <th>No.</th>
+                    <th>Di Update</th>                   
+                    <th>Lokasi</th>
+                    <th>Merk</th>                    
+                    <th>Type</th>
+                    <th>Status</th>                    
+                  </tr>
+                </thead>
+                <tbody>
+                    @foreach ($dataCctv4 as $cctv4)
+                    <tr>                        
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ Carbon::parse($cctv4->updated_time)->diffForHumans() }}</td>
+                        <td>{{ $cctv4->lokasi }}</td>
+                        <td>{{ $cctv4->merk }}</td>
+                        <td>{{ $cctv4->type }}</td>
+                        @if ($cctv4->status == "Rusak")
+                        <td class="bg-danger">{{ $cctv4->status }}</td>
+                        @else
+                        <td class="bg-info">{{ $cctv4->status }}</td>
+                        @endif
+                    </tr> 
+                    @endforeach                                   
+                </tbody>
+                <tfoot>
+                  <tr>                    
+                    <th>No.</th>
+                    <th>Di Update</th>                   
+                    <th>Lokasi</th>
+                    <th>Merk</th>                    
+                    <th>Type</th>
+                    <th>Status</th>                   
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+        
+
         <div class="card">
           <div class="card-body">
             <div class="d-flex align-items-center">
@@ -146,7 +294,7 @@
                    <th>Lat</th>
                    <th>Long</th>
                    <th>Device</th>
-                   {{-- <th>Status</th>                    --}}
+                   {{-- <th>Status</th> --}}
                   </tr>
                 </thead>
                 <tbody>

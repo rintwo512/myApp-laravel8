@@ -9,6 +9,30 @@ $(function() {
         $('#exampleUserUpdate').DataTable();
     } );
 
+    $(document).ready(function() {
+        $('#exampleUserUpdateCctvMonitor2').DataTable();
+    } );
+
+    $(document).ready(function() {
+      $('#exampleUserUpdateCctvMonitor3').DataTable();
+    });
+
+  $(document).ready(function() {
+    $('#exampleUserUpdateCctvMonitor4').DataTable();
+  });
+    
+    $(document).ready(function() {
+      $('#monitor2').DataTable();
+    } );
+
+    $(document).ready(function() {
+      $('#monitor3').DataTable();
+    } );
+
+    $(document).ready(function() {
+      $('#monitor4').DataTable();
+    } );
+
 
       $(document).ready(function() {
         var table = $('#example2').DataTable( {

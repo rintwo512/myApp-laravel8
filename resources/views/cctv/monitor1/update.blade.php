@@ -19,9 +19,9 @@
                 <select class="form-select" id="lantai" name="lantai" required>
                     <option value="{{ $dataCctv1->lantai }}" selected>{{ $dataCctv1->lantai }}</option>
                     <option value="" disabled>--Select--</option>
-                    <option value="Lantai 1">Lantai 1</option>
-                    <option value="Lantai 2">Lantai 2</option>
-                    <option value="Lantai 3">Lantai 3</option>
+                    <option value="Lt1">Lt1</option>
+                    <option value="Lt2">Lt2</option>
+                    <option value="Lt3">Lt3</option>
                 </select>
             </div>
             <div class="col-md-4">
@@ -29,10 +29,10 @@
                 <select class="form-select" id="wing" name="wing" required>
                   <option value="{{ $dataCctv1->wing }}" selected>{{ $dataCctv1->wing }}</option>
                     <option value="" disabled>--Select--</option>
-                    <option value="Wing A">Wing A</option>
-                    <option value="Wing B">Wing B</option>
-                    <option value="Wing C">Wing C</option>
-                    <option value="Wing D">Wing D</option>
+                    <option value="WA">WA</option>
+                    <option value="WB">WB</option>
+                    <option value="WC">WC</option>
+                    <option value="WD">WD</option>
                     <option value="Lainnya">Lainnya</option>
                 </select>
               </div>
@@ -42,15 +42,21 @@
               </div>
               <div class="col-md-4">
                 <label for="merk" class="form-label">Merk <small class="text-danger">*</small></label>
-                <input class="form-control text-capitalize" id="merk" name="merk" placeholder="Merk Camera" required value="{{ old('merk', $dataCctv1->merk)}}">
+                <select class="form-control" id="merk" name="merk" placeholder="Merk Camera" required>
+                  <option value="{{ $dataCctv1->merk }}" selected>{{ $dataCctv1->merk }}</option>
+                  <option value="" disabled>--Select--</option>
+                  <option value="Hikvision">Hikvision</option>
+                  <option value="Dahua">Dahua</option>
+                  <option value="SPC">SPC</option>
+                  <option value="Krisbow">Krisbow</option>
+                </select>
               </div>
               <div class="col-md-4">
                 <label for="type" class="form-label">Type <small class="text-danger">*</small></label>
                 <select class="form-select" id="type" name="type" required>
                   <option value="{{ $dataCctv1->type }}" selected>{{ $dataCctv1->type }}</option>
                     <option value="" disabled>--Select--</option>
-                    <option value="Analog">Analog</option>
-                    <option value="Ip Cam">Ip Cam</option>
+                    <option value="Analog">Analog</option>                    
                 </select>
               </div>
               <div class="col-md-4">

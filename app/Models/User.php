@@ -58,4 +58,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(CctvMonitor1::class);
     }
+
+    public function userDataCctv2()
+    {
+        return $this->hasMany(CctvMonitor2::class);
+    }
 }

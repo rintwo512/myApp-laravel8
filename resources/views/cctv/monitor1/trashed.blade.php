@@ -11,7 +11,7 @@
                   <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-table" style="color:#7b378e"></i></a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Data Trashed CCTV</li>
+                    <li class="breadcrumb-item active" aria-current="page">Data Trashed CCTV Monitor 1</li>
                   </ol>
                 </nav>
               </div>              

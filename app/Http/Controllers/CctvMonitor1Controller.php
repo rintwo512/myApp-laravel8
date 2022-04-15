@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Exports\Cctv1Export;
 use App\Models\CctvMonitor1;
+use App\Models\CctvMonitor2;
+use App\Models\CctvMonitor3;
+use App\Models\CctvMonitor4;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
@@ -21,11 +24,14 @@ class CctvMonitor1Controller extends Controller
 
         // dd(User::find(1)->userDataCctv);
 
-        // CctvMonitor1::onlyTrashed()->restore();       
+        // CctvMonitor4::onlyTrashed()->restore();
 
         return view('cctv.monitor1.index', [
             'title' => 'Data CCTV',
-            'dataCctv1' => CctvMonitor1::all()
+            'dataCctv1' => CctvMonitor1::all(),
+            'dataCctv2' => CctvMonitor2::all(),
+            'dataCctv3' => CctvMonitor3::all(),
+            'dataCctv4' => CctvMonitor4::all()
         ]);
     }
 
@@ -176,6 +182,5 @@ class CctvMonitor1Controller extends Controller
 
         $range = CctvMonitor1::whereBetween('updated_time', [$start, $end])->get();
         return response()->json($range);
-        // echo json_encode($range);
     }
 }

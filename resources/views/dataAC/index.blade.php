@@ -39,7 +39,7 @@
             <div class="col-md-4 mt-3">            
               <div class="input-group mb-3">
                   <button class="btn btn-info text-white" type="button" id="btnRangeAc">Search</button>
-                  <input type="text" class="form-control input-range-ac" name="rangeQueryAc">
+                  <input type="text" class="form-control input-range-ac" name="rangeQueryAc" placeholder="Cari data yang telah di update">
               </div>            
           </div>
 

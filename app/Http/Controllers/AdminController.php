@@ -6,6 +6,9 @@ use App\Models\Ac;
 use App\Models\User;
 use App\Models\Session;
 use App\Models\CctvMonitor1;
+use App\Models\CctvMonitor2;
+use App\Models\CctvMonitor3;
+use App\Models\CctvMonitor4;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 
@@ -81,13 +84,19 @@ class AdminController extends Controller
 
 
         $user = User::find($id);
-        $getDataUpate = Ac::where('user_updated', $user->name)->get();
+        $getDataUpdate = Ac::where('user_updated', $user->name)->get();
         $getDataUpdateCctv1 = CctvMonitor1::where('user_updated', $user->name)->get();
+        $getDataUpdateCctv2 = CctvMonitor2::where('user_updated', $user->name)->get();
+        $getDataUpdateCctv3 = CctvMonitor3::where('user_updated', $user->name)->get();
+        $getDataUpdateCctv4 = CctvMonitor4::where('user_updated', $user->name)->get();
 
         return view('dataUsers.dataUserCreate', [
             'title' => 'User Activity',
-            'dataCreates' => $getDataUpate,
+            'dataCreates' => $getDataUpdate,
             'dataCctv1' => $getDataUpdateCctv1,
+            'dataCctv2' => $getDataUpdateCctv2,
+            'dataCctv3' => $getDataUpdateCctv3,
+            'dataCctv4' => $getDataUpdateCctv4,
             'user' => $user
         ]);
     }
