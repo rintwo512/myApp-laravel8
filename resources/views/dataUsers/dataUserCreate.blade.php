@@ -5,19 +5,38 @@
 <?php use Illuminate\Support\Carbon; ?>
 
             <div class="flash-success" data-success="{{ session('success') }}"></div>
-            <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">              
-              <div class="ps-3">
-                <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb mb-0 p-0">
-                    <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-table" style="color:#7b378e"></i></a>
-                    </li>
-                    <li class="breadcrumb-item active" aria-current="page">Data perangkat yang di update oleh : <strong>{{ $user->name }}</strong></li>
-                  </ol>
-                </nav>
-              </div>              
-            </div>                        
-        <hr/>
-        <a href="/dashboard/users" class="btn btn-info mb-3 text-white"><i class="bi bi-arrow-left"></i> Back</a>             
+            
+            <a href="/dashboard/users" class="btn btn-info mb-3 text-white"><i class="bi bi-arrow-left"></i> Back</a>
+            <div class="col-md-6">
+              <div class="card radius-10">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    @if ($user->image != 'default.png')
+                    <img src="{{ asset('storage/' . $user->image) }}" class="rounded-circle p-1 border" width="90" height="90" alt="...">
+                    @else
+                    <img src="{{ asset('assets/images/avatars/' . $user->image) }}" class="rounded-circle p-1 border" width="90" height="90" alt="...">
+                    @endif
+                    <div class="flex-grow-1 ms-3">
+                      <h5 class="mt-0">{{ $user->status_login }}</h5>                   
+                      <p class="mb-0">
+                        <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">              
+                          <div class="ps-3">
+                            <nav aria-label="breadcrumb">
+                              <ol class="breadcrumb mb-0 p-0">
+                                <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-table" style="color:#7b378e"></i></a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">Data perangkat yang di update oleh : <strong>{{ $user->name }}</strong></li>
+                              </ol>
+                            </nav>
+                          </div>              
+                        </div>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        <hr/>                     
         <h6 class="mb-2 text-uppercase">Data AC</h6>
         <div class="card">
           <div class="card-body">
@@ -289,8 +308,7 @@
             <div class="table-responsive mt-3">
               <table class="table align-middle">
                 <thead class="table-secondary">
-                  <tr>                   
-                   <th>Image</th>
+                  <tr>                                      
                    <th>Lat</th>
                    <th>Long</th>
                    <th>Device</th>
@@ -298,12 +316,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>                   
-                    <td>
-                      <div class="d-flex align-items-center gap-3 cursor-pointer">
-                         <img src="/assets/images/avatars/{{ $user->image }}" class="rounded-circle" width="44" height="44" alt="">
-                      </div>
-                    </td>
+                  <tr>                                       
                     <td>{{ $user->userAgent->lat }}</td>
                     <td>{{ $user->userAgent->long }}</td>
                     <td>{{ $user->userAgent->user_agent }}</td>

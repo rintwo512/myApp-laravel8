@@ -5,12 +5,13 @@ use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AcController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ChartAcController;
+use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\CctvMonitor1Controller;
 use App\Http\Controllers\CctvMonitor2Controller;
 use App\Http\Controllers\CctvMonitor3Controller;
 use App\Http\Controllers\CctvMonitor4Controller;
-use App\Http\Controllers\ChartAcController;
-use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -131,3 +132,10 @@ Route::delete('/dashboard/cctv4/trash/{id}', [CctvMonitor4Controller::class, 're
 Route::get('/dashboard/export/cctv4', [CctvMonitor4Controller::class, 'exportDataCctv4'])->middleware('admin');
 
 Route::get('/dashboard/range/cctv4/{nilai}', [CctvMonitor4Controller::class, 'queryRangeCctv4'])->middleware('admin');
+
+
+// Settings
+Route::get('/settings/profile', [SettingsController::class, 'index'])->middleware('auth');
+Route::post('/settings/profile/{id}', [SettingsController::class, 'updateUserAccount'])->middleware('auth');
+Route::get('/settings/changepassword', [SettingsController::class, 'changePassword'])->middleware('auth');
+Route::post('/settings/changepassword/{id}', [SettingsController::class, 'postChangePassword'])->middleware('auth');

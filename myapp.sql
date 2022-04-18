@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Apr 2022 pada 19.23
+-- Waktu pembuatan: 18 Apr 2022 pada 05.03
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 7.4.27
 
@@ -101,7 +101,8 @@ INSERT INTO `ac` (`id`, `user_id`, `label`, `assets`, `wing`, `lantai`, `ruangan
 (38, 1, NULL, NULL, 'WD', 'Lt2', 'Rg.Rapat CCM', 'Daikin', 'Splite', 'Non-inverter', '2pk', 'R22', NULL, NULL, '220Volt', NULL, 'Normal', NULL, NULL, NULL, NULL, '2022-04-13 21:47', NULL, NULL, NULL, NULL, '2022-04-14 13:47:38', '2022-04-14 13:47:38'),
 (39, 1, NULL, NULL, 'Lainnya', 'Lt1', 'Forsikatel', 'LG', 'Splite', 'Non-inverter', '1,5pk', 'R22', NULL, '5,1 A', '220Volt', NULL, 'Normal', 'Telah di lakukan penggantian kapasitor tanggal 2022/04/14', NULL, NULL, NULL, NULL, 'Meong', '2022-04-14 21:54:50', NULL, NULL, '2022-04-14 13:50:47', '2022-04-14 13:54:50'),
 (40, 1, NULL, NULL, 'Lainnya', 'Lt1', 'Forsikatel', 'Sharp', 'Splite', 'Non-inverter', '2pk', 'R32', NULL, '8,2 A', '220Volt', NULL, 'Normal', 'Telah dilakukan pengisian freon tanggal 2022/04/14', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-14 13:53:41', '2022-04-14 13:53:41'),
-(41, 1, NULL, 'Telkom', 'WC', 'Lt2', 'Depan Rg.TAM', 'Daikin', 'Cassete', 'Inverter', '3pk', 'R410', 'Thailand', NULL, '220Volt', NULL, 'Rusak', NULL, 'Error U2', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, '2022-04-14 13:59:17', '2022-04-14 13:59:17');
+(41, 1, NULL, 'Telkom', 'WC', 'Lt2', 'Depan Rg.TAM', 'Daikin', 'Cassete', 'Inverter', '3pk', 'R410', 'Thailand', NULL, '220Volt', NULL, 'Rusak', NULL, 'Error U2', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, '2022-04-14 13:59:17', '2022-04-14 13:59:17'),
+(42, 6, NULL, NULL, 'WB', 'Lt1', 'fdsfds', 'Daikin', 'Splite', 'Inverter', '5pk', 'R32', NULL, NULL, '220Volt', NULL, 'Normal', NULL, NULL, NULL, NULL, NULL, 'jen', '2022-04-17 07:30:22', 'Rinto Harahap', '2022-04-16 23:31:27', '2022-04-16 23:30:07', '2022-04-16 23:31:27');
 
 -- --------------------------------------------------------
 
@@ -179,7 +180,7 @@ CREATE TABLE `cctv_monitor2` (
 --
 
 INSERT INTO `cctv_monitor2` (`id`, `user_id`, `lokasi`, `merk`, `type`, `status`, `resolusi`, `tgl_pemasangan`, `petugas_pemasangan`, `tgl_perbaikan`, `petugas_perbaikan`, `catatan`, `sandi_dvr`, `kerusakan`, `user_updated`, `user_delete`, `updated_time`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Samping Rg.Mgr SAS', 'Hikvision', 'Analog', 'Rusak', '2MP', NULL, 'Raswin,Rinto,Rahmat', NULL, NULL, 'belum dilakukan pengecekan', NULL, 'No Link', 'Meong', 'Meong', '2022-04-15 00:57:03', NULL, '2022-04-14 15:25:15', '2022-04-14 17:25:12'),
+(1, 1, 'Samping Rg.Mgr SAS', 'Hikvision', 'Analog', 'Normal', '2MP', NULL, 'Raswin,Rinto,Rahmat', NULL, NULL, 'belum dilakukan pengecekan', NULL, NULL, 'Rinto Harahap', 'Meong', '2022-04-17 07:29:04', NULL, '2022-04-14 15:25:15', '2022-04-16 23:29:04'),
 (2, 1, 'Indoor', 'Hikvision', 'Ip Cam', 'Normal', '2MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-04-15 17:17:25', '2022-04-15 16:28:25', '2022-04-15 17:17:25'),
 (3, 1, 'dss', 'Hikvision', 'Ip Cam', 'Normal', '2MP', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-04-15 17:17:20', '2022-04-15 16:31:04', '2022-04-15 17:17:20');
 
@@ -219,7 +220,7 @@ CREATE TABLE `cctv_monitor3` (
 --
 
 INSERT INTO `cctv_monitor3` (`id`, `user_id`, `lantai`, `wing`, `lokasi`, `merk`, `type`, `status`, `resolusi`, `tgl_pemasangan`, `petugas_pemasangan`, `tgl_perbaikan`, `petugas_perbaikan`, `catatan`, `sandi_dvr`, `kerusakan`, `user_updated`, `user_delete`, `updated_time`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(2, 1, 'Lt1', 'WB', 'Plasa', 'Hikvision', 'Analog', 'Normal', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-04-15 03:40:34', NULL, '2022-04-14 19:33:48', '2022-04-14 19:40:34');
+(2, 1, 'Lt1', 'WB', 'Plasa', 'Hikvision', 'Analog', 'Normal', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Meong', 'Meong', '2022-04-15 03:40:34', '2022-04-16 15:44:22', '2022-04-14 19:33:48', '2022-04-16 15:44:22');
 
 -- --------------------------------------------------------
 
@@ -255,7 +256,7 @@ CREATE TABLE `cctv_monitor4` (
 --
 
 INSERT INTO `cctv_monitor4` (`id`, `user_id`, `lokasi`, `merk`, `type`, `status`, `resolusi`, `tgl_pemasangan`, `petugas_pemasangan`, `tgl_perbaikan`, `petugas_perbaikan`, `catatan`, `sandi_dvr`, `kerusakan`, `user_updated`, `user_delete`, `updated_time`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Sekolah', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', 'Meong', '2022-04-16 01:18:05', NULL, '2022-04-15 16:33:17', '2022-04-15 17:18:05');
+(1, 1, 'Sekolah', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', 'Meong', '2022-04-16 01:18:05', '2022-04-16 15:44:16', '2022-04-15 16:33:17', '2022-04-16 15:44:16');
 
 -- --------------------------------------------------------
 
@@ -375,8 +376,9 @@ CREATE TABLE `session` (
 --
 
 INSERT INTO `session` (`id`, `user_id`, `lat`, `long`, `user_agent`, `created_at`, `updated_at`) VALUES
-(1, 1, -5.1729863, 119.4328218, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36', '2022-04-11 06:44:14', '2022-04-15 16:10:14'),
-(2, 2, -7.2574719, 112.7520883, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', '2022-04-11 11:54:01', '2022-04-12 12:06:38');
+(1, 1, NULL, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36', '2022-04-11 06:44:14', '2022-04-16 15:38:45'),
+(5, 5, NULL, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36', '2022-04-16 22:49:21', '2022-04-16 22:49:39'),
+(6, 6, NULL, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36', '2022-04-16 23:21:56', '2022-04-16 23:22:07');
 
 -- --------------------------------------------------------
 
@@ -404,8 +406,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `nik`, `image`, `is_active`, `role`, `password`, `status_login`, `is_login`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Meong', 15920011, 'default.png', 1, 1, '$2y$10$d/NucPTbpNp7imfUYwEfReY9h1FwSVboGoyNlne7UeYzzKoC6EV1S', 'online', '2022-04-15 17:20:55', NULL, '2022-04-11 06:44:14', '2022-04-15 17:20:55'),
-(2, 'Jon', 15920001, 'default.png', 1, 0, '$2y$10$hlhGdvaiwOURsDEt.GFtMeHExyj0Zynlb3AX4QatOuLQT0pykEKbW', 'offline', '2022-04-12 15:43:52', NULL, '2022-04-11 11:53:54', '2022-04-12 15:43:52');
+(1, 'Admin', 15920011, 'user-images/xPPnGfkXwqE112ZMvPndxNLi25oUhTW6aWMNsl7l.png', 1, 1, '$2y$10$d/NucPTbpNp7imfUYwEfReY9h1FwSVboGoyNlne7UeYzzKoC6EV1S', 'online', '2022-04-18 02:58:37', NULL, '2022-04-11 06:44:14', '2022-04-18 02:58:37'),
+(5, 'Markus', 15920001, 'user-images/Q0mq6u7hxSuOQSa9d1ScgrGjKDRLqL0eJAsljXos.png', 1, 0, '$2y$10$fEbMeZ3/l6CpnUCd.d7X2ON5nI81Etomu2egx7L.hONmZd6sggfsK', 'offline', '2022-04-16 23:21:41', NULL, '2022-04-16 22:49:15', '2022-04-16 23:21:41'),
+(6, 'Jhen Doe', 15920002, 'user-images/ZP9ec8l8RaHvjWfEEK3KtjAzVXDAQ7Yzmd26wz1G.png', 1, 0, '$2y$10$391A5QBYbB3UuFycNWWk0O1TbHzqVX5i3dfgzOmFnSqOzAP8ngvSC', 'offline', '2022-04-16 23:42:09', NULL, '2022-04-16 23:21:35', '2022-04-16 23:42:09');
 
 --
 -- Indexes for dumped tables
@@ -495,7 +498,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `ac`
 --
 ALTER TABLE `ac`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT untuk tabel `cctv_monitor1`
@@ -549,13 +552,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT untuk tabel `session`
 --
 ALTER TABLE `session`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

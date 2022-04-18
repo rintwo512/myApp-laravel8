@@ -17,7 +17,16 @@
         <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Charts">
           <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-charts" type="button"><i class="bi bi-bar-chart-steps"></i></button>
         </li>       
-        @endcan
+        @endcan        
+        <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Settings">
+          <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-settings" type="button"><i class="bi bi-gear-fill"></i></button>
+        </li>
+        <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Log Out" id="logSidebar">
+          <form action="/logout/{{ auth()->user()->id }}" method="post">
+            @csrf
+            <button type="button" id="btnLog1" class="nav-link" ><i class="bi bi-box-arrow-in-right"></i></button>
+          </form>
+        </li>
       </ul>
     </div>
     <div class="textmenu">
@@ -67,9 +76,20 @@
           </div>
           <a href="/dashboard/charts" class="list-group-item {{ Request::is('/dashboard/charts*') ? 'active' : '' }}"><i class="bi bi-bar-chart-fill"></i> Update Charts</a>          
         </div>
-    </div>   
       </div>
+      <div class="tab-pane fade" id="pills-settings">
+        <div class="list-group list-group-flush">
+          <div class="list-group-item">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-0">Settings</h5>
+            </div>                    
+          </div>
+          <a href="/settings/profile" class="list-group-item {{ Request::is('settings/profile*') ? 'active' : '' }}"><i class="bi bi-person-lines-fill"></i> Profile</a>
+          <a href="/settings/changepassword" class="list-group-item list-group-item {{ Request::is('settings/changepassword*') ? 'active' : '' }}"><i class="bi bi-lock"></i> Change Password</a>
+        </div>
+    </div> 
     </div>
+  </div>
  </aside>
 
 
@@ -102,19 +122,6 @@
             <input type="password" class="form-control ps-5 @error('password') is-invalid @enderror" id="password" placeholder="Enter Password" name="password" required>                          
           </div>
         </div>
-        
-        {{-- <div class="col-6">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="1" id="isActive" name="isActive">
-            <label class="form-check-label" for="isActive">Aktifkan User</label>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="1" id="role" name="role">
-            <label class="form-check-label" for="isActive">Role Admin</label>
-          </div>
-        </div> --}}
       </div>
       <div class="modal-footer">         
       <button type="submit" class="btn btn-primary">Submit</button>
@@ -142,5 +149,14 @@
             
             // toggle the icon
             this.classList.toggle("bi-eye");
-        });
+        });        
+</script>
+<script>
+  $(document).on("click","#logSidebar", function() {
+    
+    if(confirm('Are you sure?')){
+      $('#btnLog1').removeAttr('type');
+    }
+
+  });
 </script>

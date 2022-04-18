@@ -23,7 +23,11 @@
           <li class="nav-item dropdown dropdown-large">
             <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" data-bs-toggle="dropdown">
               <div class="user-setting d-flex align-items-center gap-1">
+                @if (auth()->user()->image != 'default.png')
+                <img src="{{ asset('storage/' . auth()->user()->image) }}" class="user-img" alt="">
+                @else
                 <img src="/assets/images/avatars/{{ auth()->user()->image }}" class="user-img" alt="">
+                @endif
                 <div class="user-name d-none d-sm-block">{{ auth()->user()->name }}</div>
               </div>
             </a>
@@ -31,7 +35,11 @@
               <li>
                  <a class="dropdown-item" href="#">
                    <div class="d-flex align-items-center">
-                      <img src="/assets/images/avatars/{{ auth()->user()->image }}" alt="" class="rounded-circle" width="60" height="60">
+                    @if (auth()->user()->image != 'default.png')
+                    <img src="{{ asset('storage/' . auth()->user()->image) }}" class="user-img" alt="">
+                    @else
+                    <img src="/assets/images/avatars/{{ auth()->user()->image }}" class="user-img" alt="">
+                    @endif
                       <div class="ms-3">
                         <h6 class="mb-0 dropdown-user-name">{{ auth()->user()->name }}</h6>
                         <small class="mb-0 dropdown-user-designation text-secondary">Member Since  {{ Carbon::parse(auth()->user()->created_at)->year }}</small>
@@ -41,7 +49,7 @@
                </li>
                <li><hr class="dropdown-divider"></li>
                <li>
-                  <a class="dropdown-item" href="pages-user-profile.html">
+                  <a class="dropdown-item" href="/settings/profile">
                      <div class="d-flex align-items-center">
                        <div class="setting-icon"><i class="bi bi-person-fill"></i></div>
                        <div class="setting-text ms-3"><span>Profile</span></div>
@@ -52,7 +60,7 @@
                 <li>
                   <form action="/logout/{{ auth()->user()->id }}" method="post" id="autoLogout">
                     @csrf
-                    <button class="dropdown-item" href="">
+                    <button type="button" class="dropdown-item" id="btnLog">
                       <div class="d-flex align-items-center">
                         <div class="setting-icon"><i class="bi bi-box-arrow-right"></i></div>
                         
@@ -93,12 +101,19 @@
                    @if(Cache::has('user-is-online-' . $user->id))
   
                      @if (auth()->user()->name != $user->name)
-
-                     <img src="/assets/images/avatars/{{ $user->image }}" alt="" class="rounded-circle" width="52" height="52">
-                     <div class="ms-3 flex-grow-1">
-                       <h6 class="mb-0 dropdown-msg-user">{{ $user->name }}</h6>
-                         <small class="mb-0 dropdown-msg-text text-secondary d-flex align-items-center text-success text-online">Online {{ Carbon::parse($user->is_login)->locale('id')->diffForHumans() }}</small>                     
-                      </div>
+                        @if ($user->image != 'default.png')
+                        <img src="{{ asset('storage/' . $user->image) }}" alt="" class="rounded-circle" width="52" height="52">
+                        <div class="ms-3 flex-grow-1">
+                          <h6 class="mb-0 dropdown-msg-user">{{ $user->name }}</h6>
+                            <small class="mb-0 dropdown-msg-text text-secondary d-flex align-items-center text-success text-online">Online {{ Carbon::parse($user->is_login)->locale('id')->diffForHumans() }}</small>                     
+                        </div>
+                        @else
+                        <img src="/assets/images/avatars/{{ $user->image }}" alt="" class="rounded-circle" width="52" height="52">
+                      <div class="ms-3 flex-grow-1">
+                        <h6 class="mb-0 dropdown-msg-user">{{ $user->name }}</h6>
+                          <small class="mb-0 dropdown-msg-text text-secondary d-flex align-items-center text-success text-online">Online {{ Carbon::parse($user->is_login)->locale('id')->diffForHumans() }}</small>                     
+                        </div>
+                        @endif                      
                       
                      @endif
 
@@ -116,6 +131,8 @@
     </nav>
   </header>
   <script src="/assets/js/jquery.min.js"></script>
+  
+        
   <script>
 
 $(document).ready(function () {
@@ -131,6 +148,13 @@ $(document).ready(function () {
     $("body").trigger("mousemove");
 });
 
+  const btnLog = document.querySelector('#btnLog');
+  btnLog.addEventListener('click', function() {
+    if(confirm('Are you sure?')){
+
+      btnLog.removeAttribute('type');
+    }
+  });
 
 
   </script>

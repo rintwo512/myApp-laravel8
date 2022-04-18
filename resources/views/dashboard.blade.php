@@ -1,7 +1,21 @@
 @extends('layouts.main')
 
 @section('content')
-
+<div class="row">
+<div class="col-md-8">
+<div class="ratio ratio-16x9 mb-4">
+  <iframe src="https://www.youtube.com/embed/r28RWd9lXbw" title="YouTube video" allowfullscreen></iframe>
+</div>
+</div>
+<div class="col-md-4">
+  <div class="card">
+    <div class="card-body">
+      <p data-period="1000"><span class="title_run" data-period="3000"
+        data-type='["Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus asperiores vel est facere hic laboriosam possimus sint earum neque nostrum? Dolorum nam a consequatur illum quidem magnam eum ipsam asperiores. Saepe libero adipisci nihil laborum, pariatur repellat error omnis autem obcaecati illo suscipit corrupti atque recusandae iste, accusantium rerum corporis."]'></span></p>
+    </div>
+  </div>
+</div>
+</div>
 @can('admin')  
 {{-- Chart --}}
 <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -247,6 +261,61 @@ new Chart(document.getElementById("chart7"), {
     chartAc(tahun, `Statistic Bulanan Maintenance AC : ${tahun}`);
   });
 </script>
+
+<script>
+  var textType = function(el, runText, periode) {
+      this.runText = runText;
+      this.el = el;
+      this.loopNum = 0;
+      this.periode = parseInt(periode, 10) || 1000;
+      this.txt = ' ';
+      this.tick();
+      this.isDeleting = false;
+  };
+  textType.prototype.tick = function() {
+      var i = this.loopNum % this.runText.length;
+      var fullText = this.runText[i];
+      if (this.isDeleting) {
+          this.txt = fullText.substring(0, this.txt.length - 1);
+      } else {
+          this.txt = fullText.substring(0, this.txt.length + 1);
+      }
+
+      this.el.innerHTML = '<span class="rtx">' + this.txt + '</span>';
+      var that = this;
+      var dell = 10 - Math.random() + 50;
+      if (this.isDeleting) {
+          dell /= 1;
+      }
+      if (!this.isDeleting && this.txt === fullText) {
+          dell = this.periode;
+          this.isDeleting = true;
+      } else if (this.isDeleting && this.txt === '') {
+          this.isDeleting = false;
+          this.loopNum++;
+          dell = 500;
+      }
+      setTimeout(function() {
+          that.tick();
+      }, dell);
+  };
+  window.onload = function() {
+      var elements = document.getElementsByClassName('title_run');
+      for (var i = 0; i < elements.length; i++) {
+          var runText = elements[i].getAttribute('data-type');
+          var periode = elements[i].getAttribute('data-period');
+          if (runText) {
+              new textType(elements[i], JSON.parse(runText), periode);
+          }
+      }
+
+      var css = document.createElement('style');
+      css.type = "text/css";
+      css.innerHTML =
+          ".title_run > .rtx {border-right: 0.05em solid #fff;}";
+      document.body.appendChild(css);
+  };
+  </script>
 
 
 
