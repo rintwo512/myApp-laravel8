@@ -18,6 +18,7 @@ class ChartAcController extends Controller
     public function index(Request $request)
     {
 
+
         $kalTahun = DB::table('chartac')->select('tahun')->groupBy('tahun')->orderBy('tahun', 'DESC')->get()->count();
         $kal = intval(Chart::sum('total'));
 

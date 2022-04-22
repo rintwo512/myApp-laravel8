@@ -22,6 +22,7 @@ class AdminController extends Controller
     public function index()
     {
 
+
         return view('dataUsers.index', [
             'title' => 'Data Users',
             'dataUsers' => User::all()
@@ -82,23 +83,27 @@ class AdminController extends Controller
     public function show($id)
     {
 
-
         $user = User::find($id);
-        $getDataUpdate = Ac::where('user_updated', $user->name)->get();
-        $getDataUpdateCctv1 = CctvMonitor1::where('user_updated', $user->name)->get();
-        $getDataUpdateCctv2 = CctvMonitor2::where('user_updated', $user->name)->get();
-        $getDataUpdateCctv3 = CctvMonitor3::where('user_updated', $user->name)->get();
-        $getDataUpdateCctv4 = CctvMonitor4::where('user_updated', $user->name)->get();
+        $urlSeg = request()->segment(3);
+        if ($urlSeg != 1) {
+            $getDataUpdate = Ac::where('user_updated', $user->name)->get();
+            $getDataUpdateCctv1 = CctvMonitor1::where('user_updated', $user->name)->get();
+            $getDataUpdateCctv2 = CctvMonitor2::where('user_updated', $user->name)->get();
+            $getDataUpdateCctv3 = CctvMonitor3::where('user_updated', $user->name)->get();
+            $getDataUpdateCctv4 = CctvMonitor4::where('user_updated', $user->name)->get();
 
-        return view('dataUsers.dataUserCreate', [
-            'title' => 'User Activity',
-            'dataCreates' => $getDataUpdate,
-            'dataCctv1' => $getDataUpdateCctv1,
-            'dataCctv2' => $getDataUpdateCctv2,
-            'dataCctv3' => $getDataUpdateCctv3,
-            'dataCctv4' => $getDataUpdateCctv4,
-            'user' => $user
-        ]);
+            return view('dataUsers.dataUserCreate', [
+                'title' => 'User Activity',
+                'dataCreates' => $getDataUpdate,
+                'dataCctv1' => $getDataUpdateCctv1,
+                'dataCctv2' => $getDataUpdateCctv2,
+                'dataCctv3' => $getDataUpdateCctv3,
+                'dataCctv4' => $getDataUpdateCctv4,
+                'user' => $user
+            ]);
+        } else {
+            return back();
+        }
     }
 
     /**
@@ -124,6 +129,7 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         if ($request->isActive > 0 || $request->role > 0) {
             $data['is_active'] = $request->isActive;
             $data['role'] = $request->role;
@@ -137,10 +143,6 @@ class AdminController extends Controller
                 'user_id' => $id
             ]);
         }
-
-
-        // $data['is_active'] = $request->isActive;
-        // $data['role'] = $request->role;
 
         User::where('id', $id)->update($data);
         return redirect('dashboard/users');

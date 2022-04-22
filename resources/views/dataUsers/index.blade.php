@@ -31,7 +31,8 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach ($dataUsers as $user)                                      
+                  @foreach ($dataUsers as $user)
+                  @if ($user->id != 1)                                      
                   <tr id="iduser{{ $user->id }}">                    
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->nik }}</td>
@@ -72,6 +73,7 @@
                         </div>
                     </td>
                   </tr>
+                  @endif
                   @endforeach                 
                 </tbody>
                 <tfoot>
@@ -194,6 +196,7 @@
                 })                                 
           }
         </script>
+        
         
 
 @endsection       

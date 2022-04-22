@@ -445,5 +445,19 @@ function initMap(lat, long) {
 // routes map
 // style map
           </script>
+
+<script>
+  const queryString = window.location.href.split(/[s,]+/);
+  const last = queryString[queryString.length - 1].slice(1);
+  const queryString2 = window.location.href;
+  
+  if(last == queryString2){
+    console.log('sama');
+  }else{
+    console.log('tdk');
+  }
+
+
+</script>
       
 @endsection
