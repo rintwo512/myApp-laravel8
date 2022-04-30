@@ -119,7 +119,7 @@
           <div class="col-md-4">
             <label for="refrigerant" class="form-label">Refrigerant <span class="text-danger">*</span></label>
             <select class="form-select" id="refrigerant" required name="refrigerant">
-                <option value="{{ $ac->refrigerant }}" selected>R22</option>
+                <option value="{{ $ac->refrigerant }}" selected>{{ $ac->refrigerant }}</option>
                 <option disabled value="">--Select--</option>
                 <option value="R22">R22</option>
                 <option value="R32">R32</option>

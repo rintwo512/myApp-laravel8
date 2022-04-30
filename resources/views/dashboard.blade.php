@@ -318,6 +318,5 @@ new Chart(document.getElementById("chart7"), {
   </script>
 
 
-
 @endsection
 
