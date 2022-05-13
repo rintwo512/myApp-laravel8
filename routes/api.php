@@ -3,7 +3,8 @@
 use App\Models\Ac;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AcController;
+use App\Http\Controllers\AcApiController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,5 @@ use App\Http\Controllers\AcController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/airco', function () {
-    $data = Ac::all();
-    return response()->json($data);
-});
+Route::get('/airco', [AcApiController::class, 'index']);
+Route::get('/airco/detail/{id}', [AcApiController::class, 'details']);

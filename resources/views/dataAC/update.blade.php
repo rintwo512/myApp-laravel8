@@ -134,7 +134,7 @@
             <label for="current" class="form-label">Amper</label>
             <input type="text" class="form-control" name="current" id="current" value="{{ old('current', $ac->current) }}">            
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             <label for="voltage" class="form-label">Voltage <span class="text-danger">*</span></label>
             <select class="form-select" id="voltage" required name="voltage">
                 <option value="{{ $ac->voltage }}" selected>{{ $ac->voltage }}</option>
@@ -143,11 +143,26 @@
                 <option value="380Volt">380Volt</option>                
             </select>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             <label for="btu" class="form-label">Btu</label>
             <input type="text" class="form-control" name="btu" id="btu" value="{{ old('btu', $ac->btu) }}">
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
+            <label for="pipa" class="form-label">Pipa <small>(Liquid + Gas)</small></label>
+            <select class="form-select" id="pipa" required name="pipa">
+              <option value="{{ $ac->pipa }}" selected>{{ $ac->pipa }}</option>
+              <option disabled value="">--Select--</option>
+              <option value="1/4 + 3/8">1/4 + 3/8</option>
+              <option value="1/4 + 1/2">1/4 + 1/2</option>
+              <option value="1/4 + 5/8">1/4 + 5/8</option>
+              <option value="3/8 + 5/8">3/8 + 5/8</option>
+              <option value="3/8 + 3/4">3/8 + 3/4</option>
+              <option value="1/2 + 3/4">1/2 + 3/4</option>
+              <option value="1/2 + 7/8">1/2 + 7/8</option>
+              <option value="1/2 + 1 1/2">1/2 + 1 1/2</option>
+          </select>
+          </div>
+          <div class="col-md-3">
             <label for="status" class="form-label">Status <span class="text-danger">*</span></label>
             <select class="form-select" id="status" required name="status">
                 <option value="{{ $ac->status }}" selected>{{ $ac->status }}</option>

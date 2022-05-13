@@ -23,7 +23,7 @@
           </div>
           <div class="col-md-4">
             <label for="petugas_pemasangan" class="form-label">Petugas Pemasangan</label>
-            <input type="text" class="form-control text-capitalize" id="petugas_pemasangan" name="petugas_pemasangan" value="{{ old('petugas_pemasangan') }}">
+            <input type="text" class="form-control" id="petugas_pemasangan" name="petugas_pemasangan" value="{{ old('petugas_pemasangan') }}">
           </div>
           <div class="col-md-4">
             <label for="tgl_maintenance" class="form-label">Tanggal Maintenance</label>
@@ -41,7 +41,7 @@
           </div>
           <div class="col-md-4">
             <label for="assets" class="form-label">Assets</label>
-            <input type="text" class="form-control text-capitalize" name="assets" id="assets" value="{{ old('assets') }}">            
+            <input type="text" class="form-control" name="assets" id="assets" value="{{ old('assets') }}">            
           </div>
           <div class="col-md-4">
             <label for="merk" class="form-label">Merk <span class="text-danger">*</span></label>
@@ -73,7 +73,7 @@
           </div>
           <div class="col-md-4">
             <label for="ruangan" class="form-label">Ruangan <span class="text-danger">*</span></label>
-            <input type="text" class="form-control text-capitalize @error('ruangan') is-invalid @enderror" name="ruangan" id="ruangan" value="{{ old('ruangan') }}" required>            
+            <input type="text" class="form-control @error('ruangan') is-invalid @enderror" name="ruangan" id="ruangan" value="{{ old('ruangan') }}" required>            
           </div>
           <div class="col-md-4">
             <label for="type" class="form-label">Type <span class="text-danger">*</span></label>
@@ -119,7 +119,7 @@
             <label for="current" class="form-label">Amper</label>
             <input type="text" class="form-control" name="current" id="current" value="{{ old('current') }}">            
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             <label for="voltage" class="form-label">Voltage <span class="text-danger">*</span></label>
             <select class="form-select" id="voltage" required name="voltage">
                 <option selected disabled value="">--Select--</option>
@@ -127,11 +127,25 @@
                 <option value="380Volt">380Volt</option>                
             </select>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             <label for="btu" class="form-label">Btu</label>
             <input type="text" class="form-control" name="btu" id="btu" value="{{ old('btu') }}">
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
+            <label for="pipa" class="form-label">Pipa <small>(Liquid + Gas)</small></label>
+            <select class="form-select" id="pipa" required name="pipa">
+              <option selected disabled value="">--Select--</option>
+              <option value="1/4 + 3/8">1/4 + 3/8</option>
+              <option value="1/4 + 1/2">1/4 + 1/2</option>
+              <option value="1/4 + 5/8">1/4 + 5/8</option>
+              <option value="3/8 + 5/8">3/8 + 5/8</option>
+              <option value="3/8 + 3/4">3/8 + 3/4</option>
+              <option value="1/2 + 3/4">1/2 + 3/4</option>
+              <option value="1/2 + 7/8">1/2 + 7/8</option>
+              <option value="1/2 + 1 1/2">1/2 + 1 1/2</option>
+          </select>
+          </div>
+          <div class="col-md-3">
             <label for="status" class="form-label">Status <span class="text-danger">*</span></label>
             <select class="form-select" id="status" required name="status">
                 <option selected disabled value="">--Select--</option>

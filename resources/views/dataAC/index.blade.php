@@ -110,6 +110,7 @@
                             data-currentac="{{ $ac->current }}"
                             data-voltageac="{{ $ac->voltage }}"
                             data-btuac="{{ $ac->btu }}"
+                            data-pipaac="{{ $ac->pipa }}"
                             data-statusac="{{ $ac->status }}"
                             data-catatanac="{{ $ac->catatan }}"
                             data-kerusakanac="{{ $ac->kerusakan }}"
@@ -169,19 +170,19 @@
                         <li class="list-group-item d-flex justify-content-between align-items-center">Di ubah <i class="bi bi-arrow-right"></i> <strong id="detailUpdatedAC"></strong>
                         <li class="list-group-item d-flex justify-content-between align-items-center">Tanggal Pemasangan <i class="bi bi-arrow-right"></i> <strong id="detailTanggaPemasanganAC"></strong>
                         </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">Petugas Pemasangan <i class="bi bi-arrow-right"></i> <strong id="detailPetugasPemasanganAC"></strong>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Petugas Pemasangan <i class="bi bi-arrow-right"></i> <strong id="detailPetugasPemasanganAC" class="text-capitalize"></strong>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">Tanggal Maintenance <i class="bi bi-arrow-right"></i> <strong id="detailTglMaintenanceAC"></strong>
                         </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">Label <i class="bi bi-arrow-right"></i> <strong id="detailLabelAC"></strong>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Label <i class="bi bi-arrow-right"></i> <strong id="detailLabelAC" class="text-capitalize"></strong>
                         </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">Assets <i class="bi bi-arrow-right"></i> <strong id="detailAssetsAC"></strong>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Assets <i class="bi bi-arrow-right"></i> <strong id="detailAssetsAC" class="text-capitalize"></strong>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">Wing <i class="bi bi-arrow-right"></i> <strong id="detailWingAC"></strong>
                         </li>                        
                         <li class="list-group-item d-flex justify-content-between align-items-center">Lantai <i class="bi bi-arrow-right"></i> <strong id="detailLantaiAC"></strong>
                         </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">Ruangan <i class="bi bi-arrow-right"></i> <strong id="detailRuanganAC"></strong>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Ruangan <i class="bi bi-arrow-right"></i> <strong id="detailRuanganAC" class="text-capitalize"></strong>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">Merk <i class="bi bi-arrow-right"></i> <strong id="detailMerkAC"></strong>
                         </li>
@@ -193,13 +194,15 @@
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">Refrigerant <i class="bi bi-arrow-right"></i> <strong id="detailRefrigerantAC"></strong>
                         </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">Product <i class="bi bi-arrow-right"></i> <strong id="detailProductAC"></strong>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Product <i class="bi bi-arrow-right"></i> <strong id="detailProductAC" class="text-capitalize"></strong>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">Amper <i class="bi bi-arrow-right"></i> <strong id="detailAmperAC"></strong>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">Voltage <i class="bi bi-arrow-right"></i> <strong id="detailVoltageAC"></strong>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">Btu <i class="bi bi-arrow-right"></i> <strong id="detailBtuAC"></strong>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Pipa Liquid + Gas <i class="bi bi-arrow-right"></i> <strong id="detailPipaAC"></strong>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">Status <i class="bi bi-arrow-right"></i> <strong id="detailStatusAC"></strong>
                         </li>
@@ -227,7 +230,9 @@
                           </div>
                         </div>
                         <div id="btn-ac-error">
-                             
+                          <li class="list-group-item d-flex justify-content-center align-items-center">
+                            <a href="#" class="btn btn-danger btn-sm">Lihat Data Error</a>
+                          </li>
                         </div>                        
                       </ul>
                     {{-- </div> --}}
@@ -325,8 +330,9 @@
                               
         </script>
         <script>          
-
+        
           $(document).on('click', '#btnDetailAC', function() {
+            
               const label = $(this).data('labelac');
               const assets = $(this).data('assetsac');
               const wingac = $(this).data('wingac');
@@ -341,6 +347,7 @@
               const currentac = $(this).data('currentac');
               const voltageac = $(this).data('voltageac');
               const btuac = $(this).data('btuac');
+              const pipaac = $(this).data('pipaac');
               const statusac = $(this).data('statusac');
               const catatanac = $(this).data('catatanac');
               const kerusakanac = $(this).data('kerusakanac');
@@ -371,15 +378,7 @@
                 $('#detailTglMaintenanceAC').html(tanggalmaint);
                 
               }
-              let tombolError = '';
-              if(statusac == 'Rusak'){
-                
-                             
-                tombolError += `<li class="list-group-item d-flex justify-content-center align-items-center">
-                            <a href="" class="btn btn-danger btn-sm">Lihat Data Error</a>
-                          </li>`;
-                document.querySelector('#btn-ac-error').innerHTML = tombolError;
-              }
+              
               
               $('#detailTanggaPemasanganAC').html(tanggalpemasanganac);
               $('#detailPetugasPemasanganAC').html(petugaspemsanganac);
@@ -396,11 +395,13 @@
               $('#detailProductAC').html(productac);
               $('#detailAmperAC').html(currentac);
               $('#detailVoltageAC').html(voltageac);
-              $('#detailBtuAC').html(btuac);   
+              $('#detailBtuAC').html(btuac);
+              $('#detailPipaAC').html(pipaac);
               $('#detailStatusAC').html(statusac);           
               $('#detailCatatanAC').html(catatanac); 
               $('#detailKerusakanAC').html(kerusakanac); 
-          });          
+          });
+           
         </script>
         <script>
 
@@ -526,5 +527,7 @@
                       </tr>`;
             }
           </script>
+
+         
 
 @endsection       
