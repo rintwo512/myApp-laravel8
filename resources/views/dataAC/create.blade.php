@@ -133,7 +133,7 @@
           </div>
           <div class="col-md-3">
             <label for="pipa" class="form-label">Pipa <small>(Liquid + Gas)</small></label>
-            <select class="form-select" id="pipa" required name="pipa">
+            <select class="form-select" id="pipa" name="pipa">
               <option selected disabled value="">--Select--</option>
               <option value="1/4 + 3/8">1/4 + 3/8</option>
               <option value="1/4 + 1/2">1/4 + 1/2</option>

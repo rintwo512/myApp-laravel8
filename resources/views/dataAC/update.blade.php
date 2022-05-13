@@ -149,7 +149,7 @@
           </div>
           <div class="col-md-3">
             <label for="pipa" class="form-label">Pipa <small>(Liquid + Gas)</small></label>
-            <select class="form-select" id="pipa" required name="pipa">
+            <select class="form-select" id="pipa" name="pipa">
               <option value="{{ $ac->pipa }}" selected>{{ $ac->pipa }}</option>
               <option disabled value="">--Select--</option>
               <option value="1/4 + 3/8">1/4 + 3/8</option>
