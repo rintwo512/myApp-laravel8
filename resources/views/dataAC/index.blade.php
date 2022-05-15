@@ -29,8 +29,9 @@
                 </nav>
               </div>              
             </div>            
-            
+            @can('admin')              
             <a href="/ac/create" class="mb-0 text-uppercase btn btn-primary btn-sm">Tambah Data</a>
+            @endcan
 
             <a href="/ac/export" class="mb-0 text-uppercase btn btn-secondary btn-sm">Export</a>
 
