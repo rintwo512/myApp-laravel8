@@ -139,3 +139,9 @@ Route::get('/settings/profile', [SettingsController::class, 'index'])->middlewar
 Route::post('/settings/profile/{id}', [SettingsController::class, 'updateUserAccount'])->middleware('auth');
 Route::get('/settings/changepassword', [SettingsController::class, 'changePassword'])->middleware('auth');
 Route::post('/settings/changepassword/{id}', [SettingsController::class, 'postChangePassword'])->middleware('auth');
+
+Route::get('/ac/koderror', function () {
+    return view('koderror', [
+        'title' => 'All kode error'
+    ]);
+});

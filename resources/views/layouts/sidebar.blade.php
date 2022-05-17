@@ -48,7 +48,7 @@
             <div class="list-group list-group-flush">
               <div class="list-group-item">
                 <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-0">Data</h5>
+                  <h5 class="mb-0">Database</h5>
                 </div>                    
               </div>
               <a href="/ac" class="list-group-item {{ Request::is('ac*') ? 'active' : '' }}"><i class="bi bi-house-door"></i> Data AC</a>

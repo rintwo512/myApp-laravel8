@@ -30,6 +30,9 @@ class LoginController extends Controller
 
         $users = User::where('nik', $nik)->get()->toArray();
 
+        // if ($users[0]['status_login'] == 'online') {
+        //     return back()->with('loginError', 'User is online!');
+        // }
 
         if ($users) {
 

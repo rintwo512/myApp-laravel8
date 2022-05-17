@@ -153,6 +153,193 @@
           </div>
         </div>
 
+        <h6 class="mb-0 text-uppercase">Karakteristik jenis-jenis freon</h6>
+            <hr/>
+            <div class="card">
+              <div class="card-body">
+                <p class="mt-2">Masing-masing dari tiga jenis freon tersebut memiliki perbedaan pendinginan yang diukur dengan istilah cooling index. Semakin tinggi angka cooling index-nya, semakin cepat proses pendinginannya.</p>
+                <table class="table table-bordered mb-0">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Jenis Freon</th>
+                      <th>ODP</th>
+                      <th>GWP</th>
+                      <th>Cooling Index</th>
+                      <th>Flammability</th>
+                      <th>Standar PSi</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>R22</td>
+                      <td>0.05</td>
+                      <td>1810</td>
+                      <td>100</td>
+                      <td><i class="bi bi-x"></i></td>
+                      <td>70 - 80</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>R32</td>
+                      <td>-</td>
+                      <td>675</td>
+                      <td>150</td>
+                      <td><i class="bi bi-check"></i></td>
+                      <td>150 - 160</td>
+                    </tr> 
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>R410</td>
+                      <td>-</td>
+                      <td>2090</td>
+                      <td>92</td>
+                      <td><i class="bi bi-x"></i></td>
+                      <td>140 - 150</td>
+                    </tr> 
+                  </tbody>
+                </table>                
+              </div>
+              <div class="row">
+              <div class="col-md-6">
+              <ul>
+                <h6>Keterangan : </h6>
+                <li>ODP merupakan Ozone Depletion Potential atau potensi perusakan ozon</li>
+                <li>GWP merupakan Global Warming Potential atau potensi global warming</li>
+                <li>Cooling index merupakan tingkat pendinginan freon</li>
+                <li>Flammability merupakan tingkat kemudahan terbakar freonnya</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul>
+                <h6>Kesimpulan : </h6>
+                <li>Freon R32 jauh lebih ramah lingkungan dibanding freon R410a karena tingkat GWP-nya lebih rendah dibandingkan freon R22 dan freon R410a</li>
+                <li>Freon R32 memiliki cooling index yang lebih tinggi dibandingkan dengan freon R22 dan freon R410a</li>
+                <li>Freon R32 memiliki potensi mudah terbakar dibandingkan dengan freon R22 dan freon R410a, namun untuk tingkat flammability-nya sedikit rendah</li>
+              </ul>
+            </div>
+          </div>
+            </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <h6 class="mb-0 text-uppercase">Ukuran Pipa AC Daikin</h6>
+        <hr/>
+        <div class="card">
+          <div class="card-body">
+            <table class="table table-sm mb-0">
+              <thead>
+                <tr>                                  
+                  <th scope="col">PK(Paard Kracht)</th>
+                  <th scope="col">Ukuran Pipa(Liquid & Gas)</th>
+                </tr>
+              </thead>
+              <tbody class="ukuran-daikin-body">
+                               
+              </tbody>
+            </table>
+          </div>
+        </div>
+        </div>
+        <div class="col-md-6">
+          <h6 class="mb-0 text-uppercase">Ukuran Pipa AC Umum</h6>
+      <hr/>
+      <div class="card">
+        <div class="card-body">
+          <table class="table table-sm mb-0">
+            <thead>
+              <tr>                                  
+                <th scope="col">PK(Paard Kracht)</th>
+                <th scope="col">Ukuran Pipa(Liquid & Gas)</th>
+              </tr>
+            </thead>
+            <tbody class="ukuran-umum-body">
+              <tr>                 
+                <td></td>                
+                <td></td>                
+              </tr>               
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <h6 class="mb-0 text-uppercase">Ukuran Capasitor AC</h6>
+        <hr/>
+        <div class="card">
+          <div class="card-body">
+            <table class="table table-sm mb-0">
+              <thead>
+                <tr>                                  
+                  <th scope="col">PK(Paard Kracht)</th>
+                  <th scope="col">uF(Micro Farad)</th>
+                </tr>
+              </thead>
+              <tbody class="kapasitor-body">
+                               
+              </tbody>
+            </table>
+          </div>
+        </div>
+        </div>
+        <div class="col-md-6">          
+      <div class="card">
+        <div class="card-body">
+          <div>
+            <h5 class="card-title">Penyebab Kapasitor AC Rusak</h5>
+          </div>
+          <ol>
+            <li>Sirkuit sistem yang terlalu panas</li>
+            <li>Korsleting dalam sistem pendingin</li>
+            <li>Lonjakan daya</li>
+            <li>Sambaran petir</li>
+            <li>Suhu luar ruangan yang sangat tinggi</li>
+            <li>umur dari kapasitor tersebut</li>
+          </ol>
+        </div>
+      </div>
+      </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">Cara Memeriksa Kondisi Kapasitor AC</h5>
+                </div>
+                <ol>
+                  <li>Konsletkan terlebih dulu untuk membuang sisa muatan listrik. Caranya, hubungkan kedua socket kapasitor menggunakan obeng.</li>&nbsp
+                  <li>Selanjutnya, periksa menggunakan muliti tester. Caranya, posisikan multi tester pada satuan oHm. lalu hubungkan kabel merah pada socket kapasitor, dan juga kabel yang berwarna hitam pada socket satunya.</li>&nbsp
+                  <li>Jika jarum pada multi tester jika menunjukan pergerakan ke atas kemudian balik lagi ke bawah, itu berarti kapasitor bagus. Namun jika jarum multitester tidak ada tanda pergerakan sama sekali, bisa jadi kapasitor rusak atau lemah.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">              
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">Cara Mencari Socket CSR pada kompresor AC</h5>
+                </div>
+                <ol>
+                  <li>Posisikan selector multitester pada posisi 1 kilo ohm. Terminal pertama yang akan kita cari adalah terminal <strong class="text-danger">C</strong>, dengan cara mencari hambatan yang paling besar dari ketiga terminal yang ada pada kompresor. Setelah hambatan yang paling besar sudah di temukan maka terminal yang tidak diukur adalah terminal <strong class="text-danger">C</strong></li>&nbsp
+                  <li>Selanjutnya, cari hambatan yang sedang dengan cara tempatkan salah satu jack di terminal <strong class="text-danger">C</strong>. Kemudian tempatkan jack yang satunya lagi ke salah satu terminal pada kompresor dan cari hambatan yang sedang. Setelah hambatan yang sedang ditemukan maka terminal tersebut adalah <strong class="text-danger">S</strong></li>&nbsp
+                  <li>Sekarang tempatkan salah satu jack ke terminal <strong class="text-danger">C</strong> dan jack yang satunya lagi ke terminal yang belum kita temukan, harusnya hambatannya paling kecil dari terminal <strong class="text-danger">C</strong> ke <strong class="text-danger">S</strong></li>
+                </ol>
+                <img style="width: 185px;" src="/assets/images/csr.png" class="card-img-top">
+                <img style="width: 185px;" src="/assets/images/csr1.png" class="card-img-top">
+                <img style="width: 185px;" src="/assets/images/csr2.png" class="card-img-top">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
 
         {{-- Modal Detail --}}
 
@@ -232,7 +419,7 @@
                         </div>
                         <div id="btn-ac-error">
                           <li class="list-group-item d-flex justify-content-center align-items-center">
-                            <a href="#" class="btn btn-danger btn-sm">Lihat Data Error</a>
+                            <a href="/ac/koderror" class="btn btn-danger btn-sm">Lihat Data Error</a>
                           </li>
                         </div>                        
                       </ul>
@@ -527,6 +714,43 @@
                       <td>${e.user_updated}</td>
                       </tr>`;
             }
+          </script>
+          <script>
+            fetch('/assets/kapasitor-ac.json')
+              .then(success => success.json())
+              .then(result => {
+                let cardKap = '';
+                result.forEach(e => {
+                  cardKap += `<tr>                 
+                                <td>${e.pk}</td>
+                                <td>${e.uf}</td>
+                              </tr>`;
+                });
+                document.querySelector('.kapasitor-body').innerHTML = cardKap;
+              });
+          </script>
+          <script>
+            fetch('/assets/ukuran-pipa-ac.json')
+              .then(success => success.json())
+              .then(result => {
+                let cardUmum = '';
+                result.umum.forEach(p => {
+                  cardUmum += `<tr>                 
+                                <td>${p.pk}</td>
+                                <td>${p.pipa}</td>
+                              </tr>`;
+                });
+                document.querySelector('.ukuran-umum-body').innerHTML = cardUmum;
+
+                let cardDaikin = '';
+                result.daikin.forEach(d => {
+                  cardDaikin += `<tr>                 
+                                <td>${d.pk}</td>
+                                <td>${d.pipa}</td>
+                              </tr>`;
+                });
+                document.querySelector('.ukuran-daikin-body').innerHTML = cardDaikin;
+              });
           </script>
 
          
