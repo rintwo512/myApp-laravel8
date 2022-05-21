@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 
-@section('content')
+@section('content')   
 <style>
   .tb-ac tbody tr:hover{
     cursor: pointer;
@@ -153,6 +153,8 @@
           </div>
         </div>
 
+
+        {{-- Karakter Freon --}}
         <h6 class="mb-0 text-uppercase">Karakteristik jenis-jenis freon</h6>
             <hr/>
             <div class="card">
@@ -221,6 +223,233 @@
             </div>
           </div>
             </div>
+          {{-- End Karater Freon --}}
+
+          {{-- BTU/h --}}
+          <h6 class="mb-0 text-uppercase">Menentukan Kapasitas AC Dengan BTU</h6>
+            <hr/>
+            <div class="card">
+              <div class="card-body">
+                <p class="mt-2">BTU/h (British Thermal Unit per hour), Bisa dikatakan daya pendingin ac, BTU menyatakan kemampuan mengurangi panas / mendinginkan ruangan dengan luas dan kondisi tertentu selama 1 jam. Daya listrik (Watt), Besarnya tenaga yang dibutuhkan ketika AC dalam kondisi menyala.</p>
+                <div class="row">
+                  <div class="col-md-6">                  
+                    <table class="table table-bordered mb-0">
+                      <thead>
+                        <tr>                      
+                          <th>Kapasitas AC</th>
+                          <th>BTU/h</th>                      
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>                      
+                          <td>1/2 PK</td>
+                          <td>5.000</td>                      
+                        </tr>
+                        <tr>                      
+                          <td>3/4 PK</td>
+                          <td>7.000</td>                      
+                        </tr>
+                        <tr>                      
+                          <td>1 PK</td>
+                          <td>9.000</td>                      
+                        </tr>
+                        <tr>                      
+                          <td>1,5 PK</td>
+                          <td>12.000</td>                      
+                        </tr>
+                        <tr>                      
+                          <td>2 PK</td>
+                          <td>18.000</td>                      
+                        </tr>
+                        <tr>                      
+                          <td>2,5 PK</td>
+                          <td>24.000</td>                      
+                        </tr>
+                        <tr>                      
+                          <td>3 PK</td>
+                          <td>27.000</td>                      
+                        </tr>
+                        <tr>                      
+                          <td>5 PK</td>
+                          <td>45.000</td>                      
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="col">
+                  <div class="col-md-12">
+                    <h6>Rumus : Panjang(p) x Lebar(L) x Tinggi(t) x 200/500</h6>
+                    <span>Contoh :</span>
+                    <small>Sebuah kamar dengan panjang 4m, lebar 3m, tinggi 3m dan di huni oleh 2 orang. Kapasitas AC yang ideal untuk kamar tersebut adalah : 4 x 3 x 3 x 200 = 7200 Btu/h = 1pk</small>
+                  </div>
+                  <div class="col-md-12 mt-3">
+                    <h6>Keterangan :</h6>
+                    <span>Satuan 200 digunakan apabila ruangan terisi dengan sedikit orang misalnya saja kurang dari 5 orang didalamnya. Bila lebih, dan dalam kamar tersebut banyak barang elektronik yang menghasilkan panas kamu harus mengkalikan jumlah tersebut dengan 500.</span>                   
+                  </div>
+                  <div class="col-md-12 mt-3">
+                    <h6>Kesimpulan :</h6>
+                    <span>Selain cara menghitung BTU AC, ada beberapa poin yang dipertimbangkan ketika membeli AC. Sebagai contoh, posisi rumah perlu dilihat, apakah menghadap ke utara atau ke barat. Pasalnya, rumah yang menghadap ke barat akan jauh lebih panas. Semakin banyak kaca, maka sinar matahari semakin mudah masuk ke dalam ruangan. Alhasil, AC bekerja lebih keras untuk mendinginkan ruangan tersebut.</span>                   
+                  </div>
+                </div>
+                </div>                
+              </div>              
+            </div>
+          {{-- End BTU/h --}}
+
+           {{-- BTU/h --}}
+        <div class="col-md-6">
+           <div class="card">
+             <div class="card-body">
+              <div class="pasang-ac-custom-column" id="pasang_ac_column_tipe">
+                <div style="margin-bottom:0px;" class="pasang-ac-value-ladder">
+                    <div class="row mx-auto">
+        
+                        <div>
+                            <div style="margin:0px 0px 0px 5px;" class="onoffswitch">
+                                <input type="checkbox" class="form-check-input" name="on_off_advanced" class="onoffswitch-checkbox" id="on_off_advanced">
+                                <label class="onoffswitch-label" style="height:25px;" for="on_off_advanced" class="form-check-label">
+                                  Advanced mode
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </div>
+                        </div>                       
+                    </div>
+                         
+                    <div class="row ml-20" style="font-size:26px;">
+                        <div class="col-md-4 ml-100" style="cursor:pointer;color:#4bcf16;" id="pk_range_minus">
+                            -
+                        </div>
+                        <div class="col-md-4" style="color:#4bcf16;" id="pasang_ac_range_output">
+                        </div>
+                        <div class="col-md-4" style="cursor:pointer;color:#4bcf16;" id="pk_range_plus">
+                            +
+                        </div>
+                    </div>
+        
+                    <div class="row">
+                        <div style="margin:10px 0px" class="slidecontainer">
+                            <input type="range" min="4" max="100" value="4" class="form-range" id="myRange">
+                        </div>
+                       
+                    </div>
+        
+                    <div style="display:none" id="advanced_mode_container">
+        
+                        <div style="text-align:left;" class="pasang-ac-custom-description">
+                            <diV>Geser kiri atau kanan slider dibawah ini sesuai tinggi plafon anda</diV>
+                        </div>
+        
+                        <div style="margin-bottom:20px;font-size:26px;color:#4bcf16;font-weight:bold;text-align:center;"
+                            id="pasang_ac_range_output_plafon">
+                        </div>
+                        <div class="row">
+                            <div style="margin:10px 0px" class="slidecontainer">
+                                <input type="range" min="2.0" max="10.0" step="0.1" value="3" class="form-range"
+                                    id="myRange_plafon">
+                            </div>                           
+                        </div>
+        
+                        <div style="text-align:left">
+                            <div class="advanced-column">
+                                <div class="pasang-ac-value-ladder-title"><b>Suhu Yang Diinginkan ?</b></div>
+                                <label><input type="radio" class="advanced-radio" name="radio_suhu" value="low" />
+                                    25-26 C &nbsp;</label>
+                                <label><input type="radio" class="advanced-radio" name="radio_suhu" value="medium" />
+                                    23-24 C (Suhu BCA) &nbsp;</label>
+                                <label><input type="radio" class="advanced-radio" name="radio_suhu" value="high" />
+                                    > 23 C</label>
+                            </div>
+        
+                            <div class="advanced-column">
+                                <div class="pasang-ac-value-ladder-title"><b>Berapa orang (per 10m2) ?</b></div>
+                                <label><input type="radio" class="advanced-radio" name="radio_orang" value="low" />
+                                    1-2 &nbsp;</label>
+                                <label><input type="radio" class="advanced-radio" name="radio_orang" value="medium" />
+                                    3-6 &nbsp;</label>
+                                <label><input type="radio" class="advanced-radio" name="radio_orang" value="high" />
+                                    10</label>
+                            </div>
+        
+                            <div class="advanced-column">
+                                <div class="pasang-ac-value-ladder-title"><b>Aktivitas ?</b></div>
+                                <label><input type="radio" class="advanced-radio" name="radio_aktivitas" value="low" />
+                                    Duduk &nbsp;</label>
+                                <label><input type="radio" class="advanced-radio" name="radio_aktivitas" value="medium" />
+                                    Office &nbsp;</label>
+                                <label><input type="radio" class="advanced-radio" name="radio_aktivitas" value="high" />
+                                    Gerak Fisik</label>
+                            </div>
+        
+                            <div class="advanced-column">
+                                <div class="pasang-ac-value-ladder-title"><b>Menghadap ?</b></div>
+                                <label><input type="radio" class="advanced-radio" name="radio_arah" value="low" />
+                                    Utara, Selatan &nbsp;</label>
+                                <label><input type="radio" class="advanced-radio" name="radio_arah" value="medium" />
+                                    Tenggara,Timur Laut, Barat Daya, Barat Laut
+                                    &nbsp;</label>
+                                <label><input type="radio" class="advanced-radio" name="radio_arah" value="high" />
+                                    Barat, Timur</label>
+                            </div>
+        
+                            <div class="advanced-column">
+                                <div class="pasang-ac-value-ladder-title"><b>Jenis Lampu ?</b></div>
+                                <label><input type="radio" class="advanced-radio" name="radio_lampu" value="low" />
+                                    LED &nbsp;</label>
+                                <label><input type="radio" class="advanced-radio" name="radio_lampu" value="medium" />
+                                    Neon &nbsp;</label>
+                                <label><input type="radio" class="advanced-radio" name="radio_lampu" value="high" />
+                                    Spot Light</label>
+                            </div>
+        
+                            <div class="advanced-column">
+                                <div class="pasang-ac-value-ladder-title"><b>Jam Penggunaan ?</b></div>
+                                <label><input type="radio" class="advanced-radio" name="radio_hour" value="low" />
+                                    Malam &nbsp;</label>
+                                <label><input type="radio" class="advanced-radio" name="radio_hour" value="medium" />
+                                    Pagi &nbsp;</label>
+                                <label><input type="radio" class="advanced-radio" name="radio_hour" value="high" />
+                                    Sepanjang Hari</label>
+                            </div>
+        
+                            <div class="advanced-column">
+                                <div class="pasang-ac-value-ladder-title"><b>Jenis Kaca ?</b></div>
+                                <label><input type="radio" class="advanced-radio" name="radio_glass" value="low" />
+                                    Low-E Double Glass &nbsp;</label>
+                                <label><input type="radio" class="advanced-radio" name="radio_glass" value="medium" />
+                                    Double Glass &nbsp;</label>
+                                <label><input type="radio" class="advanced-radio" name="radio_glass" value="high" />
+                                    Clear</label>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="btn btn-primary hitung-button pasang-ac-button">
+                        Hitung
+                    </div>
+       
+                </div>
+            </div>
+        
+            <div style="display:none" class="pasang-ac-custom-column" id="pasang_ac_custom_column_result">
+                <div style="text-align:left;margin-bottom:0px;"" class=" pasang-ac-value-ladder">                          
+                    <div style="font-size:24px;" class="pasang-ac-value-ladder-title">
+                        <b>Daya : <span style="color:#4bcf16" class="count" id="count_btu"></span> Btu/h</b>
+                    </div>
+                    <div id="pk_result" style="font-size:24px;display:none" class="pasang-ac-value-ladder-title">
+                        <b>Kebutuhan : <span style="color:#4bcf16" id="count_pk"></span> PK</b>
+                    </div>        
+                    <div
+                        style="border-radius: 5px;margin-bottom:10px;padding:5px 10px;background-color:#d9edf7;color:#3a87ad;border-color:#bce8f1">
+                        Perhitungan ini didasarkan pada kamar rumah tertutup plafon max 3m. Untuk ruangan
+                        lainnya yang sering dibuka tutup kami sarankan tambahkan 10% dari luas ruangan anda.
+                    </div>                                                
+                </div>
+            </div>                           
+             </div>              
+           </div>
+        </div>
+         {{-- End BTU/h --}}
 
         <div class="row">
           <div class="col-md-6">
@@ -478,7 +707,8 @@
 
 
         <script src="/assets/js/jquery.min.js"></script>
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>                
+        <script src="{{asset('assets/plugins/flickity/flickity.pkgd.min.js')}}"></script>
         <script>
           const flashSuccess = document.querySelector('.flash-success');
           const flashNotif = flashSuccess.dataset.success;          
@@ -752,6 +982,189 @@
                 document.querySelector('.ukuran-daikin-body').innerHTML = cardDaikin;
               });
           </script>
+          <script>
+
+            /* Javascript Function for Formatting Number */
+            function formatNumber(num) {
+                return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
+            }
+            
+            $('.pk-calculator-combination').click(function () {
+    
+                $('#hidden_combination_selection').val(combination_selection);    
+            });
+    
+            var slider = document.getElementById("myRange");
+    
+            var output = document.getElementById("pasang_ac_range_output");
+            output.innerHTML = slider.value + ' m2';
+            slider.oninput = function () {
+                output.innerHTML = this.value + ' m2';
+            }
+    
+            var slider_plafon = document.getElementById("myRange_plafon");
+            var output_plafon = document.getElementById("pasang_ac_range_output_plafon");
+            output_plafon.innerHTML = slider_plafon.value + ' m';
+            slider_plafon.oninput = function () {
+                output_plafon.innerHTML = this.value + ' m';
+            }
+    
+            $('#on_off_advanced').change(function () {
+                if ($(this).prop('checked')) {
+                    $('#advanced_mode_container').show();
+                } else {
+                    $('#advanced_mode_container').hide();
+                }
+            });
+    
+    
+    
+            $('.slick-brand').flickity({
+                cellAlign: 'left',
+                contain: true,
+                freeScroll: false,
+                prevNextButtons: true,
+                pageDots: false
+            });
+    
+            function convert_pk(pk) {
+                if (pk == '0.5 PK') {
+                    pk = '1/2 PK';
+                } else if (pk == '1.5 PK') {
+                    pk = '1,5 PK';
+                }
+                return pk;
+            }
+    
+    
+    
+            $('.hitung-button').on('click', function () {
+                var luas = slider.value;
+                var type = '';
+    
+                var radio_low = 0;
+                var radio_medium = 0;
+                var radio_high = 0;
+    
+                $('.advanced-radio:checked').each(function () {
+                    var radio_value = $(this).val();
+                    console.log(radio_value);
+                    if (radio_value == 'low') {
+                        radio_low += 1;
+                    } else if (radio_value == 'medium') {
+                        radio_medium += 1;
+                    } else if (radio_value == 'high') {
+                        radio_high += 1;
+                    }
+                });
+    
+                var heat_load_calculation = 0;
+                var flag = '';
+    
+                if (radio_low == radio_medium && radio_medium == radio_high) {
+                    flag = 'low';
+                } else if (radio_low > radio_medium) {
+                    flag = 'low';
+                } else {
+                    flag = 'medium';
+                    if (radio_medium > radio_high) {
+                        flag = 'medium';
+                    } else {
+                        flag = 'high';
+                    }
+                }
+    
+                if (flag == 'low') {
+                    heat_load_calculation = 537;
+                } else if (flag == 'medium') {
+                    heat_load_calculation = 591;
+                } else if (flag == 'high') {
+                    heat_load_calculation = 698;
+                }
+    
+    
+                $('.hide-vika-recommendation').hide();
+                $('#pk_result').hide();
+                $('.check-button').hide();
+                $('#pasang_ac_custom_column_recommendation').hide();
+                var plafon = slider_plafon.value;
+                var plafon_coefficient = plafon / 3;
+                var btu = Math.ceil(luas * heat_load_calculation * plafon_coefficient);
+                var pk = 0;
+                var spec_value = '';
+                var url_link = '';
+                $('#count_btu').html(btu);
+    
+                //Menghitung kebutuhan PK
+                if (btu <= 5500) {
+                    pk = '1/2';
+                } else if (btu > 5500 & btu <= 7500) {
+                    pk = '3/4';
+                } else if (btu > 7500 & btu <= 9500) {
+                    pk = '1';
+                } else if (btu > 9500 & btu <= 12500) {
+                    pk = '1,5';
+                } else if (btu > 12500 & btu <= 18500) {
+                    pk = '2';
+                } else if (btu > 18500 & btu <= 24000) {
+                    pk = '2,5';
+                } else {
+                    pk = Math.ceil(btu / 9000 * 2) / 2;
+                }
+    
+    
+    
+                $('#count_pk').html(pk);
+                $('#pasang_ac_custom_column_result').show();
+    
+    
+    
+    
+    
+    
+                $('.count').each(function () {
+                    $(this).prop('Counter', 0).animate({
+                        Counter: $(this).text()
+                    }, {
+                        duration: 2000,
+                        easing: 'swing',
+                        step: function (now) {
+                            $(this).text(Math.ceil(now).toLocaleString('id'));
+                        },
+                        complete: function () {
+                            $('#pk_result').fadeIn();
+                            $('html, body').animate({
+                                scrollTop: $('#pk_calculator_result_title').offset().top - 100
+                            }, 'slow');
+                        }
+                    });
+                });
+            });
+    
+    
+    
+            var luas_ruangan = '';
+            if (luas_ruangan > 0) {
+                slider.value = luas_ruangan;
+                output.innerHTML = slider.value + ' m2';
+                $('.hitung-button').click();
+            }
+    
+            $('#pk_range_minus').click(function () {
+                if (slider.value > 4) {
+                    slider.value = parseInt(slider.value) - 1;
+                    output.innerHTML = slider.value + ' m2';
+                }
+            });
+    
+            $('#pk_range_plus').click(function () {
+                if (slider.value < 100) {
+                    slider.value = parseInt(slider.value) + 1;
+                    output.innerHTML = slider.value + ' m2';
+                }
+            });
+    
+        </script>
 
          
 
