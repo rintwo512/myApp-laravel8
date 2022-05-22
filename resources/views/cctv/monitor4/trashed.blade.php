@@ -21,7 +21,7 @@
             <a id="btnDeleteAllCctv2" href="/dashboard/cctv4/trash/deleteAll" class="btn btn-danger btn-sm">Delete All</a>
             @endcan
         <hr/>
-        <h6 class="mb-2 text-uppercase">Monitor 2</h6>
+        <h6 class="mb-2 text-uppercase">Monitor 4</h6>
         <div class="card">
           <div class="card-body">
             <div class="table-responsive">              

@@ -129,6 +129,8 @@ Route::get('/dashboard/trashed/cctv4', [CctvMonitor4Controller::class, 'trash'])
 
 Route::delete('/dashboard/cctv4/trash/{id}', [CctvMonitor4Controller::class, 'restoreDataCctv4'])->middleware('auth');
 
+Route::get('/dashboard/cctv4/trash/deleteAll', [CctvMonitor4Controller::class, 'deleteAll'])->middleware('auth');
+
 Route::get('/dashboard/export/cctv4', [CctvMonitor4Controller::class, 'exportDataCctv4'])->middleware('auth');
 
 Route::get('/dashboard/range/cctv4/{nilai}', [CctvMonitor4Controller::class, 'queryRangeCctv4'])->middleware('auth');

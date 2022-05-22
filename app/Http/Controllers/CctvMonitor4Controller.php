@@ -108,4 +108,10 @@ class CctvMonitor4Controller extends Controller
     {
         return Excel::download(new Cctv4Export, 'data-cctv-monitor4.xlsx');
     }
+
+    public function deleteAll()
+    {
+        CctvMonitor4::onlyTrashed()->forceDelete();
+        return back()->with('success', 'Data berhasil di hapus permanen!');
+    }
 }
