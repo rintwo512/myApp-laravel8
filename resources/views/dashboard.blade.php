@@ -22,15 +22,15 @@
 <div class="col-md-2 mb-3">  
   <select class="form-select" name="tahun" id="tahun">
     <option value="">--Select--</option>
-    @foreach ($list_tahun as $tahun)
+    {{-- @foreach ($list_tahun as $tahun)
         <option value="{{ $tahun->tahun }}">{{ $tahun->tahun }}</option>
-    @endforeach  
-</select>               
+    @endforeach   --}}
+  </select>               
 </div>
 <div class="card">
   <div class="card-body">
     <div class="chart-container1">
-      <canvas id="chart7"></canvas>
+      <div id="chart6"></div>
     </div>
   </div>
 </div>
@@ -183,13 +183,121 @@
 </div>
 
 
+
 <script src="/assets/js/jquery.min.js"></script>
-<script src="/assets/plugins/chartjs/js/Chart.min.js"></script>
-<script src="/assets/plugins/chartjs/js/Chart.extension.js"></script>
+{{-- <script src="/assets/plugins/chartjs/js/Chart.min.js"></script>
+<script src="/assets/plugins/chartjs/js/Chart.extension.js"></script> --}}
+<script src="/assets/plugins/apexcharts-bundle/js/apexcharts.min.js"></script>
 
 
 
-<script type="text/javascript">
+<script>
+
+function chartAc(year, title){
+   
+   $.ajaxSetup({
+       headers: {
+           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+       }
+   });
+
+   $.ajax({
+     method: "POST",
+     url: "/dashboard",
+     data : {
+       tahun : year
+     },
+     dataType : "JSON",
+     success : result => {       
+       drawChart(result, title, year);      
+     }
+   })
+
+ }
+
+
+function drawChart(result, title, year){
+  console.log(result);
+  var total = result.map(item => parseInt(item.total));
+  var kalkulasi = total.reduce((acc, curr) => acc + curr);
+  var bulan = result.map(item => item.bulan);
+  var options = {
+      series: [{
+        name: 'Column',
+        type: 'column',
+        data: total
+      }, {
+        name: 'Line',
+        type: 'line',
+        data: total
+      }],
+      chart: {
+        foreColor: '#9ba7b2',
+        height: 350,
+        type: 'line',
+        zoom: {
+          enabled: false
+        },
+        toolbar: {
+          show: true
+        },
+      },
+      stroke: {
+        width: [0, 4]
+      },
+      plotOptions: {
+        bar: {
+          //horizontal: true,
+          columnWidth: '35%',
+          endingShape: 'rounded'
+        }
+      },
+      colors: ["#0d6efd", "#212529"],
+      title: {
+        text: `${title} - Total = ${kalkulasi} Unit`
+      },
+      dataLabels: {
+        enabled: true,
+        enabledOnSeries: [1]
+      },
+      labels: bulan,
+      xaxis: {
+        type: 'dd/MM'
+      },
+      yaxis: [{
+        title: {
+          text: 'Rata-rata',
+        },
+      }, {
+        opposite: true,
+        title: {
+          text: 'Rata-rata'
+        }
+      }]
+    };
+    var chart = new ApexCharts(document.querySelector("#chart6"), options);
+    chart.render();
+  }
+</script>
+
+<script>
+
+  $(document).ready(function() {
+    $('#tahun').change(function() {
+      var year = $(this).val();
+      
+        if(year != ''){
+          chartAc(year, `Statistic Bulanan Maintenance AC : Tahun ${year}`);
+        }
+    });
+    
+    const d = new Date();
+    let tahun = d.getFullYear();    
+    chartAc(tahun, `Statistic Bulanan Maintenance AC : Tahun ${tahun}`);
+  });
+</script>
+
+{{-- <script type="text/javascript">
 function chartAc(year, title){
    
    $.ajaxSetup({
@@ -260,7 +368,7 @@ new Chart(document.getElementById("chart7"), {
     let tahun = d.getFullYear();    
     chartAc(tahun, `Statistic Bulanan Maintenance AC : ${tahun}`);
   });
-</script>
+</script> --}}
 
 <script>
   var textType = function(el, runText, periode) {
