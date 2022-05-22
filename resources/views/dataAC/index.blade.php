@@ -340,9 +340,9 @@
                         <div style="text-align:left" class="mb-2">
                             <div class="advanced-column mb-3">
                                 <div class="pasang-ac-value-ladder-title"><b>Suhu Yang Di inginkan</b></div>
-                                <label><input type="radio" class="advanced-radio" name="radio_suhu" value="low" /> 25-26 C &nbsp;</label>
-                                <label><input type="radio" class="advanced-radio" name="radio_suhu" value="medium" /> 23-24 C (Suhu BCA) &nbsp;</label>
-                                <label><input type="radio" class="advanced-radio" name="radio_suhu" value="high" /> > 23 C</label>
+                                <label><input type="radio" class="advanced-radio" name="radio_suhu" value="low" /> 25-26&#8451; &nbsp;</label>
+                                <label><input type="radio" class="advanced-radio" name="radio_suhu" value="medium" /> 23-24&#8451; &nbsp;</label>
+                                <label><input type="radio" class="advanced-radio" name="radio_suhu" value="high" /> > 23&#8451;</label>
                             </div>
                             
                             <div class="advanced-column mb-3">
@@ -354,9 +354,9 @@
                             
                             <div class="advanced-column mb-3">
                                 <div class="pasang-ac-value-ladder-title"><b>Aktivitas</b></div>
-                                <label><input type="radio" class="advanced-radio" name="radio_aktivitas" value="low" /> Duduk &nbsp;</label>
+                                <label><input type="radio" class="advanced-radio" name="radio_aktivitas" value="low" /> Santai &nbsp;</label>
                                 <label><input type="radio" class="advanced-radio" name="radio_aktivitas" value="medium" /> Office &nbsp;</label>
-                                <label><input type="radio" class="advanced-radio" name="radio_aktivitas" value="high" /> Gerak Fisik</label>
+                                <label><input type="radio" class="advanced-radio" name="radio_aktivitas" value="high" />Olahraga</label>
                             </div>
                             
                             <div class="advanced-column mb-3">
@@ -377,7 +377,7 @@
                                 <div class="pasang-ac-value-ladder-title"><b>Jam Penggunaan</b></div>
                                 <label><input type="radio" class="advanced-radio" name="radio_hour" value="low" /> Malam &nbsp;</label>
                                 <label><input type="radio" class="advanced-radio" name="radio_hour" value="medium" /> Pagi &nbsp;</label>
-                                <label><input type="radio" class="advanced-radio" name="radio_hour" value="high" /> Sepanjang Hari</label>
+                                <label><input type="radio" class="advanced-radio" name="radio_hour" value="high" /> 24 Jam</label>
                             </div>
                             
                             <div class="advanced-column mb-3">
