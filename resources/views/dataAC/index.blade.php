@@ -315,21 +315,34 @@
                         </div>                        
                     </div>                                        
                     
-                    <div class="row" style="font-size:26px;margin-bottom:20px;font-weight:bold;"> 
+                    <div class="row" style="font-size:26px;font-weight:bold;"> 
                        
                         <div class="col-xs-4 text-primary" style="text-align:center;padding:0px;" id="pasang_ac_range_output">
-                        </div>
+                        </div>                       
                        
                     </div>
                     
                     <div class="row">
                         <div style="margin:10px 0px" class="slidecontainer">
-                            <input type="range" min="4" max="100" value="4" class="slider form-range" id="myRange">
+                            <input type="range" min="3" max="100" value="3" class="slider form-range" id="myRange">
                         </div>                        
                     </div>
+
+                    <div class="row" style="font-size:26px;font-weight:bold;">                                            
+
+                      <div class="col-xs-4 text-primary" style="text-align:center;padding:0px;" id="pasang_ac_range_output_lebar">
+                      </div>
+                     
+                  </div>
+
+                    <div class="row">
+                      <div style="margin:10px 0px" class="slidecontainerLebar">
+                          <input type="range" min="3" max="100" value="3" class="slider form-range" id="myRangeLebar">
+                      </div>                        
+                  </div>
                     
                     <div style="display:none" id="advanced_mode_container">
-                        <div class="text-primary" style="margin-bottom:20px;font-size:26px;font-weight:bold;text-align:center;" id="pasang_ac_range_output_plafon">
+                        <div class="text-primary" style="font-size:26px;font-weight:bold;text-align:center;" id="pasang_ac_range_output_plafon">
                         </div>
                         <div class="row">
                             <div style="margin:10px 0px" class="slidecontainer">
@@ -675,19 +688,25 @@
 
         <script>
 
-          var slider = document.getElementById("myRange");
-                  
+                  var slider = document.getElementById("myRange");                  
                   var output = document.getElementById("pasang_ac_range_output");
-                  output.innerHTML = slider.value + ' m2';
+                  output.innerHTML = 'Panjang : ' + slider.value + ' m';                  
                   slider.oninput = function() {
-                      output.innerHTML = this.value + ' m2';
+                      output.innerHTML = 'Panjang : ' + this.value + ' m';
+                  }
+
+                  var sliderLebar = document.getElementById('myRangeLebar');
+                  var outputLebar = document.getElementById("pasang_ac_range_output_lebar");
+                  outputLebar.innerHTML = 'Lebar : ' + sliderLebar.value + ' m';
+                  sliderLebar.oninput = function() {
+                    outputLebar.innerHTML = 'Lebar : ' + this.value + ' m';
                   }
                   
                   var slider_plafon = document.getElementById("myRange_plafon");
                   var output_plafon = document.getElementById("pasang_ac_range_output_plafon");
-                  output_plafon.innerHTML = slider_plafon.value + ' m';
+                  output_plafon.innerHTML = 'Tinggi : ' + slider_plafon.value + ' m';
                   slider_plafon.oninput = function() {
-                      output_plafon.innerHTML = this.value + ' m';
+                      output_plafon.innerHTML = 'Tinggi : ' + this.value + ' m';
                   }
                   
                   $('#on_off_advanced').change(function(){
@@ -697,20 +716,11 @@
                           $('#advanced_mode_container').hide();
                       }
                   });
-                  
-                  
-                  
-                  
-                  
-                  
-          
-                  
-                  
-                  
                   $('.hitung-button').on('click', function(){
                       
                  
-                      var luas = slider.value;
+                      var luas = slider.value;                      
+                      var lebar = sliderLebar.value;                      
                       var type = '';
                       
                       var radio_low = 0;
@@ -759,8 +769,9 @@
                       $('.check-button').hide();
                       $('#pasang_ac_custom_column_recommendation').hide();
                       var plafon = slider_plafon.value;
-                      var plafon_coefficient = plafon / 3;
-                      var btu = Math.ceil(luas * heat_load_calculation * plafon_coefficient);
+                      var plafon_coefficient = plafon / 3 ;
+                      var btu = Math.ceil(lebar * luas * heat_load_calculation * plafon_coefficient);
+                      console.log(btu);
                       var pk = 0;           
                       $('#count_btu').html(btu);
                       
