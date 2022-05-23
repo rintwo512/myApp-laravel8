@@ -97,8 +97,8 @@
       <div class="card-body">
         <div class="d-flex align-items-center">
           <div class="">
-            <p class="mb-1">Perlu diperhatikan</p>
-            <h6 class="mb-0">{{ $countAcRusak }} Unit AC yang masih tidak normal.</h6>
+            <p class="mb-1">{{ $countAcRusak == 0 ? 'Semua perangkat AC Normal' : 'Perlu diperhatikan' }}</p>
+            <h6 class="mb-0">{{ $countAcRusak == 0 ? 'Awesome!' :  $countAcRusak . ' ' . 'Unit AC yang masih tidak normal.'}}</h6>
           </div>
           <div class="ms-auto fs-2 text-danger">
             <i class="bi bi-gear"></i>
@@ -150,8 +150,8 @@
       <div class="card-body">
         <div class="d-flex align-items-center">
           <div class="">
-            <p class="mb-1">Perlu diperhatikan</p>
-            <h6 class="mb-0">{{ $countCctvAllRusak }} Unit CCTV yang masih tidak normal.</h6>
+            <p class="mb-1">{{ $countCctvAllRusak == 0 ? 'Semua perangkat CCTV Normal' : 'Perlu diperhatikan' }}</p>
+            <h6 class="mb-0">{{ $countCctvAllRusak == 0 ? 'Awesome!' : $countCctvAllRusak . ' ' . 'Unit CCTV yang masih tidak normal.' }}</h6>
           </div>
           <div class="ms-auto fs-2 text-info">
             <i class="bi bi-gear"></i>
