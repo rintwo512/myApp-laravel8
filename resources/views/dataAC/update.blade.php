@@ -176,9 +176,13 @@
             <textarea class="form-control" name="kerusakan" id="kerusakan" rows="4" cols="4" placeholder="Masukan kerusakan jika ada!">{{ old('kerusakan', $ac->kerusakan) }}</textarea>
           </div>
           <div class="col-6">
+            <label class="form-label">Keterangan</label>
+            <textarea class="form-control" name="keterangan" id="keterangan" rows="4" cols="4" value="" placeholder="Masukan keterangan jika ada!">{{ old('keterangan', $ac->keterangan) }}</textarea>
+          </div>
+          <div class="col-12">
             <label class="form-label">Catatan</label>
             <textarea class="form-control" name="catatan" id="catatan" rows="4" cols="4" value="" placeholder="Masukan catatan jika ada!">{{ old('catatan', $ac->catatan) }}</textarea>
-          </div>          
+          </div>
           <div class="col-12">
               <div class="d-grid">
               <button class="btn btn-purple" type="submit">Submit form</button>

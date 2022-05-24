@@ -147,3 +147,21 @@ Route::get('/ac/koderror', function () {
         'title' => 'All kode error'
     ]);
 });
+
+Route::get('/ampertova', function () {
+    return view('tools.amptova', [
+        'title' => 'Convert Amper To Volt Amper'
+    ]);
+});
+
+Route::get('/wattova', function () {
+    return view('tools.wattova', [
+        'title' => 'Convert Watt To VA'
+    ]);
+});
+
+Route::get('/konsumsi-energi', function () {
+    return view('tools.konsumsi-energy', [
+        'title' => 'Konsumsi Energi'
+    ]);
+});

@@ -17,6 +17,7 @@
 //  $date = date('Y-m-d H:i:s');
 @endphp
 
+
             <div class="flash-success" data-success="{{ session('success') }}"></div>
             <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">              
               <div class="ps-3">
@@ -114,6 +115,7 @@
                             data-pipaac="{{ $ac->pipa }}"
                             data-statusac="{{ $ac->status }}"
                             data-catatanac="{{ $ac->catatan }}"
+                            data-keteranganac="{{ $ac->keterangan }}"
                             data-kerusakanac="{{ $ac->kerusakan }}"
                             data-tglpemasanganac="{{ $ac->tgl_pemasangan }}" data-petugaspemasanganac="{{ $ac->petugas_pemasangan }}"
                             data-tanggalmaintenanceac="{{ Carbon::parse($ac->tgl_maintenance)->locale('id')->diffForHumans() }}" data-updatedtimeac="{{ $ac->user_updated }}/{{ Carbon::parse($ac->user_updated_time)->diffForHumans() }}">
@@ -599,6 +601,7 @@
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">Status <i class="bi bi-arrow-right"></i> <strong id="detailStatusAC"></strong>
                         </li>
+
                         <div class="accordion-item detail-kerusakan">
                           <h2 class="accordion-header" id="headingTwo">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -606,10 +609,23 @@
                             </button>
                           </h2>
                           <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                            <div class="accordion-body" id="detailKerusakanAC">
-                            </div>
+                            <p class="accordion-body" id="detailKerusakanAC">
+                            </p>
                           </div>
                         </div>
+
+                        <div class="accordion-item detail-keterangan">
+                          <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                              Keterangan
+                            </button>
+                          </h2>
+                          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <p class="accordion-body" id="detailKeteranganAC">
+                            </p>
+                          </div>
+                        </div>
+
                         <div class="accordion-item">
                           <h2 class="accordion-header" id="headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -617,11 +633,12 @@
                             </button>
                           </h2>
                           <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                            <div class="accordion-body" id="detailCatatanAC">
+                            <p class="accordion-body" id="detailCatatanAC">
                               
-                            </div>
+                            </p>
                           </div>
                         </div>
+
                         <div id="btn-ac-error">
                           <li class="list-group-item d-flex justify-content-center align-items-center">
                             <a href="/ac/koderror" class="btn btn-danger btn-sm">Lihat Data Error</a>
@@ -889,6 +906,7 @@
               const statusac = $(this).data('statusac');
               const catatanac = $(this).data('catatanac');
               const kerusakanac = $(this).data('kerusakanac');
+              const keteranganac = $(this).data('keteranganac');
               const tanggalpemasanganac = $(this).data('tglpemasanganac');
               const petugaspemsanganac = $(this).data('petugaspemasanganac');
               const tanggalmaint = $(this).data('tanggalmaintenanceac');
@@ -938,6 +956,7 @@
               $('#detailStatusAC').html(statusac);           
               $('#detailCatatanAC').html(catatanac); 
               $('#detailKerusakanAC').html(kerusakanac); 
+              $('#detailKeteranganAC').html(keteranganac); 
           });
            
         </script>

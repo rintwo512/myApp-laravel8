@@ -18,19 +18,19 @@
         <form action="/ac/create" method="post" class="row g-3 needs-validation">           
             @csrf
           <div class="col-md-4">
-            <label for="tgl_pemasangan" class="form-label">Tanggal Pemasangan</label>
+            <label for="tgl_pemasangan" class="form-label">Tanggal Pemasangan <small>(optional)</small></label>
             <input type="text" class="form-control datepicker" name="tgl_pemasangan" id="tgl_pemasangan" value="{{ old('tgl_pemasangan') }}">
           </div>
           <div class="col-md-4">
-            <label for="petugas_pemasangan" class="form-label">Petugas Pemasangan</label>
+            <label for="petugas_pemasangan" class="form-label">Petugas Pemasangan <small>(optional)</small></label>
             <input type="text" class="form-control" id="petugas_pemasangan" name="petugas_pemasangan" value="{{ old('petugas_pemasangan') }}">
           </div>
           <div class="col-md-4">
-            <label for="tgl_maintenance" class="form-label">Tanggal Maintenance</label>
+            <label for="tgl_maintenance" class="form-label">Tanggal Maintenance <small>(optional)</small></label>
             <input class="result form-control" type="text" name="tgl_maintenance" id="date-time" value="{{ old('tgl_maintenance') }}">
           </div>
           <div class="col-md-4">
-            <label for="label" class="form-label">Label</label>
+            <label for="label" class="form-label">Label <small>(optional)</small></label>
             <input type="text" class="form-control text-capitalize @error('label')
               is-invalid @enderror" id="label" name="label" value="{{ old('label') }}">
               @error('label')
@@ -40,7 +40,7 @@
               @enderror
           </div>
           <div class="col-md-4">
-            <label for="assets" class="form-label">Assets</label>
+            <label for="assets" class="form-label">Assets <small>(optional)</small></label>
             <input type="text" class="form-control" name="assets" id="assets" value="{{ old('assets') }}">            
           </div>
           <div class="col-md-4">
@@ -112,11 +112,11 @@
             
           </div>
           <div class="col-md-4">
-            <label for="product" class="form-label">Product</label>
+            <label for="product" class="form-label">Product <small>(optional)</small></label>
             <input type="text" class="form-control" name="product" id="product" value="{{ old('product') }}">            
           </div>
           <div class="col-md-4">
-            <label for="current" class="form-label">Amper</label>
+            <label for="current" class="form-label">Amper <small>(optional)</small></label>
             <input type="text" class="form-control" name="current" id="current" value="{{ old('current') }}">            
           </div>
           <div class="col-md-3">
@@ -128,11 +128,11 @@
             </select>
           </div>
           <div class="col-md-3">
-            <label for="btu" class="form-label">Btu</label>
+            <label for="btu" class="form-label">Btu <small>(optional)</small></label>
             <input type="text" class="form-control" name="btu" id="btu" value="{{ old('btu') }}">
           </div>
           <div class="col-md-3">
-            <label for="pipa" class="form-label">Pipa <small>(Liquid + Gas)</small></label>
+            <label for="pipa" class="form-label">Pipa <small>(Liquid + Gas)<small>(optional)</small></small></label>
             <select class="form-select" id="pipa" name="pipa">
               <option selected disabled value="">--Select--</option>
               <option value="1/4 + 3/8">1/4 + 3/8</option>
@@ -158,7 +158,11 @@
             <textarea class="form-control" name="kerusakan" id="kerusakan" rows="4" cols="4" value="{{ old('kerusakan') }}" placeholder="Masukan kerusakan jika ada!"></textarea>
           </div>
           <div class="col-6">
-            <label class="form-label">Catatan</label>
+            <label class="form-label">Keterangan <small>(optional)</small></label>
+            <textarea class="form-control" name="keterangan" id="keterangan" rows="4" cols="4" value="{{ old('keterangan') }}" placeholder="Masukan keterangan jika ada!"></textarea>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Catatan <small>(optional)</small></label>
             <textarea class="form-control" name="catatan" id="catatan" rows="4" cols="4" value="{{ old('catatan') }}" placeholder="Masukan catatan jika ada!"></textarea>
           </div>
           <div class="col-12">

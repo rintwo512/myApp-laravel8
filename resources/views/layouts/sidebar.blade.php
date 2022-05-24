@@ -17,7 +17,10 @@
         <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Charts">
           <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-charts" type="button"><i class="bi bi-bar-chart-steps"></i></button>
         </li>       
-        @endcan        
+        @endcan
+        <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Tools">         
+          <button type="button" data-bs-toggle="pill" data-bs-target="#pills-tools" class="nav-link" ><i class="bi bi-tools pl-10"></i></button>          
+      </li>   
         <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Settings">
           <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-settings" type="button"><i class="bi bi-gear-fill"></i></button>
         </li>
@@ -26,7 +29,7 @@
             @csrf
             <button type="button" id="btnLog1" class="nav-link" ><i class="bi bi-box-arrow-in-right"></i></button>
           </form>
-        </li>
+        </li>        
       </ul>
     </div>
     <div class="textmenu">
@@ -87,6 +90,18 @@
           <a href="/settings/profile" class="list-group-item {{ Request::is('settings/profile*') ? 'active' : '' }}"><i class="bi bi-person-lines-fill"></i> Profile</a>
           <a href="/settings/changepassword" class="list-group-item list-group-item {{ Request::is('settings/changepassword*') ? 'active' : '' }}"><i class="bi bi-lock"></i> Change Password</a>
         </div>
+    </div>
+    <div class="tab-pane fade" id="pills-tools">
+      <div class="list-group list-group-flush">
+        <div class="list-group-item">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-0">Tools</h5>
+          </div>                    
+        </div>
+        <a href="/ampertova" class="list-group-item {{ Request::is('ampertova*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Convert Amper to VA</a>
+        <a href="/wattova" class="list-group-item {{ Request::is('wattova*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Convert Watt to VA</a>
+        <a href="/konsumsi-energi" class="list-group-item {{ Request::is('konsumsi-energi*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Konsumsi Energi</a>
+      </div>
     </div> 
     </div>
   </div>
