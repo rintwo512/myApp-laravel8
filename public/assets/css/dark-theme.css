@@ -58,7 +58,8 @@ html.dark-theme .sidebar-wrapper .iconmenu .nav-pills .nav-link.active, html.dar
 }
 
 html.dark-theme .brand-logo img {
-    filter: invert(1) grayscale(100%) brightness(200%);
+    /* filter: invert(1) grayscale(200%) contrast(200%) brightness(200%); */
+    filter: grayscale(20%) contrast(200%) brightness(150%);
 }
 
 

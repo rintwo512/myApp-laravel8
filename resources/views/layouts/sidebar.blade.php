@@ -34,7 +34,7 @@
     </div>
     <div class="textmenu">
       <div class="brand-logo">
-        <img src="/assets/images/logo-dc.png" width="140" alt=""/>
+        <img src="/assets/images/r-app.png" style="margin-left: 10px" width="160" alt=""/>
       </div>
       <div class="tab-content">
         <div class="tab-pane fade" id="pills-dashboards">
@@ -98,9 +98,10 @@
             <h5 class="mb-0">Tools</h5>
           </div>                    
         </div>
-        <a href="/ampertova" class="list-group-item {{ Request::is('ampertova*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Convert Amper to VA</a>
-        <a href="/wattova" class="list-group-item {{ Request::is('wattova*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Convert Watt to VA</a>
+        <a href="/amper-to-va" class="list-group-item {{ Request::is('amper-to-va*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Konversi Amper - VA</a>
+        <a href="/watt-to-va" class="list-group-item {{ Request::is('watt-to-va*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Konversi Watt - VA</a>
         <a href="/konsumsi-energi" class="list-group-item {{ Request::is('konsumsi-energi*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Konsumsi Energi</a>
+        <a href="/btu-to-pk" class="list-group-item {{ Request::is('btu-to-pk*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Konversi Btu - PK</a>
       </div>
     </div> 
     </div>
@@ -149,10 +150,9 @@
 
 <script>
 
-  $(document).on('click', function() {
-    const dd = $('#isActive').is(":checked");
-    console.log(dd);
-  });
+  // $(document).on('click', function() {
+  //   const dd = $('#isActive').is(":checked");    
+  // });
 
   const togglePassword = document.querySelector("#togglePassword");
        const password = document.querySelector("#password");

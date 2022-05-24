@@ -148,13 +148,13 @@ Route::get('/ac/koderror', function () {
     ]);
 });
 
-Route::get('/ampertova', function () {
+Route::get('/amper-to-va', function () {
     return view('tools.amptova', [
         'title' => 'Convert Amper To Volt Amper'
     ]);
 });
 
-Route::get('/wattova', function () {
+Route::get('/watt-to-va', function () {
     return view('tools.wattova', [
         'title' => 'Convert Watt To VA'
     ]);
@@ -163,5 +163,11 @@ Route::get('/wattova', function () {
 Route::get('/konsumsi-energi', function () {
     return view('tools.konsumsi-energy', [
         'title' => 'Konsumsi Energi'
+    ]);
+});
+
+Route::get('/btu-to-pk', function () {
+    return view('tools.btutopk', [
+        'title' => 'Konversi Btu to PK'
     ]);
 });

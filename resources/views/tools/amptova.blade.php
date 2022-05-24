@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container-fluid">
-        <div class="col-md-6">
+        <div class="col-xl-6 mx-auto">
             <div class="card">
                 <div class="card-body">
                   <div class="border p-4 rounded">
@@ -13,7 +13,7 @@
                     <hr/>
                     <form name="calcform" autocomplete="off">
                         <div class="row mb-3">
-                        <label class="col-sm-3 col-form-label">Select Phase</label>
+                        <label class="col-sm-4 col-form-label">Select Phase</label>
                         <select class="form-select mb-3" aria-label="Default select example" name="phase" autofocus>
                             <option>Single phase</option>
                             <option>Three phase</option>
