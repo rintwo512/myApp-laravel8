@@ -182,16 +182,17 @@ class AcController extends Controller
                 'user_updated' => auth()->user()->name,
                 'user_updated_time' => date('Y-m-d H:i:s')
             ];
-        Ac::where('id', $id)
+        $newData = Ac::where('id', $id)
             ->update($validateNewData);
 
-        // $userUpdate = auth()->user()->name;
-        // $response = Http::get('https://api.telegram.org/bot5372613320:AAHJNa6n0C68VZFWIDcRckIWSjP_UCLiGBU/sendMessage?parse_mode=markdown&chat_id=-532291265&text=' . $userUpdate);
-        // echo $response;
-
-        $dateNow = Carbon::now();
-        $cc = Ac::where('user_updated_time', $dateNow)->first();
-        dd($cc->ruangan);
+        if ($newData > 0) {
+            $dateNow = Carbon::now();
+            $getDataUpdate = Ac::where('user_updated_time', $dateNow)->first();
+            $pesan = '*Tanggal Update* ' . '*' . $dateNow . '*' . "\n"
+                . "*Data AC yang telah diupdate*\n\n" . "Di update oleh : " . $getDataUpdate->user_updated . "\nWing : " . $getDataUpdate->wing . "\nLantai : " . $getDataUpdate->lantai . "\nRuangan : " . $getDataUpdate->ruangan . "\nMerk : " . $getDataUpdate->merk . "\nType : " . $getDataUpdate->type . "\nStatus : " . $getDataUpdate->status . "\nCatatan : " . $getDataUpdate->catatan;
+            $pesanEncode = urlencode($pesan);
+            $response = Http::get('https://api.telegram.org/bot5372613320:AAHJNa6n0C68VZFWIDcRckIWSjP_UCLiGBU/sendMessage?parse_mode=markdown&chat_id=-532291265&text=' . $pesanEncode);
+        }
 
         return redirect('/ac')->with('success', 'Data berhasil di ubah!');
     }
