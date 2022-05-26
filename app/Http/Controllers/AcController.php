@@ -9,7 +9,7 @@ use App\Exports\AcExport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
-
+use Illuminate\Support\Facades\Http;
 
 class AcController extends Controller
 {
@@ -184,6 +184,14 @@ class AcController extends Controller
             ];
         Ac::where('id', $id)
             ->update($validateNewData);
+
+        // $userUpdate = auth()->user()->name;
+        // $response = Http::get('https://api.telegram.org/bot5372613320:AAHJNa6n0C68VZFWIDcRckIWSjP_UCLiGBU/sendMessage?parse_mode=markdown&chat_id=-532291265&text=' . $userUpdate);
+        // echo $response;
+
+        $dateNow = Carbon::now();
+        $cc = Ac::where('user_updated_time', $dateNow)->first();
+        dd($cc->ruangan);
 
         return redirect('/ac')->with('success', 'Data berhasil di ubah!');
     }
