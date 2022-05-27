@@ -183,7 +183,7 @@ $nowMonth = Carbon::now()->month - 1;
                     </div>
                   </div>
                   <div class="modal-footer">         
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" id="btnUpdateChart1" class="btn btn-primary" disabled>Submit</button>
                   </div>
                 </form>                                    
                   </div>
@@ -193,7 +193,13 @@ $nowMonth = Carbon::now()->month - 1;
 
         <script src="/assets/js/jquery.min.js"></script>  
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+        <script>
+          $(document).ready(function() {
+            $('#totalUpdateChart').on('keyup',function(){
+              $("#btnUpdateChart1").removeAttr("disabled");              
+            });
+          });                       
+      </script>
         <script type="text/javascript">          
             function delDataChart(id){
 
@@ -254,4 +260,6 @@ $nowMonth = Carbon::now()->month - 1;
             });
 
         </script>
+
+        
 @endsection       

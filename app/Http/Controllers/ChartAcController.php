@@ -12,6 +12,7 @@ use App\Models\CctvMonitor4;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 
 class ChartAcController extends Controller
 {
@@ -152,7 +153,6 @@ class ChartAcController extends Controller
     {
         $id = $request->idUpdateChart;
 
-
         $rules = [
             'tahunUpdateChart' => 'required',
             'monthUpdateChart' => 'required',
@@ -166,7 +166,19 @@ class ChartAcController extends Controller
             'total' => $request->totalUpdateChart
         ];
 
-        Chart::where('id', $id)->update($data);
+        $setDB = Chart::where('id', $id)->update($data);
+
+        if ($setDB > 0) {
+
+            $one = Chart::all()->toArray();
+            $dateNow = Carbon::now();
+            $dateNowYear = Carbon::now()->format('Y');
+            $pesan = '*Tanggal update* ' . '*' . $dateNow . '*' . "\n"
+                . "*Data Maintenance AC bulanan*\n\nBulan " . $one[0]['bulan'] . " : " . $one[0]['total'] . " Unit\nBulan " . $one[1]['bulan'] . " : " . $one[1]['total'] . " Unit\n\n" . "*" . "Data tahun " . $dateNowYear . "*";
+
+            $pesanEncode = urlencode($pesan);
+            $response = Http::get('https://api.telegram.org/bot5372613320:AAHJNa6n0C68VZFWIDcRckIWSjP_UCLiGBU/sendMessage?parse_mode=markdown&chat_id=-532291265&text=' . $pesanEncode);
+        }
         return redirect('dashboard/charts')->with('success', 'Data has been updated!');
     }
 }
