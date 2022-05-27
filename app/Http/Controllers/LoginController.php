@@ -7,7 +7,9 @@ use App\Models\User;
 use App\Models\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
 
 class LoginController extends Controller
@@ -16,6 +18,7 @@ class LoginController extends Controller
 
     public function index()
     {
+
         return view('auth.login');
     }
 
@@ -50,7 +53,19 @@ class LoginController extends Controller
                     $user->userAgent->user_agent = $request->userAgent();
                     $user->push();
 
+                    User::where('id', Auth::user()->id)->update(['user_time_login' => Carbon::now()]);
+                    // User::where('id', Auth::user()->id)->update(['status_login' => 'online']);
+
+                    // $userLogin = User::where('status_login', 'online')->first();
+                    // $pesan = $userLogin->name . " " . $userLogin->status_login . " " . Carbon::parse($userLogin->user_time_login)->diffForHumans();
+                    // $pesanEncode = urlencode($pesan);
+                    // echo Http::get('https://api.telegram.org/bot5372613320:AAHJNa6n0C68VZFWIDcRckIWSjP_UCLiGBU/sendMessage?parse_mode=markdown&chat_id=-532291265&text=' . $pesanEncode);
+
+
+
                     $request->session()->regenerate();
+
+
                     return redirect()->intended('/dashboard');
                 }
             } else {

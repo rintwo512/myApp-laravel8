@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('status_login')->default('offline');
             $table->timestamp('is_login')->nullable();
+            $table->string('user_time_login')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
