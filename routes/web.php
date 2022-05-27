@@ -148,26 +148,56 @@ Route::get('/ac/koderror', function () {
     ]);
 });
 
-Route::get('/amper-to-va', function () {
+Route::get('/tools/amper-to-va', function () {
     return view('tools.amptova', [
         'title' => 'Convert Amper To Volt Amper'
     ]);
 });
 
-Route::get('/watt-to-va', function () {
+Route::get('/tools/watt-to-va', function () {
     return view('tools.wattova', [
         'title' => 'Convert Watt To VA'
     ]);
 });
 
-Route::get('/konsumsi-energi', function () {
+Route::get('/tools/konsumsi-energi', function () {
     return view('tools.konsumsi-energy', [
         'title' => 'Konsumsi Energi'
     ]);
 });
 
-Route::get('/btu-to-pk', function () {
+Route::get('/tools/btu-to-pk', function () {
     return view('tools.btutopk', [
         'title' => 'Konversi Btu to PK'
+    ]);
+});
+
+Route::get('/tools/amper-to-watt', function () {
+    return view('tools.amper-to-watt', [
+        'title' => 'Konversi Amper to Watt'
+    ]);
+});
+
+Route::get('/tools/watt-to-amper', function () {
+    return view('tools.watt-to-amper', [
+        'title' => 'Konversi Watt to Amper'
+    ]);
+});
+
+Route::get('/tools/ohm-law', function () {
+    return view('tools.ohm-law', [
+        'title' => 'Ohm Law'
+    ]);
+});
+
+Route::get('/tools/voltage-divider', function () {
+    return view('tools.voltage-divider', [
+        'title' => 'Voltage Divider Calculator'
+    ]);
+});
+
+Route::get('/tools/celcius-fahrenheit', function () {
+    return view('tools.celcius-to-fahrenheit', [
+        'title' => 'Konversi celcius to fahrenheit'
     ]);
 });

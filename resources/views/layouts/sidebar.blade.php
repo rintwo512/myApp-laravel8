@@ -98,10 +98,23 @@
             <h5 class="mb-0">Tools</h5>
           </div>                    
         </div>
-        <a href="/amper-to-va" class="list-group-item {{ Request::is('amper-to-va*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Konversi Amper - VA</a>
-        <a href="/watt-to-va" class="list-group-item {{ Request::is('watt-to-va*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Konversi Watt - VA</a>
-        <a href="/konsumsi-energi" class="list-group-item {{ Request::is('konsumsi-energi*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Konsumsi Energi</a>
-        <a href="/btu-to-pk" class="list-group-item {{ Request::is('btu-to-pk*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Konversi Btu - PK</a>
+        <a href="/tools/amper-to-va" class="list-group-item {{ Request::is('/tools/amper-to-va*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Konversi Amper - VA</a>
+
+        <a href="/tools/watt-to-amper" class="list-group-item {{ Request::is('/tools/watt-to-amper*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Konversi Watt - Amper</a>
+
+        <a href="/tools/amper-to-watt" class="list-group-item {{ Request::is('/tools/amper-to-watt*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Konversi Amper - Watt</a>
+
+        <a href="/tools/watt-to-va" class="list-group-item {{ Request::is('/tools/watt-to-va*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Konversi Watt - VA</a>
+
+        <a href="/tools/konsumsi-energi" class="list-group-item {{ Request::is('/tools/konsumsi-energi*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Konsumsi Energi</a>
+
+        <a href="/tools/ohm-law" class="list-group-item {{ Request::is('/tools/ohm-law*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Ohm law</a>
+
+        <a href="/tools/voltage-divider" class="list-group-item {{ Request::is('/tools/voltage-divider*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Voltage Divider</a>
+
+        <a href="/tools/celcius-fahrenheit" class="list-group-item {{ Request::is('/tools/celcius-fahrenheit*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i>Celcius - Fahrenheit</a>
+
+        <a href="/tools/btu-to-pk" class="list-group-item {{ Request::is('/tools/btu-to-pk*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Konversi Btu - PK</a>
       </div>
     </div> 
     </div>
