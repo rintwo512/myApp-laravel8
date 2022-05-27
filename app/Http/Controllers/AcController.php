@@ -189,7 +189,7 @@ class AcController extends Controller
             $dateNow = Carbon::now();
             $getDataUpdate = Ac::where('user_updated_time', $dateNow)->first();
             $pesan = '*Tanggal Update* ' . '*' . $dateNow . '*' . "\n"
-                . "*Data AC yang telah diupdate*\n\n" . "Di update oleh : " . $getDataUpdate->user_updated . "\nWing : " . $getDataUpdate->wing . "\nLantai : " . $getDataUpdate->lantai . "\nRuangan : " . $getDataUpdate->ruangan . "\nMerk : " . $getDataUpdate->merk . "\nType : " . $getDataUpdate->type . "\nStatus : " . $getDataUpdate->status . "\nCatatan : " . $getDataUpdate->catatan;
+                . "*Data AC yang telah diupdate*\n\n" . "Di update oleh : " . $getDataUpdate->user_updated . "\nWing : " . $getDataUpdate->wing . "\nLantai : " . $getDataUpdate->lantai . "\nRuangan : " . $getDataUpdate->ruangan . "\nMerk : " . $getDataUpdate->merk . "\nType : " . $getDataUpdate->type . "\nStatus : " . $getDataUpdate->status . "\nDi maintenance : " . Carbon::parse($getDataUpdate->tgl_maintenance)->diffForHumans() . "\nCatatan : " . $getDataUpdate->catatan;
             $pesanEncode = urlencode($pesan);
             $response = Http::get('https://api.telegram.org/bot5372613320:AAHJNa6n0C68VZFWIDcRckIWSjP_UCLiGBU/sendMessage?parse_mode=markdown&chat_id=-532291265&text=' . $pesanEncode);
         }
