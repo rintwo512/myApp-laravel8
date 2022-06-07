@@ -31,6 +31,7 @@ class CctvMonitor4Controller extends Controller
                 'tgl_pemasangan' => $request->tgl_pemasangan4,
                 'petugas_pemasangan' => $request->petugas_pemasangan4,
                 'kerusakan' => $request->kerusakan4,
+                'sandi_dvr' => $request->sandi_dvr4,
                 'user_id' => auth()->user()->id
             ];
         CctvMonitor4::create($validateNewData);

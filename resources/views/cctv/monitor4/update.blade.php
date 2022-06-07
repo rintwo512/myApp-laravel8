@@ -5,7 +5,7 @@
         
 <div class="row">
 <div class="col-xl-9 mx-auto">
-  <a href="/dashboard/cctv4" class="btn btn-success btn-sm mb-3"><i class="bi bi-arrow-left"></i> Back</a>
+  <a href="/dashboard/cctv" class="btn btn-success btn-sm mb-3"><i class="bi bi-arrow-left"></i> Back</a>
   <h6 class="mb-0 text-uppercase">Update Data CCTV Monitor 4</h6>
   <hr/>
   <div class="card">
