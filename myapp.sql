@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Jun 2022 pada 12.46
+-- Waktu pembuatan: 08 Jun 2022 pada 07.48
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 7.4.27
 
@@ -178,22 +178,22 @@ CREATE TABLE `cctv_monitor1` (
 --
 
 INSERT INTO `cctv_monitor1` (`id`, `user_id`, `lantai`, `wing`, `lokasi`, `merk`, `type`, `status`, `resolusi`, `tgl_pemasangan`, `petugas_pemasangan`, `tgl_perbaikan`, `petugas_perbaikan`, `catatan`, `sandi_dvr`, `kerusakan`, `user_updated`, `user_delete`, `updated_time`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(11, 1, 'Lt1', 'Lainnya', 'Cam 1, Lobby Utama', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-07 17:19:35', NULL, '2022-06-07 09:13:23', '2022-06-07 09:19:35'),
-(12, 1, 'Lt1', 'Lainnya', 'Cam 2, Lobby Utama Bagian Barat', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-07 17:20:01', NULL, '2022-06-07 09:14:09', '2022-06-07 09:20:01'),
+(11, 1, 'Lt1', 'Lainnya', 'Cam1, Lobby Utama', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:11:08', NULL, '2022-06-07 09:13:23', '2022-06-08 04:11:08'),
+(12, 1, 'Lt1', 'Lainnya', 'Cam2, Lobby Utama Bagian Barat', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:11:18', NULL, '2022-06-07 09:14:09', '2022-06-08 04:11:18'),
 (13, 1, 'Lt1', 'Lainnya', 'Cam3, Pintu Masuk Frondest', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-07 17:20:15', NULL, '2022-06-07 09:15:04', '2022-06-07 09:20:15'),
-(14, 1, 'Lt1', 'WA', 'Cam 4, Pintu Masuk Wing A', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-07 17:20:34', NULL, '2022-06-07 09:15:44', '2022-06-07 09:20:34'),
-(15, 1, 'Lt1', 'WD', 'Cam 5, Rg.TA', 'Hikvision', 'Analog', 'Normal', '2MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-07 17:21:06', NULL, '2022-06-07 09:16:21', '2022-06-07 09:21:06'),
-(16, 1, 'Lt1', 'WC', 'Cam 6, Arah Pintu Toilet', 'Hikvision', 'Analog', 'Normal', '2MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-07 17:21:26', NULL, '2022-06-07 09:18:07', '2022-06-07 09:21:26'),
-(17, 1, 'Lt2', 'WC', 'Cam 7, Pintu masuk wing c', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:22:49', '2022-06-07 09:22:49'),
-(18, 1, 'Lt1', 'WB', 'Cam 8, Rg.Staff GSD', 'Hikvision', 'Analog', 'Normal', '2MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:24:02', '2022-06-07 09:24:02'),
-(19, 1, 'Lt2', 'WB', 'Cam 9, Pintu masuk wing b', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:24:46', '2022-06-07 09:24:46'),
-(20, 1, 'Lt2', 'WD', 'Cam 10, pintu masuk wing c', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:25:45', '2022-06-07 09:25:45'),
-(21, 1, 'Lt2', 'WC', 'Cam 11, Ruang tamu', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:26:36', '2022-06-07 09:26:36'),
-(22, 1, 'Lt2', 'WD', 'Cam 12, Atas meja ibu tini', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:27:40', '2022-06-07 09:27:40'),
-(23, 1, 'Lt2', 'WA', 'Cam 13, Atas pintu masuk ruang OSM HR', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:28:33', '2022-06-07 09:28:33'),
-(24, 1, 'Lt3', 'Lainnya', 'Cam 14, Atas ruang binroh', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:29:36', '2022-06-07 09:29:36'),
-(25, 1, 'Lt3', 'WB', 'Cam 15, Fiber room', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:30:10', '2022-06-07 09:30:10'),
-(26, 1, 'Lt3', 'WA', 'Cam 16, Rg.Staff MSO', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:31:00', '2022-06-07 09:31:00');
+(14, 1, 'Lt1', 'WA', 'Cam4, Pintu Masuk Wing A', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:09:14', NULL, '2022-06-07 09:15:44', '2022-06-08 04:09:14'),
+(15, 1, 'Lt1', 'WD', 'Cam5, Rg.TA', 'Hikvision', 'Analog', 'Normal', '2MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:09:25', NULL, '2022-06-07 09:16:21', '2022-06-08 04:09:25'),
+(16, 1, 'Lt1', 'WC', 'Cam6, Arah Pintu Toilet', 'Hikvision', 'Analog', 'Normal', '2MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:09:36', NULL, '2022-06-07 09:18:07', '2022-06-08 04:09:36'),
+(17, 1, 'Lt2', 'WC', 'Cam7, Pintu masuk wing c', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:09:47', NULL, '2022-06-07 09:22:49', '2022-06-08 04:09:47'),
+(18, 1, 'Lt1', 'WB', 'Cam8, Rg.Staff GSD', 'Hikvision', 'Analog', 'Normal', '2MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:09:57', NULL, '2022-06-07 09:24:02', '2022-06-08 04:09:57'),
+(19, 1, 'Lt2', 'WB', 'Cam9, Pintu masuk wing b', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:10:10', NULL, '2022-06-07 09:24:46', '2022-06-08 04:10:10'),
+(20, 1, 'Lt2', 'WD', 'Cam10, pintu masuk wing c', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:10:20', NULL, '2022-06-07 09:25:45', '2022-06-08 04:10:20'),
+(21, 1, 'Lt2', 'WC', 'Cam11, Ruang tamu', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:11:31', NULL, '2022-06-07 09:26:36', '2022-06-08 04:11:31'),
+(22, 1, 'Lt2', 'WD', 'Cam12, Atas meja ibu tini', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:11:45', NULL, '2022-06-07 09:27:40', '2022-06-08 04:11:45'),
+(23, 1, 'Lt2', 'WA', 'Cam13, Atas pintu masuk ruang OSM HR', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:11:56', NULL, '2022-06-07 09:28:33', '2022-06-08 04:11:56'),
+(24, 1, 'Lt3', 'Lainnya', 'Cam14, Atas ruang binroh', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:12:10', NULL, '2022-06-07 09:29:36', '2022-06-08 04:12:10'),
+(25, 1, 'Lt3', 'WB', 'Cam15, Fiber room', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:12:21', NULL, '2022-06-07 09:30:10', '2022-06-08 04:12:21'),
+(26, 1, 'Lt3', 'WA', 'Cam16, Rg.Staff MSO', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:12:33', NULL, '2022-06-07 09:31:00', '2022-06-08 04:12:33');
 
 -- --------------------------------------------------------
 
@@ -230,21 +230,21 @@ CREATE TABLE `cctv_monitor2` (
 
 INSERT INTO `cctv_monitor2` (`id`, `user_id`, `lokasi`, `merk`, `type`, `status`, `resolusi`, `tgl_pemasangan`, `petugas_pemasangan`, `tgl_perbaikan`, `petugas_perbaikan`, `catatan`, `sandi_dvr`, `kerusakan`, `user_updated`, `user_delete`, `updated_time`, `deleted_at`, `created_at`, `updated_at`) VALUES
 (4, 1, 'Cam1, Parkir halamn depan', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-07 17:33:21', NULL, '2022-06-07 09:32:15', '2022-06-07 09:33:21'),
-(5, 1, 'Cam 2, Pintu keluar selatan', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-07 17:33:33', NULL, '2022-06-07 09:33:01', '2022-06-07 09:33:33'),
-(6, 1, 'Cam 3, Parkir halaman utara', 'Dahua', 'Analog', 'Normal', '2MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-07 17:34:50', NULL, '2022-06-07 09:34:25', '2022-06-07 09:34:50'),
-(7, 1, 'Cam 4, Pintu masuk utara', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:35:35', '2022-06-07 09:35:35'),
-(8, 1, 'Cam 5, Parkir samping SAS', 'Hikvision', 'Analog', 'Normal', '4MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-07 17:36:37', NULL, '2022-06-07 09:36:23', '2022-06-07 09:36:37'),
-(9, 1, 'Cam 6, Parkir SL', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:37:14', '2022-06-07 09:37:14'),
-(10, 1, 'Cam 7, Halaman menuju frondest', 'Hikvision', 'Analog', 'Normal', '2MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:38:02', '2022-06-07 09:38:02'),
-(11, 1, 'Cam 8, Parkir motor utara', 'Hikvision', 'Analog', 'Normal', '2MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:38:45', '2022-06-07 09:38:45'),
-(12, 1, 'Cam 9, Pintu keluar frondest/pintu emergency wing c 1', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:40:18', '2022-06-07 09:40:18'),
-(13, 1, 'Cam 10, Halaman depan forsikatel', 'Hikvision', 'Analog', 'Normal', '2MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:42:07', '2022-06-07 09:42:07'),
-(14, 1, 'Cam 11, Parkiran FM', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:42:41', '2022-06-07 09:42:41'),
-(15, 1, 'Cam 12, Depan FM', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:43:36', '2022-06-07 09:43:36'),
-(16, 1, 'Cam 13, Pintu keluar selatan', 'Hikvision', 'Analog', 'Normal', '2MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:44:21', '2022-06-07 09:44:21'),
-(17, 1, 'Cam 14, Parkir mobil utara', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:45:08', '2022-06-07 09:45:08'),
-(18, 1, 'Cam 15, Taman depan indoor/Segitiga/arah keluar', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, 'Pola Z', NULL, 'Meong', NULL, '2022-06-07 17:47:53', NULL, '2022-06-07 09:45:43', '2022-06-07 09:47:53'),
-(19, 1, 'Cam 16, Halam depan indoor/segitiga/arah masuk', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:48:48', '2022-06-07 09:48:48');
+(5, 1, 'Cam2, Pintu keluar selatan', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:14:09', NULL, '2022-06-07 09:33:01', '2022-06-08 04:14:09'),
+(6, 1, 'Cam3, Parkir halaman utara', 'Dahua', 'Analog', 'Normal', '2MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:14:21', NULL, '2022-06-07 09:34:25', '2022-06-08 04:14:21'),
+(7, 1, 'Cam4, Pintu masuk utara', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:14:34', NULL, '2022-06-07 09:35:35', '2022-06-08 04:14:34'),
+(8, 1, 'Cam5, Parkir samping SAS', 'Hikvision', 'Analog', 'Normal', '4MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:14:44', NULL, '2022-06-07 09:36:23', '2022-06-08 04:14:44'),
+(9, 1, 'Cam6, Parkir SL', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:15:02', NULL, '2022-06-07 09:37:14', '2022-06-08 04:15:02'),
+(10, 1, 'Cam7, Halaman menuju frondest', 'Hikvision', 'Analog', 'Normal', '2MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:15:12', NULL, '2022-06-07 09:38:02', '2022-06-08 04:15:12'),
+(11, 1, 'Cam8, Parkir motor utara', 'Hikvision', 'Analog', 'Normal', '2MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:15:26', NULL, '2022-06-07 09:38:45', '2022-06-08 04:15:26'),
+(12, 1, 'Cam9, Pintu keluar frondest/pintu emergency wing c 1', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:15:38', NULL, '2022-06-07 09:40:18', '2022-06-08 04:15:38'),
+(13, 1, 'Cam10, Halaman depan forsikatel', 'Hikvision', 'Analog', 'Normal', '2MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:12:46', NULL, '2022-06-07 09:42:07', '2022-06-08 04:12:46'),
+(14, 1, 'Cam11, Parkiran FM', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:13:04', NULL, '2022-06-07 09:42:41', '2022-06-08 04:13:04'),
+(15, 1, 'Cam12, Depan FM', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:13:14', NULL, '2022-06-07 09:43:36', '2022-06-08 04:13:14'),
+(16, 1, 'Cam13, Pintu keluar selatan', 'Hikvision', 'Analog', 'Normal', '2MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:13:25', NULL, '2022-06-07 09:44:21', '2022-06-08 04:13:25'),
+(17, 1, 'Cam14, Parkir mobil utara', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:13:35', NULL, '2022-06-07 09:45:08', '2022-06-08 04:13:35'),
+(18, 1, 'Cam15, Taman depan indoor/Segitiga/arah keluar', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, 'Pola Z', NULL, 'Meong', NULL, '2022-06-08 12:13:46', NULL, '2022-06-07 09:45:43', '2022-06-08 04:13:46'),
+(19, 1, 'Cam16, Halam depan indoor/segitiga/arah masuk', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'Vendor', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:13:57', NULL, '2022-06-07 09:48:48', '2022-06-08 04:13:57');
 
 -- --------------------------------------------------------
 
@@ -282,22 +282,22 @@ CREATE TABLE `cctv_monitor3` (
 --
 
 INSERT INTO `cctv_monitor3` (`id`, `user_id`, `lantai`, `wing`, `lokasi`, `merk`, `type`, `status`, `resolusi`, `tgl_pemasangan`, `petugas_pemasangan`, `tgl_perbaikan`, `petugas_perbaikan`, `catatan`, `sandi_dvr`, `kerusakan`, `user_updated`, `user_delete`, `updated_time`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(3, 1, 'Lt1', 'WC', 'Cam 1, Atas pintu menuju toilet', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:50:33', '2022-06-07 09:50:33'),
-(4, 1, 'Lt2', 'WB', 'Cam 2, Rg.Rapat Baruga', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:51:12', '2022-06-07 09:51:12'),
-(5, 1, 'Lt1', 'WA', 'Cam 3, Rg.Staff RWS', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:52:01', '2022-06-07 09:52:01'),
-(6, 1, 'Lt1', 'Lainnya', 'Cam 4, Plasa/arah ruang tunggu', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-07 18:07:27', NULL, '2022-06-07 09:52:54', '2022-06-07 10:07:27'),
-(7, 1, 'Lt2', 'WA', 'Cam 5, Atas Rg.OBS', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:53:58', '2022-06-07 09:53:58'),
-(8, 1, 'Lt1', 'WC', 'Cam 6, Atas Pintu Masuk/Rg.Tamu', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:54:54', '2022-06-07 09:54:54'),
-(9, 1, 'Lt2', 'Lainnya', 'Cam 7, Rg.Tamu Sekdiv', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:55:39', '2022-06-07 09:55:39'),
-(10, 1, 'Lt2', 'WC', 'Cam 8, Depan ruang TAM', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:56:37', '2022-06-07 09:56:37'),
-(11, 1, 'Lt1', 'Lainnya', 'Cam 9, Lobby timur/pintu masuk timur', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:57:33', '2022-06-07 09:57:33'),
-(12, 1, 'Lt1', 'Lainnya', 'Cam 10, Taman utara/arah menuju parkiran SL', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 09:59:35', '2022-06-07 09:59:35'),
-(13, 1, 'Lt1', 'Lainnya', 'Cam 11, Pintu masuk selatan/arah menuju rg.me', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 10:00:24', '2022-06-07 10:00:24'),
-(14, 1, 'Lt3', 'WA', 'Cam 12, Rg.Staff MSO/Depan rg OSM MSO', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 10:02:18', '2022-06-07 10:02:18'),
-(15, 1, 'Lt1', 'WA', 'Cam 13, Rg.Egbis/mengraha rg.staff egbis', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 10:03:54', '2022-06-07 10:03:54'),
-(16, 1, 'Lt1', 'WD', 'Cam 14, Rg.TA/Atas pintu menuju toilet', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 10:04:57', '2022-06-07 10:04:57'),
-(17, 1, 'Lt1', 'Lainnya', 'Cam 15, Tangga utama timur/atas rg telkom medika', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 10:06:14', '2022-06-07 10:06:14'),
-(18, 1, 'Lt1', 'Lainnya', 'Cam 16, Plasa/atas pintu masuk', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, 'gambar agak glitch', NULL, NULL, 'Meong', NULL, '2022-06-07 18:08:44', NULL, '2022-06-07 10:08:12', '2022-06-07 10:08:44');
+(3, 1, 'Lt1', 'WC', 'Cam1, Atas pintu menuju toilet', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:16:02', NULL, '2022-06-07 09:50:33', '2022-06-08 04:16:02'),
+(4, 1, 'Lt2', 'WB', 'Cam2, Rg.Rapat Baruga', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:19:09', NULL, '2022-06-07 09:51:12', '2022-06-08 04:19:09'),
+(5, 1, 'Lt1', 'WA', 'Cam3, Rg.Staff RWS', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:16:16', NULL, '2022-06-07 09:52:01', '2022-06-08 04:16:16'),
+(6, 1, 'Lt1', 'Lainnya', 'Cam4, Plasa/arah ruang tunggu', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:16:31', NULL, '2022-06-07 09:52:54', '2022-06-08 04:16:31'),
+(7, 1, 'Lt2', 'WA', 'Cam5, Atas Rg.OBS', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:19:25', NULL, '2022-06-07 09:53:58', '2022-06-08 04:19:25'),
+(8, 1, 'Lt1', 'WC', 'Cam6, Atas Pintu Masuk/Rg.Tamu', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:16:44', NULL, '2022-06-07 09:54:54', '2022-06-08 04:16:44'),
+(9, 1, 'Lt2', 'Lainnya', 'Cam7, Rg.Tamu Sekdiv', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:19:42', NULL, '2022-06-07 09:55:39', '2022-06-08 04:19:42'),
+(10, 1, 'Lt2', 'WC', 'Cam8, Depan ruang TAM', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:19:55', NULL, '2022-06-07 09:56:37', '2022-06-08 04:19:55'),
+(11, 1, 'Lt1', 'Lainnya', 'Cam9, Lobby timur/pintu masuk timur', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:17:05', NULL, '2022-06-07 09:57:33', '2022-06-08 04:17:05'),
+(12, 1, 'Lt1', 'Lainnya', 'Cam10, Taman utara/arah menuju parkiran SL', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:17:19', NULL, '2022-06-07 09:59:35', '2022-06-08 04:17:19'),
+(13, 1, 'Lt1', 'Lainnya', 'Cam11, Pintu masuk selatan/arah menuju rg.me', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:17:37', NULL, '2022-06-07 10:00:24', '2022-06-08 04:17:37'),
+(14, 1, 'Lt3', 'WA', 'Cam12, Rg.Staff MSO/Depan rg OSM MSO', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:20:12', NULL, '2022-06-07 10:02:18', '2022-06-08 04:20:12'),
+(15, 1, 'Lt1', 'WA', 'Cam13, Rg.Egbis/mengraha rg.staff egbis', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:17:50', NULL, '2022-06-07 10:03:54', '2022-06-08 04:17:50'),
+(16, 1, 'Lt1', 'WD', 'Cam14, Rg.TA/Atas pintu menuju toilet', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:18:05', NULL, '2022-06-07 10:04:57', '2022-06-08 04:18:05'),
+(17, 1, 'Lt1', 'Lainnya', 'Cam15, Tangga utama timur/atas rg telkom medika', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:18:33', NULL, '2022-06-07 10:06:14', '2022-06-08 04:18:33'),
+(18, 1, 'Lt1', 'Lainnya', 'Cam16, Plasa/atas pintu masuk', 'Hikvision', 'Analog', 'Normal', '1,5MP', NULL, 'ME', NULL, NULL, 'gambar agak glitch', NULL, NULL, 'Meong', NULL, '2022-06-08 12:18:56', NULL, '2022-06-07 10:08:12', '2022-06-08 04:18:56');
 
 -- --------------------------------------------------------
 
@@ -308,6 +308,7 @@ INSERT INTO `cctv_monitor3` (`id`, `user_id`, `lantai`, `wing`, `lokasi`, `merk`
 CREATE TABLE `cctv_monitor4` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `user_id` bigint(20) UNSIGNED NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `lokasi` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `merk` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -332,23 +333,23 @@ CREATE TABLE `cctv_monitor4` (
 -- Dumping data untuk tabel `cctv_monitor4`
 --
 
-INSERT INTO `cctv_monitor4` (`id`, `user_id`, `lokasi`, `merk`, `type`, `status`, `resolusi`, `tgl_pemasangan`, `petugas_pemasangan`, `tgl_perbaikan`, `petugas_perbaikan`, `catatan`, `sandi_dvr`, `kerusakan`, `user_updated`, `user_delete`, `updated_time`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(2, 1, 'Cam 1, Lap golf mengarah pos salemba', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 10:10:17', '2022-06-07 10:10:17'),
-(3, 1, 'Cam 2, Lap golf mengarah ke tennis indoor', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 10:11:05', '2022-06-07 10:11:05'),
-(4, 1, 'Cam 3, Hadap lap bola', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 10:12:50', '2022-06-07 10:12:50'),
-(5, 1, 'Cam 4, Mengarah pintu samping tennis indoor', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 10:13:27', '2022-06-07 10:13:27'),
-(6, 1, 'Cam 5, Mengarah ke pintu utama tennis indoor', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, 'Pola Z', NULL, 'Meong', NULL, '2022-06-07 18:17:48', NULL, '2022-06-07 10:17:34', '2022-06-07 10:17:48'),
-(7, 1, 'Cam 6, Mengarah ke taman segitiga indoor', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 10:18:48', '2022-06-07 10:18:48'),
-(8, 1, 'Cam 7, Pintu samping sekolah telkom arah masuk', 'Hikvision', 'Ip Cam', 'Rusak', '4MP', NULL, 'ME', NULL, NULL, 'Belum di lakukan pengecekan', NULL, 'No link', 'Meong', NULL, '2022-06-07 18:23:08', NULL, '2022-06-07 10:20:10', '2022-06-07 10:23:08'),
-(9, 1, 'Cam 8, pintu samping sekolah telkom arah keluar', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 10:22:33', '2022-06-07 10:22:33'),
-(10, 1, 'Cam 9, Arah Ware House TA', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 10:25:48', '2022-06-07 10:25:48'),
-(11, 1, 'Cam 10, Arah pintu keluar utama sekolah telkom', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, 'Gambar agak blur', 'Pola Z', NULL, 'Meong', NULL, '2022-06-07 18:27:41', NULL, '2022-06-07 10:25:48', '2022-06-07 10:27:41'),
-(12, 1, 'Cam 11, Genset 1000', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 10:29:28', '2022-06-07 10:29:28'),
-(13, 1, 'Cam 12, Parkiran mobil oprational/mengrah ke parkiran motor karyawan', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, 'Pola Z', NULL, 'Meong', NULL, '2022-06-07 18:33:44', NULL, '2022-06-07 10:33:14', '2022-06-07 10:33:44'),
-(14, 1, 'Cam 13, Parkiran mobil operation/mengrah ke parkiran mobli utara', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 10:39:59', '2022-06-07 10:39:59'),
-(15, 1, 'Cam 14, Parkiran mobil operation/mengarah ke parkiran motor karyawan', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 10:41:45', '2022-06-07 10:41:45'),
-(16, 1, 'Cam 15, Samping Rg.Manager SAS/Mengarah ke jalan masuk utama tireg', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 10:43:14', '2022-06-07 10:43:14'),
-(17, 1, 'Cam 15, Samping kantin/mengarah ke jalan masuk utama tireg', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-07 10:44:05', '2022-06-07 10:44:05');
+INSERT INTO `cctv_monitor4` (`id`, `user_id`, `image`, `lokasi`, `merk`, `type`, `status`, `resolusi`, `tgl_pemasangan`, `petugas_pemasangan`, `tgl_perbaikan`, `petugas_perbaikan`, `catatan`, `sandi_dvr`, `kerusakan`, `user_updated`, `user_delete`, `updated_time`, `deleted_at`, `created_at`, `updated_at`) VALUES
+(2, 1, 'm4_cam1.png', 'Cam1, Lap golf mengarah pos salemba', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 12:08:22', NULL, '2022-06-07 10:10:17', '2022-06-08 04:08:22'),
+(3, 1, 'm4_cam2.png', 'Cam2, Lap golf mengarah ke tennis indoor', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 13:17:40', NULL, '2022-06-07 10:11:05', '2022-06-08 05:17:40'),
+(4, 1, 'm4_cam3.png', 'Cam3, Hadap lap bola', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 13:36:52', NULL, '2022-06-07 10:12:50', '2022-06-08 05:36:52'),
+(5, 1, 'm4_cam4.png', 'Cam4, Mengarah pintu samping tennis indoor', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 13:37:14', NULL, '2022-06-07 10:13:27', '2022-06-08 05:37:14'),
+(6, 1, 'm4_cam5.png', 'Cam5, Mengarah ke pintu utama tennis indoor', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, 'Pola Z', NULL, 'Meong', NULL, '2022-06-08 13:37:29', NULL, '2022-06-07 10:17:34', '2022-06-08 05:37:29'),
+(7, 1, 'm4_cam6.png', 'Cam6, Mengarah ke taman segitiga indoor', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 13:37:42', NULL, '2022-06-07 10:18:48', '2022-06-08 05:37:42'),
+(8, 1, 'm4_cam7.png', 'Cam7, Pintu samping sekolah telkom arah masuk', 'Hikvision', 'Ip Cam', 'Rusak', '4MP', NULL, 'ME', NULL, NULL, 'Belum di lakukan pengecekan', NULL, 'No link', 'Meong', NULL, '2022-06-08 13:43:05', NULL, '2022-06-07 10:20:10', '2022-06-08 05:43:05'),
+(9, 1, 'm4_cam8.png', 'Cam8, pintu samping sekolah telkom arah keluar', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 13:38:30', NULL, '2022-06-07 10:22:33', '2022-06-08 05:38:30'),
+(10, 1, 'm4_cam9.png', 'Cam9, Arah Ware House TA', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 13:38:42', NULL, '2022-06-07 10:25:48', '2022-06-08 05:38:42'),
+(11, 1, 'm4_cam10.png', 'Cam10, Arah pintu keluar utama sekolah telkom', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, 'Gambar agak blur', 'Pola Z', NULL, 'Meong', NULL, '2022-06-08 13:38:55', NULL, '2022-06-07 10:25:48', '2022-06-08 05:38:55'),
+(12, 1, 'm4_cam11.png', 'Cam11, Genset 1000', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 13:39:30', NULL, '2022-06-07 10:29:28', '2022-06-08 05:39:30'),
+(13, 1, 'm4_cam12.png', 'Cam12, Parkiran mobil oprational/mengrah ke parkiran motor karyawan', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, 'Pola Z', NULL, 'Meong', NULL, '2022-06-08 13:39:45', NULL, '2022-06-07 10:33:14', '2022-06-08 05:39:45'),
+(14, 1, 'm4_cam13.png', 'Cam13, Parkiran mobil operation/mengrah ke parkiran mobli utara', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 13:40:00', NULL, '2022-06-07 10:39:59', '2022-06-08 05:40:00'),
+(15, 1, 'm4_cam14.png', 'Cam 14, Parkiran mobil operation/mengarah ke parkiran motor karyawan', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 13:40:17', NULL, '2022-06-07 10:41:45', '2022-06-08 05:40:17'),
+(16, 1, 'm4_cam15.png', 'Cam15, Samping Rg.Manager SAS/Mengarah ke jalan masuk utama tireg', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 13:40:30', NULL, '2022-06-07 10:43:14', '2022-06-08 05:40:30'),
+(17, 1, 'm4_cam16.png', 'Cam16, Samping kantin/mengarah ke jalan masuk utama tireg', 'Hikvision', 'Ip Cam', 'Normal', '4MP', NULL, 'ME', NULL, NULL, NULL, NULL, NULL, 'Meong', NULL, '2022-06-08 13:40:45', NULL, '2022-06-07 10:44:05', '2022-06-08 05:40:45');
 
 -- --------------------------------------------------------
 
@@ -500,7 +501,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `nik`, `image`, `is_active`, `role`, `password`, `status_login`, `is_login`, `user_time_login`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Meong', 15920011, 'user-images/FeLt4y7cNt0tyCxoenPfoHTxNEsjGAh2Ieb3or20.png', 1, 1, '$2y$10$d/NucPTbpNp7imfUYwEfReY9h1FwSVboGoyNlne7UeYzzKoC6EV1S', 'online', '2022-06-07 10:44:22', '2022-06-07 17:11:54', NULL, '2022-04-11 06:44:14', '2022-06-07 10:44:22'),
+(1, 'Meong', 15920011, 'user-images/FeLt4y7cNt0tyCxoenPfoHTxNEsjGAh2Ieb3or20.png', 1, 1, '$2y$10$d/NucPTbpNp7imfUYwEfReY9h1FwSVboGoyNlne7UeYzzKoC6EV1S', 'online', '2022-06-08 05:47:15', '2022-06-08 11:46:58', NULL, '2022-04-11 06:44:14', '2022-06-08 05:47:15'),
 (3, 'Jon Doe', 15920001, 'default.png', 1, 0, '$2y$10$9.k2N.RmEGARF3yU1340Cur8chEMD205n59NWLmxG6Zuf7vXN797C', 'offline', '2022-05-27 22:10:29', '2022-05-28 06:09:24', NULL, '2022-04-21 14:19:00', '2022-05-27 22:10:29');
 
 --
