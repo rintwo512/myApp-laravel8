@@ -75,11 +75,11 @@
               <div class="col-md-12">
                 <label class="form-label">Sandi DVR</label>
                 <input type="text" class="form-control" id="sandi_dvr4" name="sandi_dvr4" placeholder="Kata sandi DVR/NVR" value="{{ old('sandi_dvr4', $dataCctv4->sandi_dvr) }}">
-              </div>
-              <div class="col-6">
-                <label class="form-label">Kerusakan</label>
-                <textarea class="form-control" rows="4" cols="4" id="kerusakan4" name="kerusakan4" placeholder="Kerusakan pada camera!">{{ $dataCctv4->kerusakan }}</textarea>
-             </div>
+              </div>             
+             <div class="col-6">
+              <label class="form-label">Kerusakan</label>
+              <textarea class="form-control" rows="4" cols="4" id="kerusakan4" name="kerusakan4" placeholder="Kerusakan pada camera!">{{ $dataCctv4->kerusakan }}</textarea>
+           </div>
              <div class="col-6">
               <label class="form-label">Catatan <small>(Optional)</small></label>
               <textarea class="form-control" rows="4" cols="4" id="catatan4" name="catatan4">{{ $dataCctv4->catatan }}</textarea>

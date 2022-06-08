@@ -5,6 +5,47 @@
 
 @php use Illuminate\Support\Carbon; @endphp
 
+<style>
+     
+     img {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+img:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+#image-viewer4 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+.modal-content-img4 {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+.modal-content-img4 { 
+    animation-name: zoom4;
+    animation-duration: 0.6s;
+}
+@keyframes zoom4 {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+</style>
+
 
             <meta name="csrf-token" content="{{ csrf_token() }}">
             <div class="flash-success" data-success="{{ session('success') }}"></div>
@@ -44,6 +85,7 @@
               <table id="example" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                   <tr>                    
+                    <th></th>                    
                     <th>Lantai</th>
                     <th>Wing</th>
                     <th>Lokasi</th>
@@ -55,7 +97,12 @@
                 </thead>
                 <tbody> 
                 @foreach ($dataCctv1 as $cctv1)
-                    <tr>                    
+                    <tr>
+                      <td>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox">
+                        </div>
+                      </td>                      
                         <td>{{ $cctv1->lantai }}</td>                
                         <td>{{ $cctv1->wing }}</td>              
                         <td>{{ $cctv1->lokasi }}</td>
@@ -107,6 +154,7 @@
                 </tbody>
                 <tfoot>
                   <tr>
+                    <th></th>                    
                     <th>Lantai</th>
                     <th>Wing</th>
                     <th>Lokasi</th>
@@ -342,6 +390,7 @@
   <table id="monitor4" class="table table-striped table-bordered" style="width:100%">
     <thead>
       <tr>
+        <th>Image</th>
         <th>Lokasi</th>
         <th>Merk</th>                    
         <th>Type</th>
@@ -351,7 +400,12 @@
     </thead>
     <tbody>
       @foreach ($dataCctv4 as $cctv4)
-              <tr>                    
+              <tr>
+                <td class="productlist">
+                    <div class="product-box images4">
+                        <img src="/assets/cctv4/{{ $cctv4->image }}">
+                    </div>                   
+                </td>
                 <td>{{ $cctv4->lokasi }}</td>                
                 <td>{{ $cctv4->merk }}</td>
                 <td>{{ $cctv4->type }}</td>
@@ -397,6 +451,7 @@
     </tbody>
     <tfoot>
       <tr>
+        <th>Image</th>
         <th>Lokasi</th>
         <th>Merk</th>                    
         <th>Type</th>
@@ -760,7 +815,7 @@
 
             {{-- Modal Detail cctv1 --}}        
             <div class="modal fade" id="modalDetailDataCctvMonitor1" tabindex="-1" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-dialog modal-dialog-scrollable modal-lg">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title">Detail Data</h5>
@@ -833,7 +888,7 @@
 
           {{-- Modal Detail cctv2 --}}        
           <div class="modal fade" id="modalDetailDataCctvMonitor2" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-dialog modal-dialog-scrollable modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title">Detail Data</h5>
@@ -902,7 +957,7 @@
 
           {{-- Modal Detail cctv3 --}}        
           <div class="modal fade" id="modalDetailDataCctvMonitor3" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-dialog modal-dialog-scrollable modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title">Detail Data</h5>
@@ -975,7 +1030,7 @@
 
         {{-- Modal Detail cctv2 --}}        
         <div class="modal fade" id="modalDetailDataCctvMonitor4" tabindex="-1" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-dialog modal-dialog-scrollable modal-lg">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title">Detail Data</h5>
@@ -1195,10 +1250,14 @@
         {{-- end modal range data cctv4--}}
 
 
-        
+        <div id="image-viewer4">          
+          <img class="modal-content-img4" id="full-image4">
+        </div>
 
         <script src="/assets/js/jquery.min.js"></script>  
+        {{-- <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script> --}}
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="/assets/plugins/lightbox/simple-lightbox.jquery.min.js"></script>
         
         <script>
 
@@ -1839,6 +1898,8 @@
                     </tr>`;
           }
         </script>
-        {{-- fungsi cari data dengan range tanggal cctv4 --}}
+        {{-- end fungsi cari data dengan range tanggal cctv4 --}}
 
+
+       
 @endsection       

@@ -16,6 +16,7 @@ class CreateCctvMonitor4Table extends Migration
         Schema::create('cctv_monitor4', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
+            $table->string('image')->nullable();
             $table->string('lokasi');
             $table->string('merk');
             $table->string('type');
