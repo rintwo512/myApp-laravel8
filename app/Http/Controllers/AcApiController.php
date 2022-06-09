@@ -9,7 +9,7 @@ class AcApiController extends Controller
 {
     public function index()
     {
-        $data = Ac::all();
+        $data = Ac::all('id', 'label', 'wing', 'lantai', 'ruangan', 'type', 'status');
         if ($data) {
             return response()->json($data);
         } else {

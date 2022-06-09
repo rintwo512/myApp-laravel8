@@ -1028,7 +1028,7 @@ img:hover {opacity: 0.7;}
           </div>        
         {{-- end modal detail cctv3 --}}
 
-        {{-- Modal Detail cctv2 --}}        
+        {{-- Modal Detail cctv4 --}}        
         <div class="modal fade" id="modalDetailDataCctvMonitor4" tabindex="-1" aria-hidden="true">
           <div class="modal-dialog modal-dialog-scrollable modal-lg">
             <div class="modal-content">
@@ -1095,7 +1095,7 @@ img:hover {opacity: 0.7;}
             </div>
           </div>
         </div>        
-      {{-- end modal detail cctv2 --}}
+      {{-- end modal detail cctv4 --}}
 
 
 

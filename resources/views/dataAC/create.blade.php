@@ -80,7 +80,7 @@
             <select class="form-select" id="type" required name="type">
                 <option selected disabled value="">--Select--</option>
                 <option value="Cassete">Cassete</option>
-                <option value="Splite">Splite</option>
+                <option value="Wall Mounted">Wall Mounted</option>
                 <option value="Standing floor">Standing Floor</option>
                 <option value="Central">Central</option>                
             </select>

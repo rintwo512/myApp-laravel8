@@ -531,12 +531,12 @@
             <div class="card">              
               <div class="card-body">
                 <div>
-                  <h5 class="card-title">Cara Mencari Socket CSR pada kompresor AC</h5>
+                  <h5 class="card-title">Cara Mencari CSR pada kompresor AC</h5>
                 </div>
                 <ol>
                   <li>Posisikan selector multitester pada posisi 1 kilo ohm. Terminal pertama yang akan kita cari adalah terminal <strong class="text-danger">C</strong>, dengan cara mencari hambatan yang paling besar dari ketiga terminal yang ada pada kompresor. Setelah hambatan yang paling besar sudah di temukan maka terminal yang tidak diukur adalah terminal <strong class="text-danger">C</strong></li>&nbsp
                   <li>Selanjutnya, cari hambatan yang sedang dengan cara tempatkan salah satu jack di terminal <strong class="text-danger">C</strong>. Kemudian tempatkan jack yang satunya lagi ke salah satu terminal pada kompresor dan cari hambatan yang sedang. Setelah hambatan yang sedang ditemukan maka terminal tersebut adalah <strong class="text-danger">S</strong></li>&nbsp
-                  <li>Sekarang tempatkan salah satu jack ke terminal <strong class="text-danger">C</strong> dan jack yang satunya lagi ke terminal yang belum kita temukan, harusnya hambatannya paling kecil dari terminal <strong class="text-danger">C</strong> ke <strong class="text-danger">S</strong></li>
+                  <li>Sekarang tempatkan salah satu jack ke terminal <strong class="text-danger">C</strong> dan jack yang satunya lagi ke terminal yang belum kita temukan, harusnya hambatannya paling kecil dari terminal <strong class="text-danger">C</strong> ke <strong class="text-danger">R</strong></li>
                 </ol>
                 <img style="width: 185px;" src="/assets/images/csr.png" class="card-img-top">
                 <img style="width: 185px;" src="/assets/images/csr1.png" class="card-img-top">
@@ -552,7 +552,7 @@
 
         <div class="col">          
           <div class="modal fade" id="exampleScrollableModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-dialog modal-dialog-scrollable modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title">Detail Data</h5>
