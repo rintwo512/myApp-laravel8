@@ -29,6 +29,10 @@
             <label for="tgl_maintenance" class="form-label">Tanggal Maintenance <small>(optional)</small></label>
             <input class="result form-control" type="text" name="tgl_maintenance" id="date-time" value="{{ old('tgl_maintenance') }}">
           </div>
+          <div class="col-md-12">
+            <label for="petugas_maint" class="form-label">Petugas Maintenance <small>(optional)</small></label>
+            <input class="form-control" type="text" name="petugas_maint">
+          </div>
           <div class="col-md-4">
             <label for="label" class="form-label">Label <small>(optional)</small></label>
             <input type="text" class="form-control text-capitalize @error('label')

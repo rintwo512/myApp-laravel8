@@ -38,6 +38,7 @@ class CreateAcTable extends Migration
             $table->string('tgl_pemasangan')->nullable();
             $table->string('petugas_pemasangan')->nullable();
             $table->string('tgl_maintenance')->nullable();
+            $table->string('petugas_maint')->nullable();
             $table->string('user_updated')->nullable();
             $table->string('user_updated_time')->nullable();
             $table->string('is_delete')->nullable();

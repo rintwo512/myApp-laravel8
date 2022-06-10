@@ -15,7 +15,66 @@
 
 img:hover {opacity: 0.7;}
 
-/* The Modal (background) */
+/* The Modal (background) 2 */
+#image-viewer2 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+.modal-content-img2 {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+.modal-content-img2 { 
+    animation-name: zoom2;
+    animation-duration: 0.6s;
+}
+@keyframes zoom2 {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+
+/* The Modal (background) 3 */
+#image-viewer3 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+.modal-content-img3 {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+.modal-content-img3 { 
+    animation-name: zoom3;
+    animation-duration: 0.6s;
+}
+@keyframes zoom3 {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Modal (background) 4 */
 #image-viewer4 {
     display: none;
     position: fixed;
@@ -195,6 +254,7 @@ img:hover {opacity: 0.7;}
           <table id="monitor2" class="table table-striped table-bordered" style="width:100%">
             <thead>
               <tr>
+                <th>Image</th>
                 <th>Lokasi</th>
                 <th>Merk</th>                    
                 <th>Type</th>
@@ -204,7 +264,12 @@ img:hover {opacity: 0.7;}
             </thead>
             <tbody>
               @foreach ($dataCctv2 as $cctv2)
-              <tr>                    
+              <tr>
+                <td class="productlist">
+                  <div class="product-box images2">
+                      <img src="/assets/cctv2/{{ $cctv2->image }}">
+                  </div>                   
+                </td>
                 <td>{{ $cctv2->lokasi }}</td>                
                 <td>{{ $cctv2->merk }}</td>
                 <td>{{ $cctv2->type }}</td>
@@ -288,6 +353,7 @@ img:hover {opacity: 0.7;}
       <table id="monitor3" class="table table-striped table-bordered" style="width:100%">
         <thead>
           <tr>                    
+            <th>Image</th>
             <th>Lantai</th>
             <th>Wing</th>
             <th>Lokasi</th>
@@ -299,7 +365,12 @@ img:hover {opacity: 0.7;}
         </thead>
         <tbody>
           @foreach ($dataCctv3 as $cctv3)
-          <tr>                    
+          <tr>
+              <td class="productlist">
+                <div class="product-box images3">
+                    <img src="/assets/cctv3/{{ $cctv3->image }}">
+                </div>                   
+              </td>
               <td>{{ $cctv3->lantai }}</td>                
               <td>{{ $cctv3->wing }}</td>              
               <td>{{ $cctv3->lokasi }}</td>
@@ -351,6 +422,7 @@ img:hover {opacity: 0.7;}
         </tbody>
         <tfoot>
           <tr>
+            <th>Image</th>
             <th>Lantai</th>
             <th>Wing</th>
             <th>Lokasi</th>
@@ -1249,15 +1321,23 @@ img:hover {opacity: 0.7;}
       </div>
         {{-- end modal range data cctv4--}}
 
-
+        {{-- Lightbox --}}
         <div id="image-viewer4">          
           <img class="modal-content-img4" id="full-image4">
         </div>
 
+        <div id="image-viewer3">          
+          <img class="modal-content-img3" id="full-image3">
+        </div>
+
+        <div id="image-viewer2">          
+          <img class="modal-content-img2" id="full-image2">
+        </div>
+        {{-- End lightbox --}}
+
         <script src="/assets/js/jquery.min.js"></script>  
         {{-- <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script> --}}
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="/assets/plugins/lightbox/simple-lightbox.jquery.min.js"></script>
         
         <script>
 
@@ -1902,4 +1982,40 @@ img:hover {opacity: 0.7;}
 
 
        
-@endsection       
+{{-- lightbox --}}
+<script>
+  $(".images3 img").click(function(){
+    $("#full-image3").attr("src", $(this).attr("src"));
+    $('#image-viewer3').show();
+  });
+  
+  $('#full-image3').on('click', function() {
+    $('#image-viewer3').hide(300);
+  });
+
+// ----------------------------------------
+  
+  $(".images4 img").click(function(){
+    $("#full-image4").attr("src", $(this).attr("src"));
+    $('#image-viewer4').show();
+  });
+
+  $('#full-image4').on('click', function() {
+    $('#image-viewer4').hide(300);
+  });
+
+
+  // ----------------------------------------
+  
+  $(".images2 img").click(function(){
+    $("#full-image2").attr("src", $(this).attr("src"));
+    $('#image-viewer2').show();
+  });
+
+  $('#full-image2').on('click', function() {
+    $('#image-viewer2').hide(300);
+  });
+
+</script>
+{{-- end lightbox --}}
+        @endsection       

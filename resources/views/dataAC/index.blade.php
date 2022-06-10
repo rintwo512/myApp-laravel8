@@ -117,7 +117,9 @@
                             data-catatanac="{{ $ac->catatan }}"
                             data-keteranganac="{{ $ac->keterangan }}"
                             data-kerusakanac="{{ $ac->kerusakan }}"
-                            data-tglpemasanganac="{{ $ac->tgl_pemasangan }}" data-petugaspemasanganac="{{ $ac->petugas_pemasangan }}"
+                            data-tglpemasanganac="{{ $ac->tgl_pemasangan }}"
+                            data-petugasmaintac="{{ $ac->petugas_maint }}"
+                            data-petugaspemasanganac="{{ $ac->petugas_pemasangan }}"
                             data-tanggalmaintenanceac="{{ Carbon::parse($ac->tgl_maintenance)->locale('id')->diffForHumans() }}" data-updatedtimeac="{{ $ac->user_updated }}/{{ Carbon::parse($ac->user_updated_time)->diffForHumans() }}">
                             <i class="bi bi-eye-fill"></i>
                             </button>
@@ -569,6 +571,8 @@
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">Tanggal Maintenance <i class="bi bi-arrow-right"></i> <strong id="detailTglMaintenanceAC"></strong>
                         </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Petugas Maintenance <i class="bi bi-arrow-right"></i> <strong id="detailPetugasMaintAC"></strong>
+                        </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">Label <i class="bi bi-arrow-right"></i> <strong id="detailLabelAC" class="text-capitalize"></strong>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">Assets <i class="bi bi-arrow-right"></i> <strong id="detailAssetsAC" class="text-capitalize"></strong>
@@ -910,6 +914,7 @@
               const tanggalpemasanganac = $(this).data('tglpemasanganac');
               const petugaspemsanganac = $(this).data('petugaspemasanganac');
               const tanggalmaint = $(this).data('tanggalmaintenanceac');
+              const petugasmaintac = $(this).data('petugasmaintac');
               const updatedtimeac = $(this).data('updatedtimeac');
             
               if(updatedtimeac == '/1 detik yang lalu'){
@@ -937,6 +942,7 @@
               
               
               $('#detailTanggaPemasanganAC').html(tanggalpemasanganac);
+              $('#detailPetugasMaintAC').html(petugasmaintac);
               $('#detailPetugasPemasanganAC').html(petugaspemsanganac);
               $('#detailLabelAC').html(label);
               $('#detailAssetsAC').html(assets);

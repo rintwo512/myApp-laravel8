@@ -89,6 +89,7 @@ class AcController extends Controller
                 'tgl_pemasangan' => $request->tgl_pemasangan,
                 'petugas_pemasangan' => $request->petugas_pemasangan,
                 'tgl_maintenance' => $request->tgl_maintenance,
+                'petugas_maint' => $request->petugas_maint,
                 'user_id' => auth()->user()->id
             ];
 
@@ -179,6 +180,7 @@ class AcController extends Controller
                 'tgl_pemasangan' => $request->tgl_pemasangan,
                 'petugas_pemasangan' => $request->petugas_pemasangan,
                 'tgl_maintenance' => $request->tgl_maintenance,
+                'petugas_maint' => $request->petugas_maint,
                 'user_updated' => auth()->user()->name,
                 'user_updated_time' => date('Y-m-d H:i:s')
             ];
