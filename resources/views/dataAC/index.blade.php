@@ -34,10 +34,12 @@
             <a href="/ac/create" class="mb-0 text-uppercase btn btn-primary btn-sm">Tambah Data</a>
             @endcan
 
-            <a href="/ac/export" class="mb-0 text-uppercase btn btn-secondary btn-sm">Export</a>
+            <a href="/ac/note" class="mb-0 text-uppercase btn btn-warning btn-sm"><i class="bi bi-card-list"></i></a>
+
+            <a href="/ac/export" style="background: #1F6E43"  class="mb-0 text-uppercase btn btn-secondary btn-sm"><i class="bi bi-file-spreadsheet"></i></a>
 
             <a href="/ac/trash" class="mb-0 text-uppercase btn btn-secondary btn-sm"><i class="bi bi-trash-fill"></i></a>
-
+            
             <div class="col-md-4 mt-3">            
               <div class="input-group mb-3">
                   <button class="btn btn-info text-white" type="button" id="btnRangeAc">Search</button>

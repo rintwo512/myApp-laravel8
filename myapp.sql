@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Jun 2022 pada 00.38
+-- Waktu pembuatan: 20 Jun 2022 pada 12.03
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 7.4.27
 
@@ -120,7 +120,7 @@ INSERT INTO `ac` (`id`, `user_id`, `label`, `assets`, `wing`, `lantai`, `ruangan
 (54, 1, 'B1', 'Telkom', 'WB', 'Lt1', 'Rg.Staff GSD', 'Daikin', 'Cassete', 'Non-inverter', '3pk', 'R22', 'Thailand', '13,4 A', '220Volt', NULL, NULL, 'Normal', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-15 20:17:12', '2022-04-15 20:17:12'),
 (55, 1, 'B1', 'Telkom', 'WB', 'Lt1', 'Rg.Staff GSD/Atas Meja Afdal', 'Daikin', 'Cassete', 'Inverter', '3pk', 'R410', 'Thailand', '13 A', '220Volt', NULL, NULL, 'Normal', NULL, NULL, NULL, NULL, 'ME', NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-15 20:18:39', '2022-04-15 20:18:39'),
 (56, 1, 'B1', 'Telkom', 'WB', 'Lt1', 'Atas Meja Bilyard GSD', 'Daikin', 'Cassete', 'Non-inverter', '3pk', 'R22', 'Thailand', '13,4 A', '220Volt', NULL, NULL, 'Normal', 'pembuangan air sering bocor', NULL, NULL, NULL, NULL, NULL, NULL, 'Meong', '2022-04-16 04:22:27', NULL, NULL, '2022-04-15 20:20:30', '2022-04-15 20:22:27'),
-(57, 1, 'B1', 'GSD', 'WB', 'Lt1', 'Rg.RBOC GSD', 'Daikin', 'Wall Mounted', 'Inverter', '2pk', 'R410', 'Thailand', NULL, '220Volt', NULL, NULL, 'Normal', NULL, NULL, NULL, NULL, 'ME', NULL, NULL, 'Meong', '2022-06-09 12:58:06', NULL, NULL, '2022-04-15 20:21:25', '2022-06-09 04:58:06'),
+(57, 1, 'B1', 'GSD', 'WB', 'Lt1', 'Rg.RBOC GSD', 'Daikin', 'Wall Mounted', 'Inverter', '2pk', 'R410', 'Thailand', NULL, '220Volt', NULL, NULL, 'Normal', NULL, NULL, NULL, NULL, 'ME', '2022-06-15 09:25', 'Rahmat Haryadi, Rahmat Abdullah', 'Meong', '2022-06-20 14:25:12', NULL, NULL, '2022-04-15 20:21:25', '2022-06-20 06:25:12'),
 (59, 1, NULL, 'Telkom', 'WC', 'Lt1', 'Rg.Deputy Infra', 'Daikin', 'Wall Mounted', 'Non-inverter', '2,5pk', 'R32', 'Malaysia', '9 A', '220Volt', '22000', '1/4 + 1/2', 'Normal', NULL, NULL, NULL, '29 April, 2022', 'raswin, rinto, rahmat kintil, arif', NULL, NULL, 'Meong', '2022-06-09 12:58:26', NULL, NULL, '2022-05-01 03:54:49', '2022-06-09 04:58:26'),
 (60, 1, NULL, NULL, 'WA', 'Lt1', 'osm egbis', 'Daikin', 'Wall Mounted', 'Non-inverter', '2pk', 'R32', 'Thailand', NULL, '220Volt', NULL, '1/4 + 5/8', 'Normal', NULL, NULL, NULL, '11 May, 2022', 'Me', NULL, NULL, 'Meong', '2022-06-09 12:59:00', NULL, NULL, '2022-05-13 04:17:37', '2022-06-09 04:59:00'),
 (61, 1, NULL, NULL, 'WC', 'Lt2', 'rg.pantry', 'Daikin', 'Wall Mounted', 'Non-inverter', '2pk', 'R32', NULL, NULL, '220Volt', NULL, '1/4 + 1/2', 'Normal', NULL, NULL, NULL, NULL, 'Vendor', '2022-05-11 11:26', 'Rahmat Hidayatullah, Rahmat Abdullah', 'Meong', '2022-06-11 04:54:17', NULL, NULL, '2022-05-14 03:27:42', '2022-06-10 20:54:17'),
@@ -147,7 +147,12 @@ INSERT INTO `ac` (`id`, `user_id`, `label`, `assets`, `wing`, `lantai`, `ruangan
 (83, 1, NULL, 'Telkom', 'Lainnya', 'Lt1', 'Medika', 'Daikin', 'Cassete', 'Non-inverter', '3pk', 'R22', 'Thailand', NULL, '220Volt', NULL, '3/8 + 5/8', 'Normal', 'Telah di lakukan vakum dan pengisian freon tanggal 09/juni/2022\r\nRahmat Hidayatullah, Rahmat Haryadi, Rahmat Abdullah', NULL, NULL, NULL, 'Vendor', NULL, NULL, 'Meong', '2022-06-11 05:05:19', NULL, NULL, '2022-06-09 04:15:40', '2022-06-10 21:05:19'),
 (84, 1, 'C2.01', 'Telkom', 'WC', 'Lt2', 'Rg.Staff Area depan', 'Daikin', 'Standing floor', 'Non-inverter', '3pk', 'R410', 'Malaysia', '10 A', '380Volt', NULL, '3/8 + 5/8', 'Normal', NULL, NULL, NULL, '10 June, 2022', 'Rinto, Rahmat, Rahmat, Hasrul, Arif, Andre, Rahmat', NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-10 19:57:51', '2022-06-10 19:57:51'),
 (85, 1, 'C2.02', 'Telkom', 'WC', 'Lt2', 'Rg.Staff GA', 'Daikin', 'Standing floor', 'Non-inverter', '3pk', 'R410', 'Malaysia', '10 A', '380Volt', NULL, '3/8 + 5/8', 'Normal', NULL, NULL, NULL, '10 June, 2022', 'Rinto, Rahmat, Rahmat, Hasrul, Arif, Andre, Rahmat', NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-10 20:00:04', '2022-06-10 20:00:04'),
-(86, 1, 'C1.01', 'Telkom', 'WC', 'Lt1', 'Rg.Staff', 'Daikin', 'Standing floor', 'Non-inverter', '3pk', 'R410', 'Malaysia', '10 A', '380Volt', NULL, '3/8 + 5/8', 'Normal', 'MCB ada di panel ac sentral.\r\nSumber ada di wing c lt.2', NULL, NULL, '10 June, 2022', 'Rinto, Rahmat, Rahmat, Hasrul, Arif, Andre, Rahmat', NULL, NULL, 'Meong', '2022-06-11 05:08:37', NULL, NULL, '2022-06-10 20:01:33', '2022-06-10 21:08:37');
+(86, 1, 'C1.01', 'Telkom', 'WC', 'Lt1', 'Rg.Staff', 'Daikin', 'Standing floor', 'Non-inverter', '3pk', 'R410', 'Malaysia', '10 A', '380Volt', NULL, '3/8 + 5/8', 'Normal', 'MCB ada di panel ac sentral.\r\nSumber ada di wing c lt.2', NULL, NULL, '10 June, 2022', 'Rinto, Rahmat, Rahmat, Hasrul, Arif, Andre, Rahmat', NULL, NULL, 'Meong', '2022-06-11 05:08:37', NULL, NULL, '2022-06-10 20:01:33', '2022-06-10 21:08:37'),
+(87, 1, 'A3.03', 'Telkom', 'WA', 'Lt3', 'Rg.Staff ROC', 'Daikin', 'Standing floor', 'Non-inverter', '3pk', 'R410', 'Malaysia', '10 A', '380Volt', NULL, '3/8 + 5/8', 'Normal', 'MCB Ada di panel ruang server ROC', NULL, NULL, '14 June, 2022', 'Rinto, Rahmat, Rahmat, Hasrul, Arif, Andre, Rahmat, Rusdi, Raswin', NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-15 09:39:52', '2022-06-15 09:39:52'),
+(88, 1, 'B3.05', 'Telkom', 'WB', 'Lt3', 'Fiber room', 'Daikin', 'Standing floor', 'Non-inverter', '3pk', 'R410', 'Malaysia', '10 A', '380Volt', NULL, '3/8 + 5/8', 'Normal', NULL, NULL, NULL, '14 June, 2022', 'Rinto, Rahmat, Rahmat, Hasrul, Arif, Andre, Rusdi, Raswin, Rahmat', NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-15 09:41:37', '2022-06-15 09:41:37'),
+(89, 1, 'A1.10', 'Telkom', 'WA', 'Lt1', 'Rg.Staff RWS', 'Daikin', 'Standing floor', 'Non-inverter', '3pk', 'R410', 'Malaysia', '10 A', '380Volt', NULL, '3/8 + 5/8', 'Normal', NULL, NULL, NULL, '14 June, 2022', 'Rinto, Rahmat, Raswin, Andre, Arif, Rahmat', NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-15 09:42:52', '2022-06-15 09:42:52'),
+(90, 1, NULL, 'Telkom', 'WD', 'Lt2', 'Ex. ruang rapat marketing', 'Daikin', 'Wall Mounted', 'Non-inverter', '2pk', 'R32', 'Malaysia', NULL, '220Volt', NULL, '1/4 + 1/2', 'Normal', NULL, NULL, NULL, NULL, 'Vendor', '2022-06-13 09:43', 'Arif, Syahril', NULL, NULL, NULL, NULL, '2022-06-15 09:44:26', '2022-06-15 09:44:26'),
+(91, 1, NULL, 'Telkom', 'WD', 'Lt2', 'Ex. ruang rapat marketing', 'Daikin', 'Wall Mounted', 'Non-inverter', '2pk', 'R410', 'Thailand', NULL, '220Volt', NULL, '1/4 + 5/8', 'Normal', NULL, NULL, NULL, NULL, 'Vendor', '2022-06-13 09:44', 'Arif, Syahril', NULL, NULL, NULL, NULL, '2022-06-15 09:46:14', '2022-06-15 09:46:14');
 
 -- --------------------------------------------------------
 
@@ -382,7 +387,7 @@ CREATE TABLE `chartac` (
 INSERT INTO `chartac` (`id`, `tahun`, `bulan`, `total`, `created_at`, `updated_at`) VALUES
 (25, '2022', 'April', '6', '2022-04-11 08:12:25', '2022-04-14 14:06:29'),
 (26, '2022', 'May', '15', '2022-05-14 03:28:52', '2022-05-28 15:00:01'),
-(29, '2022', 'June', '10', '2022-06-02 04:36:18', '2022-06-07 08:44:21');
+(29, '2022', 'June', '12', '2022-06-02 04:36:18', '2022-06-15 09:46:55');
 
 -- --------------------------------------------------------
 
@@ -428,6 +433,28 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (9, '2022_04_14_231437_create_cctv_monitor2_table', 2),
 (10, '2022_04_15_024616_create_cctv_monitor3_table', 3),
 (11, '2022_04_16_002444_create_cctv_monitor4_table', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `note_ac`
+--
+
+CREATE TABLE `note_ac` (
+  `id` int(11) NOT NULL,
+  `aksi` varchar(255) NOT NULL,
+  `petugas` varchar(255) NOT NULL,
+  `tanggal` varchar(255) NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `note_ac`
+--
+
+INSERT INTO `note_ac` (`id`, `aksi`, `petugas`, `tanggal`, `updated_at`, `created_at`) VALUES
+(5, 'Pencucian semua outdoor di lantai 3 area lantai hijau', 'Rinto, Syahril, Andre', '2022-06-14 15:01', '2022-06-20 09:59:57', '2022-06-20 09:01:17');
 
 -- --------------------------------------------------------
 
@@ -510,7 +537,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `nik`, `image`, `is_active`, `role`, `password`, `status_login`, `is_login`, `user_time_login`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Meong', 15920011, 'user-images/KBKqC7cwLbKBw4261pwOjdxxyyqLktWwdrOBaGeU.png', 1, 1, '$2y$10$d/NucPTbpNp7imfUYwEfReY9h1FwSVboGoyNlne7UeYzzKoC6EV1S', 'online', '2022-06-10 22:35:11', '2022-06-11 05:58:35', NULL, '2022-04-11 06:44:14', '2022-06-10 22:35:11'),
+(1, 'Meong', 15920011, 'user-images/KBKqC7cwLbKBw4261pwOjdxxyyqLktWwdrOBaGeU.png', 1, 1, '$2y$10$d/NucPTbpNp7imfUYwEfReY9h1FwSVboGoyNlne7UeYzzKoC6EV1S', 'online', '2022-06-20 09:59:58', '2022-06-20 17:59:37', NULL, '2022-04-11 06:44:14', '2022-06-20 09:59:58'),
 (3, 'Jon Doe', 15920001, 'default.png', 1, 0, '$2y$10$9.k2N.RmEGARF3yU1340Cur8chEMD205n59NWLmxG6Zuf7vXN797C', 'offline', '2022-05-27 22:10:29', '2022-05-28 06:09:24', NULL, '2022-04-21 14:19:00', '2022-06-09 05:14:52');
 
 --
@@ -567,6 +594,12 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `note_ac`
+--
+ALTER TABLE `note_ac`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `password_resets`
 --
 ALTER TABLE `password_resets`
@@ -601,7 +634,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `ac`
 --
 ALTER TABLE `ac`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- AUTO_INCREMENT untuk tabel `cctv_monitor1`
@@ -644,6 +677,12 @@ ALTER TABLE `failed_jobs`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT untuk tabel `note_ac`
+--
+ALTER TABLE `note_ac`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `personal_access_tokens`

@@ -4,6 +4,7 @@ use App\Models\Ac;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AcController;
+use App\Http\Controllers\NoteController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ChartAcController;
@@ -49,7 +50,7 @@ Route::post('/dashboard/charts/updateChart', [ChartAcController::class, 'updateD
 Route::delete('/dashboard/charts/delete/{id}', [ChartAcController::class, 'deleteDataChartAc'])->middleware('auth');
 
 
-
+// Route AC
 Route::get('/ac', [AcController::class, 'index'])->middleware('auth');
 Route::get('/ac/create', [AcController::class, 'create'])->middleware('auth');
 Route::post('/ac/create', [AcController::class, 'store'])->middleware('auth');
@@ -64,6 +65,8 @@ Route::delete('ac/trash/{id}', [AcController::class, 'restore'])->middleware('au
 Route::get('/dashboard/range/ac/{nilai}', [AcController::class, 'queryRangeAc'])->middleware('auth');
 
 
+// Route Note AC
+Route::resource('/ac/note', NoteController::class)->middleware('auth');
 
 
 Route::resource('/dashboard/users', AdminController::class)->middleware('admin');
