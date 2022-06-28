@@ -13,6 +13,7 @@ use App\Http\Controllers\CctvMonitor1Controller;
 use App\Http\Controllers\CctvMonitor2Controller;
 use App\Http\Controllers\CctvMonitor3Controller;
 use App\Http\Controllers\CctvMonitor4Controller;
+use App\Http\Controllers\StockController;
 
 /*
 |--------------------------------------------------------------------------
@@ -204,3 +205,8 @@ Route::get('/tools/celcius-fahrenheit', function () {
         'title' => 'Konversi celcius to fahrenheit'
     ]);
 });
+
+
+
+// Stock Barang
+Route::resource('/dashboard/stock', StockController::class)->middleware('auth');

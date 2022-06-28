@@ -54,8 +54,9 @@
                   <h5 class="mb-0">Database</h5>
                 </div>                    
               </div>
-              <a href="/ac" class="list-group-item {{ Request::is('ac*') ? 'active' : '' }}"><i class="bi bi-house-door"></i> Data AC</a>
-              <a href="/dashboard/cctv" class="list-group-item list-group-item {{ Request::is('dashboard/cctv*') ? 'active' : '' }}"><i class="bi bi-house"></i> Data CCTV</a>
+              <a href="/ac" class="list-group-item {{ Request::is('ac*') ? 'active' : '' }}"><i class="bi bi-server"></i> Data AC</a>
+              <a href="/dashboard/cctv" class="list-group-item list-group-item {{ Request::is('dashboard/cctv*') ? 'active' : '' }}"><i class="bi bi-server"></i> Data CCTV</a>
+              <a href="/dashboard/stock" class="list-group-item list-group-item {{ Request::is('dashboard/stock*') ? 'active' : '' }}"><i class="bi bi-server"></i> Stock Barang</a>
             </div>
         </div>
         <div class="tab-pane fade" id="pills-adminMenu">
