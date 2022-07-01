@@ -175,6 +175,26 @@
                 <option value="Rusak">Rusak</option>                
             </select>
           </div>
+          <div class="col-md-6">
+            <label for="seriIndoor" class="form-label">No Seri Indoor <small>(optional)</small></label>
+            <input type="text" class="form-control @error('seri_indoor')
+              is-invalid
+            @enderror" name="seri_indoor" id="seriIndoor" value="{{ old('seri_indoor', $ac->seri_indoor) }}">
+            @error('seri_indoor')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+            @enderror
+          </div>
+          <div class="col-md-6">
+            <label for="seriOutdoor" class="form-label">No Seri Outdoor <small>(optional)</small></label>
+            <input type="text" class="form-control @error('seri_outdoor') is-invalid @enderror" name="seri_outdoor" id="seriOutdoor" value="{{ old('seri_outdoor', $ac->seri_outdoor) }}">
+            @error('seri_outdoor')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+            @enderror
+          </div>
           <div class="col-6">
             <label class="form-label">Kerusakan</label>
             <textarea class="form-control" name="kerusakan" id="kerusakan" rows="4" cols="4" placeholder="Masukan kerusakan jika ada!">{{ old('kerusakan', $ac->kerusakan) }}</textarea>

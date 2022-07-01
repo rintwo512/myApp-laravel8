@@ -116,6 +116,8 @@
                             data-btuac="{{ $ac->btu }}"
                             data-pipaac="{{ $ac->pipa }}"
                             data-statusac="{{ $ac->status }}"
+                            data-seriindoorac="{{ $ac->seri_indoor }}"
+                            data-serioutdoorac="{{ $ac->seri_outdoor }}"
                             data-catatanac="{{ $ac->catatan }}"
                             data-keteranganac="{{ $ac->keterangan }}"
                             data-kerusakanac="{{ $ac->kerusakan }}"
@@ -603,6 +605,10 @@
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">Btu <i class="bi bi-arrow-right"></i> <strong id="detailBtuAC"></strong>
                         </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">No Seri Indoor <i class="bi bi-arrow-right"></i> <strong id="detailSeriIndoorAC"></strong>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">No Seri Outdoor <i class="bi bi-arrow-right"></i> <strong id="detailSeriOutdoorAC"></strong>
+                        </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">Pipa Liquid + Gas <i class="bi bi-arrow-right"></i> <strong id="detailPipaAC"></strong>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">Status <i class="bi bi-arrow-right"></i> <strong id="detailStatusAC"></strong>
@@ -910,6 +916,8 @@
               const btuac = $(this).data('btuac');
               const pipaac = $(this).data('pipaac');
               const statusac = $(this).data('statusac');
+              const seriIndoor = $(this).data('seriindoorac');
+              const seriOutdoor = $(this).data('serioutdoorac');
               const catatanac = $(this).data('catatanac');
               const kerusakanac = $(this).data('kerusakanac');
               const keteranganac = $(this).data('keteranganac');
@@ -960,6 +968,8 @@
               $('#detailAmperAC').html(currentac);
               $('#detailVoltageAC').html(voltageac);
               $('#detailBtuAC').html(btuac);
+              $('#detailSeriIndoorAC').html(seriIndoor);
+              $('#detailSeriOutdoorAC').html(seriOutdoor);
               $('#detailPipaAC').html(pipaac);
               $('#detailStatusAC').html(statusac);           
               $('#detailCatatanAC').html(catatanac); 

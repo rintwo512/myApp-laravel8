@@ -11,6 +11,7 @@ use Illuminate\Support\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Http;
 
+
 class AcController extends Controller
 {
     /**
@@ -52,7 +53,7 @@ class AcController extends Controller
 
         $validateDataAc = $request->validate([
             'wing' => 'required',
-            // 'label' => 'unique:ac',
+
             'lantai' => 'required',
             'ruangan' => 'required',
             'merk' => 'required',
@@ -64,6 +65,23 @@ class AcController extends Controller
             'voltage' => 'required',
             'status' => 'required'
         ]);
+
+        $rulesSeri = [
+            'seri_indoor' => 'unique:ac,NULL',
+            'seri_outdoor' => 'unique:ac,NULL'
+        ];
+
+        if ($request->seri_indoor != NULL) {
+
+            $validateDataAc = $request->validate($rulesSeri);
+        }
+
+        $rulesLabel = [
+            'label' => 'unique:ac',
+        ];
+        if ($request->label != NULL) {
+            $validateDataAc = $request->validate($rulesLabel);
+        }
 
         $validateDataAc =
             [
@@ -90,6 +108,8 @@ class AcController extends Controller
                 'petugas_pemasangan' => $request->petugas_pemasangan,
                 'tgl_maintenance' => $request->tgl_maintenance,
                 'petugas_maint' => $request->petugas_maint,
+                'seri_indoor' => $request->seri_indoor,
+                'seri_outdoor' => $request->seri_outdoor,
                 'user_id' => auth()->user()->id
             ];
 
@@ -133,9 +153,7 @@ class AcController extends Controller
      */
     public function update(Request $request, Ac $ac, $id)
     {
-
-        $oldLabel = Ac::find($id)->toArray();
-
+        $old = Ac::find($id);
 
         $rules = [
             'wing' => 'required',
@@ -150,11 +168,20 @@ class AcController extends Controller
             'status' => 'required'
         ];
 
-        // if ($request->label != $oldLabel['label']) {
-        //     $rules['label'] = 'unique:ac';
-        // }
-
         $validateNewData = $request->validate($rules);
+
+        $ruleSeri = [
+            'seri_indoor' => 'required|unique:ac',
+            'seri_outdoor' => 'required|unique:ac'
+        ];
+
+        if ($request->seri_indoor != $old->seri_indoor) {
+            $validateNewData = $request->validate($ruleSeri);
+        }
+        if ($request->seri_outdoor != $old->seri_outdoor) {
+            $validateNewData = $request->validate($ruleSeri);
+        }
+
 
         $validateNewData =
             [
@@ -181,6 +208,8 @@ class AcController extends Controller
                 'petugas_pemasangan' => $request->petugas_pemasangan,
                 'tgl_maintenance' => $request->tgl_maintenance,
                 'petugas_maint' => $request->petugas_maint,
+                'seri_indoor' => $request->seri_indoor,
+                'seri_outdoor' => $request->seri_outdoor,
                 'user_updated' => auth()->user()->name,
                 'user_updated_time' => date('Y-m-d H:i:s')
             ];
