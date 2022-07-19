@@ -18,9 +18,12 @@
           <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-charts" type="button"><i class="bi bi-bar-chart-steps"></i></button>
         </li>       
         @endcan
+        <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Teknik">         
+          <button type="button" data-bs-toggle="pill" data-bs-target="#pills-teknik" class="nav-link" ><i class="bi bi-wrench pl-10"></i></button>          
+      </li>
         <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Tools">         
           <button type="button" data-bs-toggle="pill" data-bs-target="#pills-tools" class="nav-link" ><i class="bi bi-tools pl-10"></i></button>          
-      </li>   
+      </li>  
         <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Settings">
           <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-settings" type="button"><i class="bi bi-gear-fill"></i></button>
         </li>
@@ -117,7 +120,17 @@
 
         <a href="/tools/btu-to-pk" class="list-group-item {{ Request::is('/tools/btu-to-pk*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Konversi Btu - PK</a>
       </div>
-    </div> 
+    </div>
+    <div class="tab-pane fade" id="pills-teknik">
+      <div class="list-group list-group-flush">
+        <div class="list-group-item">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-0">Note</h5>
+          </div>                    
+        </div>
+        <a href="/teknik/listrik" class="list-group-item {{ Request::is('/teknik/listrik*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Teknik Listrik</a>
+      </div>
+    </div>
     </div>
   </div>
  </aside>

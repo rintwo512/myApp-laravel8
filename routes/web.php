@@ -210,3 +210,10 @@ Route::get('/tools/celcius-fahrenheit', function () {
 
 // Stock Barang
 Route::resource('/dashboard/stock', StockController::class)->middleware('auth');
+
+
+Route::get('/teknik/listrik', function () {
+    return view('teknik.listrik', [
+        'title' => "Teknik Listrik"
+    ]);
+})->middleware('auth');
