@@ -102,6 +102,9 @@
             <h5 class="mb-0">Tools</h5>
           </div>                    
         </div>
+
+        <a href="/tools/konver-cosine" class="list-group-item {{ Request::is('/tools/konver-cosine*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Cos Kalkulator</a>
+
         <a href="/tools/amper-to-va" class="list-group-item {{ Request::is('/tools/amper-to-va*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Konversi Amper - VA</a>
 
         <a href="/tools/watt-to-amper" class="list-group-item {{ Request::is('/tools/watt-to-amper*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Konversi Watt - Amper</a>
@@ -129,6 +132,7 @@
           </div>                    
         </div>
         <a href="/teknik/listrik" class="list-group-item {{ Request::is('/teknik/listrik*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Teknik Listrik</a>
+        <a href="/teknik/pendingin" class="list-group-item {{ Request::is('/teknik/pendingin*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Teknik Pendingin</a>
       </div>
     </div>
     </div>

@@ -152,6 +152,14 @@ Route::get('/ac/koderror', function () {
     ]);
 });
 
+
+// Tools
+Route::get('/tools/konver-cosine', function () {
+    return view('tools.konver-cosine', [
+        'title' => 'Kalkulator Cos'
+    ]);
+});
+
 Route::get('/tools/amper-to-va', function () {
     return view('tools.amptova', [
         'title' => 'Convert Amper To Volt Amper'
@@ -212,8 +220,16 @@ Route::get('/tools/celcius-fahrenheit', function () {
 Route::resource('/dashboard/stock', StockController::class)->middleware('auth');
 
 
+
+// Tools
 Route::get('/teknik/listrik', function () {
     return view('teknik.listrik', [
         'title' => "Teknik Listrik"
+    ]);
+})->middleware('auth');
+
+Route::get('/teknik/pendingin', function () {
+    return view('teknik.pendingin', [
+        'title' => "Teknik Pendingin"
     ]);
 })->middleware('auth');
