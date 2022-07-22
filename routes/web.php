@@ -14,6 +14,7 @@ use App\Http\Controllers\CctvMonitor2Controller;
 use App\Http\Controllers\CctvMonitor3Controller;
 use App\Http\Controllers\CctvMonitor4Controller;
 use App\Http\Controllers\StockController;
+use Illuminate\Routing\Route as RoutingRoute;
 
 /*
 |--------------------------------------------------------------------------
@@ -231,5 +232,11 @@ Route::get('/teknik/listrik', function () {
 Route::get('/teknik/pendingin', function () {
     return view('teknik.pendingin', [
         'title' => "Teknik Pendingin"
+    ]);
+})->middleware('auth');
+
+Route::get('/teknik/mesin', function () {
+    return view('teknik.mesin', [
+        'title' => "Teknik Mesin"
     ]);
 })->middleware('auth');

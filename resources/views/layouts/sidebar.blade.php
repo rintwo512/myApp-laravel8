@@ -133,6 +133,7 @@
         </div>
         <a href="/teknik/listrik" class="list-group-item {{ Request::is('/teknik/listrik*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Teknik Listrik</a>
         <a href="/teknik/pendingin" class="list-group-item {{ Request::is('/teknik/pendingin*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Teknik Pendingin</a>
+        <a href="/teknik/mesin" class="list-group-item {{ Request::is('/teknik/mesin*') ? 'active' : '' }}"><i class="bi bi-gear-wide"></i> Teknik Mesin</a>
       </div>
     </div>
     </div>
